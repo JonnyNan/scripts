@@ -10,13 +10,13 @@ echo "
 \______|    \/               \/     \/     \/     \/
                                                                                                   
 "
-DOCKER_IMG_NAME="xr2021/jdsign"
+DOCKER_IMG_NAME="xr2021/jd-base"
 JD_PATH=""
 SHELL_FOLDER=$(pwd)
 CONTAINER_NAME=""
 CONFIG_PATH=""
 LOG_PATH=""
-TAG="main"
+TAG="v1"
 
 HAS_IMAGE=false
 PULL_IMAGE=true
@@ -176,4 +176,4 @@ if [ ! -f "$CONFIG_PATH/config.sh" ]; then
 log "4.下面列出所有容器"
 docker ps
 
-log "5.安装已经完成。\n现在你可以访问设备的 ip:5678 用户名：admin  密码：adminadmin  来添加cookie，和其他操作。感谢使用！"
+log "5.安装已经完成。\n现在你可以访问设备的 ip:5678 用户名：admin  密码：password  来添加cookie，和其他操作。感谢使用！"
