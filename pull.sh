@@ -1,3 +1,5 @@
 git config http.sslVerify "false"
 git config --global http.sslVerify "false"
-git pull origin master
+git fetch --all
+git reset --hard origin/master
+git pull
