@@ -1,3 +1,4 @@
+cd scripts
 git config http.sslVerify "false"
 git config --global http.sslVerify "false"
 git fetch --all
