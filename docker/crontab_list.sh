@@ -1,141 +1,137 @@
+ENV_PATH=
+#0616 更新scripts目录
 # 每3天的23:50分清理一次日志(互助码不清理，proc_file.sh对该文件进行了去重)
 50 23 */3 * * find /scripts/logs -name '*.log' | grep -v 'sharecodeCollection' | xargs rm -rf
 #收集助力码
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
-##############短期活动##############
-#女装盲盒 活动时间：2021-05-24到2021-06-22
-35 1,22 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
+ENV_PATH=
+#0615 更新
+# 更新js脚本和shell脚本，并替换相关参数：
+22 * * * * bash MY_PATH/git_pull.sh >> MY_PATH/log/git_pull.log 2>&1
+48 * * * * bash MY_PATH/scripts/pull.sh
+# 删除 RmLogDaysAgo 指定天数以前的旧日志，本行为不记录日志：
+57 13 * * * bash MY_PATH/rm_log.sh >/dev/null 2>&1
 
-#京东极速版红包(活动时间：2021-5-5至2021-5-31)
-45 0,23 * * * node /scripts/jd_speed_redpocke.js >> /scripts/logs/jd_speed_redpocke.log 2>&1
+# 导出所有互助码清单，日志在log/export_sharecodes下(可通过面板或者日记查看)：
+48 * * * * bash MY_PATH/export_sharecodes.sh
 
-#超级直播间红包雨(活动时间不定期，出现异常提示请忽略。红包雨期间会正常)
-1,31 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
+# 重启挂机脚本：
+# 33 13 * * * bash MY_PATH/jd.sh hangup
+  
+# 自定义定时区，添加自己其他想加的定时任务:
 
-#每日抽奖(活动时间：2021-05-01至2021-05-31)
-13 1,22,23 * * * node /scripts/jd_daily_lottery.js >> /scripts/logs/jd_daily_lottery.log 2>&1
 
-#手机狂欢城
-0 0,12,18,21 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
-#618动物联萌
-33 0,6-23/2 * * * node /scripts/jd_zoo.js >> /scripts/logs/jd_zoo.log 2>&1
-#618动物联萌专门收集金币(每小时的第30分运行一次)
-0-59/30 * * * * node /scripts/jd_zooCollect.js >> /scripts/logs/jd_zooCollect.log 2>&1
-#家电星推官 活动时间：2021年5月27日 00:00:00-2021年6月18日 23:59:59
-0 0 * * * node /scripts/jd_xtg.js >> /scripts/logs/jd_xtg.log 2>&1
-#家电星推官好友互助 活动时间：2021年5月27日 00:00:00-2021年6月18日 23:59:59
-0 0 * * * node /scripts/jd_xtg_help.js >> /scripts/logs/jd_xtg_help.log 2>&1
-#金榜创造营 活动时间：2021-05-21至2021-12-31
-0 1,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
-#5G超级盲盒(活动时间：2021-06-2到2021-07-31)
-0 0-23/4 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
-#明星小店(星店长，2021-06-10)
-0 1,21 * * * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
-#新潮品牌狂欢（6.18过期）
-20 1,21 * * * node /scripts/jd_mcxhd.js >> /scripts/logs/jd_mcxhd.log 2>&1
-#京喜领88元红包(6.31到期)
-30 1,6,12,21 * * * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
-#省钱大赢家之翻翻乐
-10,40 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
-##############长期活动##############
-# 签到
-7 0,17 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
-# 东东超市兑换奖品
-0,30 0 * * * node /scripts/jd_blueCoin.js >> /scripts/logs/jd_blueCoin.log 2>&1
-# 摇京豆
-6 0,23 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
-# 东东农场
-15 6-18/6 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
-# 宠汪汪
-45 */2,23 * * * node /scripts/jd_joy.js >> /scripts/logs/jd_joy.log 2>&1
-# 宠汪汪积分兑换京豆
-0 0-16/8 * * * node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
-# 宠汪汪喂食
-35 */1 * * * node /scripts/jd_joy_feedPets.js >> /scripts/logs/jd_joy_feedPets.log 2>&1
-# 宠汪汪邀请助力
-10 13-20/1 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
-# 摇钱树
-23 */2 * * * node /scripts/jd_moneyTree.js >> /scripts/logs/jd_moneyTree.log 2>&1
-# 东东萌宠
-35 6-18/6 * * * node /scripts/jd_pet.js >> /scripts/logs/jd_pet.log 2>&1
-# 京东种豆得豆
-10 7-22/1 * * * node /scripts/jd_plantBean.js >> /scripts/logs/jd_plantBean.log 2>&1
-# 京东全民开红包
-12 0-23/4 * * * node /scripts/jd_redPacket.js >> /scripts/logs/jd_redPacket.log 2>&1
-# 进店领豆
-6 0 * * * node /scripts/jd_shop.js >> /scripts/logs/jd_shop.log 2>&1
-# 东东超市
-31 0,1-23/2 * * * node /scripts/jd_superMarket.js >> /scripts/logs/jd_superMarket.log 2>&1
-# 取关京东店铺商品
-45 23 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log 2>&1
-# 京豆变动通知
-20 10 * * * node /scripts/jd_bean_change.js >> /scripts/logs/jd_bean_change.log 2>&1
-# 京东抽奖机
-0 0,12,23 * * * node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.log 2>&1
-# 京东排行榜
-21 9 * * * node /scripts/jd_rankingList.js >> /scripts/logs/jd_rankingList.log 2>&1
-# 天天提鹅
-28 * * * * node /scripts/jd_daily_egg.js >> /scripts/logs/jd_daily_egg.log 2>&1
-# 金融养猪
-32 0-23/6 * * * node /scripts/jd_pigPet.js >> /scripts/logs/jd_pigPet.log 2>&1
-# 京喜工厂
-50 * * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
-# 东东小窝
-46 6,23 * * * node /scripts/jd_small_home.js >> /scripts/logs/jd_small_home.log 2>&1
-# 东东工厂
-26 * * * * node /scripts/jd_jdfactory.js >> /scripts/logs/jd_jdfactory.log 2>&1
-# 赚京豆(微信小程序)
-12 * * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
-# 京东快递签到
-47 1 * * * node /scripts/jd_kd.js >> /scripts/logs/jd_kd.log 2>&1
-# 京东汽车(签到满500赛点可兑换500京豆)
-0 0 * * * node /scripts/jd_car.js >> /scripts/logs/jd_car.log 2>&1
-# 领京豆额外奖励(每日可获得3京豆)
-23 1,12,22 * * * node /scripts/jd_bean_home.js >> /scripts/logs/jd_bean_home.log 2>&1
-# 微信小程序京东赚赚
-6 0-5/1,11 * * * node /scripts/jd_jdzz.js >> /scripts/logs/jd_jdzz.log 2>&1
-# crazyJoy自动每日任务
-30 7,23 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
-# 京东汽车旅程赛点兑换金豆
-0 0 * * * node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.log 2>&1
-# 导到所有互助码
-23 7 * * * node /scripts/jd_get_share_code.js >> /scripts/logs/jd_get_share_code.log 2>&1
-# 口袋书店
-38 8,12,18 * * * node /scripts/jd_bookshop.js >> /scripts/logs/jd_bookshop.log 2>&1
-# 京喜农场
-30 9,12,18 * * * node /scripts/jd_jxnc.js >> /scripts/logs/jd_jxnc.log 2>&1
-# 签到领现金
-10 */4 * * * node /scripts/jd_cash.js >> /scripts/logs/jd_cash.log 2>&1
-# 闪购盲盒
-47 8,22 * * * node /scripts/jd_sgmh.js >> /scripts/logs/jd_sgmh.log 2>&1
-# 京东秒秒币
-10 6,21 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
-#美丽研究院
-41 7,12,19 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
-#京东保价
-#41 0,23 * * * node /scripts/jd_price.js >> /scripts/logs/jd_price.log 2>&1
-#京东极速版签到+赚现金任务
-21 1,6 * * * node /scripts/jd_speed_sign.js >> /scripts/logs/jd_speed_sign.log 2>&1
-#监控crazyJoy分红
-10 12 * * * node /scripts/jd_crazy_joy_bonus.js >> /scripts/logs/jd_crazy_joy_bonus.log 2>&1
-#京喜财富岛
-5 7,12,18 * * * node /scripts/jd_cfd.js >> /scripts/logs/jd_cfd.log 2>&1
-# 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
-#20 9 * * 6 node /scripts/jd_delCoupon.js >> /scripts/logs/jd_delCoupon.log 2>&1
-#家庭号
-10 6,7 * * * node /scripts/jd_family.js >> /scripts/logs/jd_family.log 2>&1
-#京东直播（又回来了）
-30-50/5 12,23 * * * node /scripts/jd_live.js >> /scripts/logs/jd_live.log 2>&1
-#京东健康社区
-13 1,6,22 * * * node /scripts/jd_health.js >> /scripts/logs/jd_health.log 2>&1
-#京东健康社区收集健康能量
-5-45/20 * * * * node /scripts/jd_health_collect.js >> /scripts/logs/jd_health_collect.log 2>&1
-# 幸运大转盘
-10 10,23 * * * node /scripts/jd_market_lottery.js >> /scripts/logs/jd_market_lottery.log 2>&1
-# 领金贴
-5 0 * * * node /scripts/jd_jin_tie.js >> /scripts/logs/jd_jin_tie.log 2>&1
-# 跳跳乐瓜分京豆
-15 0,12,22 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
-#京喜牧场
-15 0,12,22 * * * node /scripts/jd_jxmc.js >> /scripts/logs/jd_jxmc.log 2>&1
+# 运行lxk0301大佬的js脚本，仅列出长期任务作初始化用，AutoAddCron=true时，将自动添加短期任务。
+# 请保留任务名称中的前缀"jd_"，去掉后缀".js"，如果有些任务你不想运行，注释掉就好了，不要删除。否则会重新添加上。
+# 非lxk0301/jd_scripts仓库中的脚本不能以“jd_”、“jr_”、“jx_”开头。请在最后保留一个空行。
+0 10 * * * bash MY_PATH/jd.sh jd_bean_change
+33 0-23/4 * * * bash MY_PATH/jd.sh jd_bean_home
+0 0,6 * * * cd /scripts && node jd_bean_sign
+1 7,12,19 * * * bash MY_PATH/jd.sh jd_beauty
+0,30 0 * * * bash MY_PATH/jd.sh jd_blueCoin
+7 8,12,18 * * * bash MY_PATH/jd.sh jd_bookshop
+0 0 * * * bash MY_PATH/jd.sh jd_car
+0 0 * * * bash MY_PATH/jd.sh jd_car_exchange
+0 0-18/6 * * * bash MY_PATH/jd.sh jd_carnivalcity
+27 6,18,15 * * * bash MY_PATH/jd.sh jd_cash
+30 * * * * bash MY_PATH/jd.sh jd_cfd
+0 0 * * * bash MY_PATH/jd.sh jd_club_lottery
+10 7 * * * bash MY_PATH/jd.sh jd_crazy_joy
+18 * * * * bash MY_PATH/jd.sh jd_daily_egg
+13 1,22,23 * * * bash MY_PATH/jd.sh jd_daily_lottery
+20 * * * * bash MY_PATH/jd.sh jd_dreamFactory
+5 6-18/6 * * * bash MY_PATH/jd.sh jd_fruit
+47 7 * * * bash MY_PATH/jd.sh jd_get_share_code
+13 1,7,22 * * * bash MY_PATH/jd.sh jd_health
+5-45/20 * * * * bash MY_PATH/jd.sh jd_health_collect
+36 */4 * * * bash MY_PATH/jd.sh jd_jdfactory
+30 0,1 * * * bash MY_PATH/jd.sh jd_jdzz
+15 */2 * * * bash MY_PATH/jd.sh jd_joy
+15 */1 * * * bash MY_PATH/jd.sh jd_joy_feedPets
+0 0,8,12,16 * * * bash MY_PATH/jd.sh jd_joy_reward
+10 10-20/2 * * * bash MY_PATH/jd.sh jd_joy_run
+1 0,11,21 * * * bash MY_PATH/jd.sh jd_jump
+0 6,9,12,18 * * * bash MY_PATH/jd.sh jd_jxnc
+23 1 * * * bash MY_PATH/jd.sh jd_kd
+10-20/5 12 * * * bash MY_PATH/jd.sh jd_live
+0,30 0-23/1 * * * bash MY_PATH/jd.sh jd_live_redrain
+22 0,12,18 * * * bash MY_PATH/jd.sh jd_lotteryMachine
+0 */4 * * * bash MY_PATH/jd.sh jd_mohe
+0 */2 * * * bash MY_PATH/jd.sh jd_moneyTree
+10 7 * * * bash MY_PATH/jd.sh jd_ms
+35 1,22 * * * bash MY_PATH/jd.sh jd_nzmh
+5 6-18/6 * * * bash MY_PATH/jd.sh jd_pet
+12 * * * * bash MY_PATH/jd.sh jd_pigPet
+0 */6 * * * bash MY_PATH/jd.sh jd_plantBean
+11 9 * * * bash MY_PATH/jd.sh jd_rankingList
+1 1 * * * bash MY_PATH/jd.sh jd_redPacket
+27 8 * * * bash MY_PATH/jd.sh jd_sgmh
+10 0 * * * bash MY_PATH/jd.sh jd_shop
+1 0 * * * bash MY_PATH/jd.sh jd_try
+16 6,23 * * * bash MY_PATH/jd.sh jd_small_home
+40 0,8 * * * bash MY_PATH/jd.sh jd_speed_redpocke
+48 0,12,18 * * * bash MY_PATH/jd.sh jd_speed_sign
+0 1,21 * * * bash MY_PATH/jd.sh jd_star_shop
+11 */6 * * * bash MY_PATH/jd.sh jd_superMarket
+36 0-23/4 * * * bash MY_PATH/jd.sh jd_syj
+55 0-23/4 * * * bash MY_PATH/jd.sh jd_unsubscribe
+19 11 * * * bash MY_PATH/jd.sh adolf_pk
+17 11 * * * bash MY_PATH/jd.sh diy_adolf_flp
+16 11 * * * bash MY_PATH/jd.sh diy_adolf_oneplus
+51 10 * * * bash MY_PATH/jd.sh jd_family
+35 9 * * * bash MY_PATH/jd.sh jd_xtg_help
+21 11 * * * bash MY_PATH/jd.sh jdtqz
+16 9 * * * bash MY_PATH/jd.sh long_hby_lottery
+28 9 * * * bash MY_PATH/jd.sh wen-superBrand
+26 9 * * * bash MY_PATH/jd.sh zooBaojiexiaoxiaole
+15 9 * * * bash MY_PATH/jd.sh zooLongzhou
+58 5 * * * bash MY_PATH/jd.sh jd_xtg
+22 6 * * * bash MY_PATH/jd.sh jd_ShopSign
+22 8 * * * bash MY_PATH/jd.sh jd_limitBox
+22 9 * * * bash MY_PATH/jd.sh jd_qqtmy
+36 0-23/4 * * * bash MY_PATH/jd.sh jd_try
+22 4 * * * bash MY_PATH/jd.sh jd_Newsyj
+23 4 * * * bash MY_PATH/jd.sh jd_ShopSign
+24 4 * * * bash MY_PATH/jd.sh jd_blueCoin20
+25 4 * * * bash MY_PATH/jd.sh jd_cash_exchange
+27 4 * * * bash MY_PATH/jd.sh jd_crazy_joy_coin
+28 4 * * * bash MY_PATH/jd.sh jd_daydlt
+29 4 * * * bash MY_PATH/jd.sh jd_dphby
+30 4 * * * bash MY_PATH/jd.sh jd_dpqd
+31 4 * * * bash MY_PATH/jd.sh jd_dpqd2
+32 4 * * * bash MY_PATH/jd.sh jd_factory
+33 4 * * * bash MY_PATH/jd.sh jd_fanslove
+4 5 * * * bash MY_PATH/jd.sh jd_friend
+5 5 * * * bash MY_PATH/jd.sh jd_gcip
+6 5 * * * bash MY_PATH/jd.sh jd_getFanslove
+7 5 * * * bash MY_PATH/jd.sh jd_global
+8 5 * * * bash MY_PATH/jd.sh jd_half_redrain
+9 5 * * * bash MY_PATH/jd.sh jd_jbczy
+10 5 * * * bash MY_PATH/jd.sh jd_jintie
+11 5 * * * bash MY_PATH/jd.sh jd_jintie_wx
+12 5 * * * bash MY_PATH/jd.sh jd_joy500
+14 5 * * * bash MY_PATH/jd.sh jd_joy_steal
+15 5 * * * bash MY_PATH/jd.sh jd_jxd
+17 5 * * * bash MY_PATH/jd.sh jd_live_lottery_social
+18 5 * * * bash MY_PATH/jd.sh jd_mcxhd_brandcity
+19 5 * * * bash MY_PATH/jd.sh jd_monk_pasture
+20 5 * * * bash MY_PATH/jd.sh jd_necklace
+22 5 * * * bash MY_PATH/jd.sh jd_opencard
+23 5 * * * bash MY_PATH/jd.sh jd_petTreasureBox
+24 5 * * * bash MY_PATH/jd.sh jd_plus_bean
+25 5 * * * bash MY_PATH/jd.sh jd_priceProtect
+26 5 * * * bash MY_PATH/jd.sh jd_s5g
+27 5 * * * bash MY_PATH/jd.sh jd_shake
+28 5 * * * bash MY_PATH/jd.sh jd_shop_follow_sku
+29 5 * * * bash MY_PATH/jd.sh jd_shop_lottery
+30 5 * * * bash MY_PATH/jd.sh jd_speed
+31 5 * * * bash MY_PATH/jd.sh jd_split
+32 5 * * * bash MY_PATH/jd.sh jd_super_box
+33 5 * * * bash MY_PATH/jd.sh jd_super_redrain
+34 5 * * * bash MY_PATH/jd.sh jd_sxj
+36 0-23/4 * * * bash MY_PATH/jd.sh jd_try
+37 5 * * * bash MY_PATH/jd.sh jd_unbind
+39 5 * * * bash MY_PATH/jd.sh jd_wechat_sign
+40 5 * * * bash MY_PATH/jd.sh jx_cfdtx
+41 5 * * * bash MY_PATH/jd.sh jx_sign
