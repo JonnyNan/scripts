@@ -135,3 +135,4 @@ ENV_PATH=
 39 5 * * * bash MY_PATH/jd.sh jd_wechat_sign
 40 5 * * * bash MY_PATH/jd.sh jx_cfdtx
 41 5 * * * bash MY_PATH/jd.sh jx_sign
+5 6-18/6 * * * bash MY_PATH/jd.sh jx_wsdlb
