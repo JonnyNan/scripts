@@ -6,7 +6,7 @@ ENV_PATH=
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
 # 更新js脚本和shell脚本，并替换相关参数：
-12 12 * * * bash MY_PATH/git_pull.sh >> MY_PATH/log/git_pull.log 2>&1
+#12 12 * * * bash MY_PATH/git_pull.sh >> MY_PATH/log/git_pull.log 2>&1
 11 11 * * * bash MY_PATH/scripts/pull.sh
 # 删除 RmLogDaysAgo 指定天数以前的旧日志，本行为不记录日志：
 57 13 * * * bash MY_PATH/rm_log.sh >/dev/null 2>&1
