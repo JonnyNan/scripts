@@ -77,12 +77,7 @@ ENV_PATH=
 17 12 * * * bash MY_PATH/jd.sh diy_adolf_flp
 16 11 * * * bash MY_PATH/jd.sh diy_adolf_oneplus
 51 10 * * * bash MY_PATH/jd.sh jd_family
-35 9 * * * bash MY_PATH/jd.sh jd_xtg_help
 21 11 * * * bash MY_PATH/jd.sh jdtqz
-16 9 * * * bash MY_PATH/jd.sh long_hby_lottery
-28 13 * * * bash MY_PATH/jd.sh wen-superBrand
-26 13 * * * bash MY_PATH/jd.sh zooBaojiexiaoxiaole
-15 14 * * * bash MY_PATH/jd.sh zooLongzhou
 58 5 * * * bash MY_PATH/jd.sh jd_xtg
 22 2 * * * bash MY_PATH/jd.sh jd_ShopSign
 22 2 * * * bash MY_PATH/jd.sh jd_limitBox
@@ -94,8 +89,8 @@ ENV_PATH=
 27 4 * * * bash MY_PATH/jd.sh jd_crazy_joy_coin
 28 4 * * * bash MY_PATH/jd.sh jd_daydlt
 29 4 * * * bash MY_PATH/jd.sh jd_dphby
-30 2 * * * bash MY_PATH/jd.sh jd_dpqd
-31 2 * * * bash MY_PATH/jd.sh jd_dpqd2
+32 2,6 * * * bash MY_PATH/jd.sh jd_dpqd
+20 2,6 * * * bash MY_PATH/jd.sh jd_dpqd2
 32 4 * * * bash MY_PATH/jd.sh jd_factory
 33 4 * * * bash MY_PATH/jd.sh jd_fanslove
 4 5 * * * bash MY_PATH/jd.sh jd_friend
