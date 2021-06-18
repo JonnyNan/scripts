@@ -102,9 +102,7 @@ ENV_PATH=
 15 5 * * * bash MY_PATH/jd.sh jd_jxd
 17 5 * * * bash MY_PATH/jd.sh jd_live_lottery_social
 18 5 * * * bash MY_PATH/jd.sh jd_mcxhd_brandcity
-19 5 * * * bash MY_PATH/jd.sh jd_monk_pasture
 20 8 * * * bash MY_PATH/jd.sh jd_necklace
-22 8 * * * bash MY_PATH/jd.sh jd_opencard
 23 5 * * * bash MY_PATH/jd.sh jd_petTreasureBox
 24 8 * * * bash MY_PATH/jd.sh jd_plus_bean
 25 8 * * * bash MY_PATH/jd.sh jd_priceProtect
@@ -119,4 +117,5 @@ ENV_PATH=
 39 2 * * * bash MY_PATH/jd.sh jd_wechat_sign
 0 0 * * * bash MY_PATH/jd.sh jx_cfdtx
 10 8 * * * bash MY_PATH/jd.sh jx_sign
+12 2,11 * * * bash MY_PATH/jd.sh jx_djjl
 
