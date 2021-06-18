@@ -31,7 +31,6 @@ ENV_PATH=
 7 8,12,18 * * * bash MY_PATH/jd.sh jd_bookshop
 0 0 * * * bash MY_PATH/jd.sh jd_car
 0 0 * * * bash MY_PATH/jd.sh jd_car_exchange
-0 0-18/6 * * * bash MY_PATH/jd.sh jd_carnivalcity
 17 1,18,15 * * * bash MY_PATH/jd.sh jd_cash
 30 * * * * bash MY_PATH/jd.sh jd_cfd
 0 8 * * * bash MY_PATH/jd.sh jd_club_lottery
@@ -73,12 +72,9 @@ ENV_PATH=
 11 */6 * * * bash MY_PATH/jd.sh jd_superMarket
 36 0-23/4 * * * bash MY_PATH/jd.sh jd_syj
 55 0-23/4 * * * bash MY_PATH/jd.sh jd_unsubscribe
-19 10 * * * bash MY_PATH/jd.sh adolf_pk
-17 12 * * * bash MY_PATH/jd.sh diy_adolf_flp
 16 11 * * * bash MY_PATH/jd.sh diy_adolf_oneplus
 51 10 * * * bash MY_PATH/jd.sh jd_family
 21 11 * * * bash MY_PATH/jd.sh jdtqz
-58 5 * * * bash MY_PATH/jd.sh jd_xtg
 22 2 * * * bash MY_PATH/jd.sh jd_ShopSign
 22 2 * * * bash MY_PATH/jd.sh jd_limitBox
 22 2 * * * bash MY_PATH/jd.sh jd_qqtmy
@@ -112,9 +108,7 @@ ENV_PATH=
 23 5 * * * bash MY_PATH/jd.sh jd_petTreasureBox
 24 8 * * * bash MY_PATH/jd.sh jd_plus_bean
 25 8 * * * bash MY_PATH/jd.sh jd_priceProtect
-26 5 * * * bash MY_PATH/jd.sh jd_s5g
 27 7 * * * bash MY_PATH/jd.sh jd_shake
-28 7 * * * bash MY_PATH/jd.sh jd_shop_follow_sku
 29 7 * * * bash MY_PATH/jd.sh jd_shop_lottery
 30 5 * * * bash MY_PATH/jd.sh jd_speed
 32 3 * * * bash MY_PATH/jd.sh jd_super_box
@@ -125,4 +119,4 @@ ENV_PATH=
 39 2 * * * bash MY_PATH/jd.sh jd_wechat_sign
 0 0 * * * bash MY_PATH/jd.sh jx_cfdtx
 10 8 * * * bash MY_PATH/jd.sh jx_sign
-5 6-18/6 * * * bash MY_PATH/jd.sh jx_wsdlb
+
