@@ -6,13 +6,14 @@ ENV_PATH=
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
 # 更新js脚本和shell脚本，并替换相关参数：
-#12 12 * * * bash MY_PATH/git_pull.sh >> MY_PATH/log/git_pull.log 2>&1
+12 12 * * * bash MY_PATH/git_pull.sh >> MY_PATH/log/git_pull.log 2>&1
 12 10 * * * bash MY_PATH/pull.sh
 # 删除 RmLogDaysAgo 指定天数以前的旧日志，本行为不记录日志：
 57 13 * * * bash MY_PATH/rm_log.sh >/dev/null 2>&1
 
 # 导出所有互助码清单，日志在log/export_sharecodes下(可通过面板或者日记查看)：
 48 * * * * bash MY_PATH/export_sharecodes.sh
+40 * * * *
 
 # 重启挂机脚本：
 # 33 13 * * * bash MY_PATH/jd.sh hangup
@@ -109,5 +110,9 @@ ENV_PATH=
 15 0-23/4 * * * bash MY_PATH/jd.sh jd_unsubscribe
 1 0 * * * bash MY_PATH/jd.sh jx_cfdtx
 18 3 * * * bash MY_PATH/jd.sh jx_sign
+0 0-23/1 * * * bash MY_PATH/jd.sh jd_super_redrain
+22 3 * * * bash MY_PATH/jd.sh jd_tyt
+29 3 * * * bash MY_PATH/jd.sh jd_ddo_pk
+
 
 
