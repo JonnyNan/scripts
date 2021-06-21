@@ -82,7 +82,7 @@ ENV_PATH=
 0 */4 * * * bash MY_PATH/jd.sh jd_mohe
 0 */2 * * * bash MY_PATH/jd.sh jd_moneyTree
 10 7 * * * bash MY_PATH/jd.sh jd_ms
-15 4 * * * bash MY_PATH/jd.sh  jd_necklace
+5 1,10 * * * bash MY_PATH/jd.sh  jd_necklace
 1 16 * * * bash MY_PATH/jd.sh  jd_opencard
 5 6-18/6 * * * bash MY_PATH/jd.sh jd_pet
 8 9 * * * bash MY_PATH/jd.sh  jd_petTreasureBox
