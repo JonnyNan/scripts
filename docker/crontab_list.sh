@@ -115,6 +115,6 @@ ENV_PATH=
 22 3 * * * bash MY_PATH/jd.sh jd_tyt
 #东东电竞经理 格式ok
 22 22 * * * bash /root/jd/scripts/jd_djjl.js >> /scripts/logs/jd_djjl.log 2>&1
-29 3 * * * bash /root/jd/jd.sh jd_ddo_pk.js
+29 3 * * * bash /root/jd/jd.sh jd_ddo_pk.js >> /scripts/logs/jd_ddo_pk.log 2>&1
 
 
