@@ -44,6 +44,7 @@ ENV_PATH=
 13 1,22,23 * * * bash MY_PATH/jd.sh jd_daily_lottery
 35 2 * * * bash MY_PATH/jd.sh  jd_daydlt
 18 1,10 * * * bash MY_PATH/jd.sh jd_djjl
+18 1,10 * * * bash MY_PATH/jd.sh jd_djjl.js
 13 10 * * * bash MY_PATH/jd.sh jd_dpqd
 8 9 * * * bash MY_PATH/jd.sh jd_dpqd2
 20 * * * * bash MY_PATH/jd.sh jd_dreamFactory
@@ -112,7 +113,8 @@ ENV_PATH=
 18 3 * * * bash MY_PATH/jd.sh jx_sign
 0 0-23/1 * * * bash MY_PATH/jd.sh jd_super_redrain
 22 3 * * * bash MY_PATH/jd.sh jd_tyt
-29 3 * * * bash MY_PATH/jd.sh jd_ddo_pk
+29 3 * * * bash MY_PATH/jd.sh jd_ddo_pk.js
+29 3 * * * bash MY_PATH/jd.sh 3333k.js
 
 
 
