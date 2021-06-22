@@ -114,7 +114,9 @@ ENV_PATH=
 0 0-23/1 * * * bash MY_PATH/jd.sh jd_super_redrain
 22 3 * * * bash MY_PATH/jd.sh jd_tyt
 29 3 * * * bash MY_PATH/jd.sh jd_ddo_pk.js
-29 3 * * * bash MY_PATH/jd.sh 3333k.js
+#东东电竞经理
+47 10 * * * node /scripts/jd_djjl.js >> /scripts/logs/jd_djjl.log 2>&1
+22 22 * * * bash /root/jd/scripts/jd_djjl.js >> /scripts/logs/jd_djjl.log 2>&1
 
 
 
