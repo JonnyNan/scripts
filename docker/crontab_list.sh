@@ -113,10 +113,8 @@ ENV_PATH=
 18 3 * * * bash MY_PATH/jd.sh jx_sign
 0 0-23/1 * * * bash MY_PATH/jd.sh jd_super_redrain
 22 3 * * * bash MY_PATH/jd.sh jd_tyt
-29 3 * * * bash MY_PATH/jd.sh jd_ddo_pk.js
-#东东电竞经理
-47 10 * * * node /scripts/jd_djjl.js >> /scripts/logs/jd_djjl.log 2>&1
+#东东电竞经理 格式ok
 22 22 * * * bash /root/jd/scripts/jd_djjl.js >> /scripts/logs/jd_djjl.log 2>&1
-
+29 3 * * * bash /root/jd/jd.sh jd_ddo_pk.js
 
 
