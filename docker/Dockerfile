@@ -8,7 +8,7 @@ LABEL AUTHOR="none" \
 ENV DEFAULT_LIST_FILE=crontab_list.sh \
     CUSTOM_LIST_MERGE_TYPE=append \
     COOKIES_LIST=/scripts/logs/cookies.list \
-    REPO_URL=git@github.com:hajiuhajiu02/scripts.git \
+    REPO_URL=git@github.com:hajiuhajiu/scripts.git \
     REPO_BRANCH=master
 
 RUN set -ex \
