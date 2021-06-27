@@ -7,3 +7,9 @@ docker 一键安装：
 wget  https://github.com/hajiuhajiu/jd-shell/raw/v3/install_scripts/docker_install_jd.sh -O docker_install_jd.sh && chmod +x docker_install_jd.sh && bash docker_install_jd.sh
 
 安装完成后输入docker设备地址如192.168.1.1:5678 用户名admin密码admin5678 添加cookie，可进入后扫码获得，自行设定各脚本运行时间即可。
+
+
+
+
+扫码获取ck目前仅仅支持扫码设备与获取二维码设备同ip下才能成功获取否则提示失效!
+扫码获取ck目前仅仅支持扫码设备与获取二维码设备同ip下才能成功获取否则提示失效!!
