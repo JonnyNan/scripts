@@ -117,5 +117,12 @@ ENV_PATH=
 #东东电竞经理 格式ok
 22 22 * * * bash /root/jd/scripts/jd_djjl.js >> /scripts/logs/jd_djjl.log 2>&1
 29 3 * * * bash /root/jd/jd.sh jd_ddo_pk.js >> /scripts/logs/jd_ddo_pk.log 2>&1
+33 6,8 * * * bash /root/jd/jd.sh jd_europeancup.js >> log/jd_europeancup.log 2>&1
+13 6,8 * * * bash /root/jd/jd.sh jd_paoku.js >> log/jd_paoku.log 2>&1
+23 6,8 * * * bash /root/jd/jd.sh jd_qqxing.js >> log/jd_qqxing.log 2>&1
+15 0-23/4 * * * bash MY_PATH/jd.sh jd_jxmc.js >> /scripts/logs/jd_jxmc.log 2>&1
+
+
+
 
 
