@@ -115,9 +115,10 @@ ENV_PATH=
 0 0-23/1 * * * bash /root/jd/jd.sh jd_super_redrain.js >> /log/jd_super_redrain.log 2>&1
 22 3 * * * bash /root/jd/jd.sh jd_tyt.js >> /log/jd_tyt.log 2>&1
 #东东电竞经理 格式ok
-22 22 * * * bash /root/jd/scripts/jd_djjl.js >> /log/jd_djjl.log 2>&1
+22 22 * * * bash /root/jd/jd.sh jd_djjl
 29 3 * * * bash /root/jd/jd.sh jd_ddo_pk.js >> /log/jd_ddo_pk.log 2>&1
 33 6,8 * * * bash /root/jd/jd.sh jd_europeancup.js >> log/jd_europeancup.log 2>&1
 13 6,8 * * * bash /root/jd/jd.sh jd_paoku.js >> log/jd_paoku.log 2>&1
 23 6,8 * * * bash /root/jd/jd.sh jd_qqxing.js >> log/jd_qqxing.log 2>&1
 15 0-23/4 * * * bash /root/jd/jd.sh jd_jxmc.js >> /log/jd_jxmc.log 2>&1
+18 0-23/4 * * * bash /root/jd/jd.sh jd_jxmc
