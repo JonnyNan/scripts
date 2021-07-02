@@ -121,3 +121,4 @@ ENV_PATH=
 23 6,8 * * * bash /root/jd/jd.sh jd_qqxing.js >> log/jd_qqxing.log 2>&1
 15 0-23/4 * * * bash /root/jd/jd.sh jd_jxmc.js >> /log/jd_jxmc.log 2>&1
 18 0-23/4 * * * bash /root/jd/jd.sh jd_jxmc
+29 4 * * * bash /root/jd/jd.sh jd_ddnc_farmpark.js >> /log/jd_ddnc_farmpark.log 2>&1
