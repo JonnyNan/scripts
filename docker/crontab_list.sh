@@ -84,7 +84,6 @@ ENV_PATH=
 0 */2 * * * bash /root/jd/jd.sh jd_moneyTree.js >> /log/jd_moneyTree.log 2>&1
 10 7 * * * bash /root/jd/jd.sh jd_ms.js >> /log/jd_ms.log 2>&1
 5 1,10 * * * bash /root/jd/jd.sh  jd_necklace.js >> /log/jd_necklace.log 2>&1
-1 16 * * * bash /root/jd/jd.sh  jd_opencard.js >> /log/jd_opencard.log 2>&1
 5 6-18/6 * * * bash /root/jd/jd.sh jd_pet.js >> /log/jd_pet.log 2>&1
 8 9 * * * bash /root/jd/jd.sh  jd_petTreasureBox.js >> /log/jd_petTreasureBox.log 2>&1
 12 * * * * bash /root/jd/jd.sh jd_pigPet.js >> /log/jd_pigPet.log 2>&1
@@ -95,8 +94,6 @@ ENV_PATH=
 27 8 * * * bash /root/jd/jd.sh jd_sgmh.js >> /log/jd_sgmh.log 2>&1
 26 5 * * * bash /root/jd/jd.sh  jd_shake.js >> /log/jd_shake.log 2>&1
 10 0 * * * bash /root/jd/jd.sh jd_shop.js >> /log/jd_shop.log 2>&1
-22 2 * * * bash /root/jd/jd.sh  jd_shop_follow_sku.js >> /log/jd_shop_follow_sku.log 2>&1
-12 1 * * * bash /root/jd/jd.sh  jd_shop_lottery.js >> /log/jd_shop_lottery.log 2>&1
 58 8 * * * bash /root/jd/jd.sh jd_ShopSign.js >> /log/jd_ShopSign.log 2>&1
 16 6,23 * * * bash /root/jd/jd.sh jd_small_home.js >> /log/jd_small_home.log 2>&1
 10 0,1 * * * bash /root/jd/jd.sh  jd_speed.js >> /log/jd_speed.log 2>&1
