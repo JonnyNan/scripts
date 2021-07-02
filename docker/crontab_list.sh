@@ -113,12 +113,12 @@ ENV_PATH=
 22 22 * * * bash /root/jd/jd.sh jd_djjl
 29 3 * * * bash /root/jd/jd.sh jd_ddo_pk.js >> /log/jd_ddo_pk.log 2>&1
 33 6,8 * * * bash /root/jd/jd.sh jd_europeancup.js >> log/jd_europeancup.log 2>&1
-13 6,8 * * * bash /root/jd/jd.sh jd_paoku.js >> log/jd_paoku.log 2>&1
-23 6,8 * * * bash /root/jd/jd.sh jd_qqxing.js >> log/jd_qqxing.log 2>&1
-15 0-23/4 * * * bash /root/jd/jd.sh jd_jxmc.js >> /log/jd_jxmc.log 2>&1
+13 6,8 * * * bash /root/jd/jd.sh jd_paoku
+23 6,8 * * * bash /root/jd/jd.sh jd_qqxing
+15 0-23/4 * * * bash /root/jd/jd.sh jd_jxmc
 18 0-23/4 * * * bash /root/jd/jd.sh jd_jxmc
-29 4 * * * bash /root/jd/jd.sh jd_ddnc_farmpark.js >> /log/jd_ddnc_farmpark.log 2>&1
-1 0,1 * * * bash /root/jd/jd.sh jd_qmqjd.js >> log/jd_qmqjd.log 2>&1
-20 10,12 * * * bash /root/jd/jd.sh Captain01.js >> log/Captain01.log 2>&1
+29 4 * * * bash /root/jd/jd.sh jd_ddnc_farmpark
+1 0,1 * * * bash /root/jd/jd.sh jd_qmqjd.js
+20 10,12 * * * bash /root/jd/jd.sh Captain01
 
 
