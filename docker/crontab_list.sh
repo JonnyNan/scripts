@@ -116,10 +116,9 @@ ENV_PATH=
 13 6,8 * * * bash /root/jd/jd.sh jd_paoku
 23 6,8 * * * bash /root/jd/jd.sh jd_qqxing
 15 0-23/4 * * * bash /root/jd/jd.sh jd_jxmc
-18 0-23/4 * * * bash /root/jd/jd.sh jd_jxmc
 29 4 * * * bash /root/jd/jd.sh jd_ddnc_farmpark
 1 0,1 * * * bash /root/jd/jd.sh jd_qmqjd.js
 20 10,12 * * * bash /root/jd/jd.sh Captain01
-2 0,2 * * * bash /root/jd/jd.sh jd_zjb
+2 0,2 * * * bash /root/jd/jd.sh jd_zjb.js >> /log/jd_ddo_pk.log 2>&1
 
 
