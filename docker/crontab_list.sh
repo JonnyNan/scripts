@@ -45,7 +45,6 @@ ENV_PATH=
 13 1,22,23 * * * bash /root/jd/jd.sh jd_daily_lottery.js >> /log/jd_daily_lottery.log 2>&1
 35 2 * * * bash /root/jd/jd.sh  jd_daydlt.js >> /log/jd_daydlt.log 2>&1
 18 1,10 * * * bash /root/jd/jd.sh jd_djjl.js >> /log/jd_djjl.log 2>&1
-18 1,10 * * * bash /root/jd/jd.sh jd_djjl.js.js >> /log/jd_djjl.js.log 2>&1
 13 10 * * * bash /root/jd/jd.sh jd_dpqd.js >> /log/jd_dpqd.log 2>&1
 8 9 * * * bash /root/jd/jd.sh jd_dpqd2.js >> /log/jd_dpqd2.log 2>&1
 20 * * * * bash /root/jd/jd.sh jd_dreamFactory.js >> /log/jd_dreamFactory.log 2>&1
@@ -75,7 +74,7 @@ ENV_PATH=
 0 6,9,12,18 * * * bash /root/jd/jd.sh jd_jxnc.js >> /log/jd_jxnc.log 2>&1
 23 1 * * * bash /root/jd/jd.sh jd_kd.js >> /log/jd_kd.log 2>&1
 10-20/5 12 * * * bash /root/jd/jd.sh jd_live.js >> /log/jd_live.log 2>&1
-0 3,9,18 * * * bash /root/jd/jd.sh jd_jxlhb.js >> /log/.log 2>&1
+0 3,9,18 * * * bash /root/jd/jd.sh jd_jxlhb.js >> /log/jd_jxlhb.log 2>&1
 28 14 * * * bash /root/jd/jd.sh  jd_live_lottery_social.js >> /log/jd_live_lottery_social.log 2>&1
 0,30 0-23/1 * * * bash /root/jd/jd.sh jd_live_redrain.js >> /log/jd_live_redrain.log 2>&1
 22 0,12,18 * * * bash /root/jd/jd.sh jd_lotteryMachine.js >> /log/jd_lotteryMachine.log 2>&1
