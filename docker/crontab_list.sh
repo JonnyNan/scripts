@@ -118,7 +118,10 @@ ENV_PATH=
 15 0-23/4 * * * bash /root/jd/jd.sh jd_jxmc
 29 4 * * * bash /root/jd/jd.sh jd_ddnc_farmpark
 1 0,1 * * * node /scripts/jd_qmqjd.js >> log/jd_qmqjd.log 2>&1
-20 10,12 * * * bash /root/jd/jd.sh Captain01
-2 0,2 * * * bash /root/jd/jd.sh jd_zjb.js >> /log/jd_ddo_pk.log 2>&1
+20 10,12 * * * node /scripts/Captain01.js >> log/Captain01.log 2>&1
+2 0,2 * * * node /scripts/jd_zjb.js >> /log/jd_zjb.log 2>&1
+18 6,9 * * * node /scripts/jd_superBrand.js >> log/jd_superBrand.log 2>&1
+20 8,10 * * * node /scripts/jd_DrawEntrance.js >> log/jd_DrawEntrance.log 2>&1
+
 
 
