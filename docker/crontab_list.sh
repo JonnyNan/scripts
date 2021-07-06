@@ -122,6 +122,4 @@ ENV_PATH=
 20 8,10 * * * node /scripts/jd_DrawEntrance.js >> log/jd_DrawEntrance.log 2>&1
 5 9,11 * * * node /scripts/jd_ddo_pk.js >> /log/jd_ddo_pk.log 2>&1
 23 6,8 * * * node /scripts/jd_qqxing.js >> /log/jd_qqxing.log 2>&1
-
-
-
+20 0,10 * * * node /scripts/jd_lsj.js >> /log/jd_lsj.log 2>&1
