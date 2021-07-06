@@ -125,4 +125,6 @@ ENV_PATH=
 20 0,10 * * * node /scripts/jd_lsj.js >> /log/jd_lsj.log 2>&1
 26 0,8 * * * node /scripts/jd_nzmh.js >> /log/jd_nzmh.log 2>&1
 33 0,9 * * * node /scripts/jd_superBrand.js >> /log/jd_superBrand.log 2>&1
+3 4,6,11 * * * node /scripts/jd_joy_park.js >> /log/jd_joy_park.log 2>&1
+
 
