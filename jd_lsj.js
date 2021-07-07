@@ -65,7 +65,7 @@ if ($.isNode()) {
     $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
     if(!useInfo[$.UserName]) continue;
     $.canHelp = true;
-    newShareCodes.push({code:'0BC0AA82E6E6165FE75FF77CA78416F9D94866A81E8A79794C2841D76A8ED68349336DE54E26AA8F2834B248E6398CB7A755DF4FDAE585EC3E1ABE26F3DD3CFFC956D12974FF00A045D8E31A84FE84C18A8357DE96A1F617B8AC4D64BC24B689',usr:''})
+    newShareCodes.push({code:'jd_lsj',usr:''})
     for (let j = 0; j < newShareCodes.length && $.canHelp; j++) {
       $.oneCodeInfo = newShareCodes[j];
       if($.UserName === newShareCodes[j].usr || $.oneCodeInfo.max){
