@@ -4,7 +4,7 @@
 新用户第一次想设置主号拉邀请就先分享到QQ查看邀请码 inviter就是
 运行脚本查看邀请码
 #自定义邀请码变量 
-export joyinviterPin="" //IANWqUmbgQVF9ePHGsGFA2m-zSTLKmHFbE-IW-Waarw
+export joyinviterPin="" //jDdprSRaLT9UxWwjqKGenw
 ====================
 新手上路勿黑勿喷
 TG通知群 https://t.me/ningmeng999
@@ -25,7 +25,7 @@ let cookiesArr = [], cookie = '', message;
 let codeList = []
 let codeList1 = []
 
-let joyinviterPin = 'mKRur!!!!!!!!!!c';
+let joyinviterPin = 'jDdprSRaLT9UxWwjqKGenw';
 if (process.env.joyinviterPin) {
   joyinviterPin = process.env.joyinviterPin;
 }
