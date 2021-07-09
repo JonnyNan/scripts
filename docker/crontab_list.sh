@@ -126,10 +126,10 @@ ENV_PATH=
 26 0,8 * * * node /scripts/jd_nzmh.js >> /log/jd_nzmh.log 2>&1
 33 0,9 * * * node /scripts/jd_superBrand.js >> /log/jd_superBrand.log 2>&1
 3 4,6,11 * * * node /scripts/jd_joy_park.js >> /log/jd_joy_park.log 2>&1
-3 4,6,11 * * * node /scripts/jd_goodMorning.js >> /log/jd_goodMorning.log 2>&1
-3 4,6,11 * * * node /scripts/jd_NewSign.js >> /log/jd_NewSign.log 2>&1
-3 4,6,11 * * * node /scripts/jd_qjd.js >> /log/jd_qjd.log 2>&1
-3 4,6,11 * * * node /scripts/jd_summer_movement.js >> /log/jd_summer_movement.log 2>&1
-3 4,6,11 * * * node /scripts/MovementFaker.js >> /log/MovementFaker.log 2>&1
+13 4,6,11 * * * node /scripts/jd_goodMorning.js >> /log/jd_goodMorning.log 2>&1
+23 4,7,11 * * * node /scripts/jd_NewSign.js >> /log/jd_NewSign.log 2>&1
+33 4,6,16 * * * node /scripts/jd_qjd.js >> /log/jd_qjd.log 2>&1
+43 4,8,13 * * * node /scripts/jd_summer_movement.js >> /log/jd_summer_movement.log 2>&1
+53 4,6,15 * * * node /scripts/MovementFaker.js >> /log/MovementFaker.log 2>&1
 
 
