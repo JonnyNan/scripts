@@ -132,6 +132,9 @@ ENV_PATH=
 43 4,8,13 * * * node /scripts/jd_summer_movement.js >> /log/jd_summer_movement.log 2>&1
 53 4,6,15 * * * node /scripts/MovementFaker.js >> /log/MovementFaker.log 2>&1
 02 9,18,20 * * * node /scripts/jd_summer_movement_help.js >> /log/jd_summer_movement_help.log 2>&1
+06 0,1,10 * * * node /scripts/jd_sendBeans.js >> /log/jd_sendBeans.log 2>&1
+
+
 
 
 
