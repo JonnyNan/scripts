@@ -113,8 +113,8 @@ ENV_PATH=
 22 22 * * * bash /root/jd/jd.sh jd_djjl
 33 6,8 * * * bash /root/jd/jd.sh jd_europeancup.js >> log/jd_europeancup.log 2>&1
 13 6,8 * * * bash /root/jd/jd.sh jd_paoku
-15 0-23/4 * * * bash /root/jd/jd.sh jd_jxmc
-29 4 * * * bash /root/jd/jd.sh jd_ddnc_farmpark
+15 0-23/4 * * * node /scripts/jd_jxmc.js >> /log/jd_jxmc.log 2>&1
+29 0-23/4 * * * node /scripts/jd_ddnc_farmpark.js >> /log/jd_ddnc_farmpark.log 2>&1
 1 0,1 * * * node /scripts/jd_qmqjd.js >> log/jd_qmqjd.log 2>&1
 20 10,12 * * * node /scripts/Captain01.js >> log/Captain01.log 2>&1
 2 0,2 * * * node /scripts/jd_zjb.js >> /log/jd_zjb.log 2>&1
