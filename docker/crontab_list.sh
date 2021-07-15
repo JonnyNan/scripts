@@ -134,7 +134,7 @@ ENV_PATH=
 02 9,18,20 * * * node /scripts/jd_summer_movement_help.js >> /log/jd_summer_movement_help.log 2>&1
 06 0,1,10 * * * node /scripts/jd_sendBeans.js >> /log/jd_sendBeans.log 2>&1
 12 */6 * * * node /scripts/jd_cfd_loop.js >> /log/jd_cfd_loop.log 2>&1
-
+10 0,10 * * * node /scripts/jd_twz-star.js >> /log/jd_twz-star.log 2>&1
 
 
 
