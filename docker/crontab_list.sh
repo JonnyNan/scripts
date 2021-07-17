@@ -135,6 +135,9 @@ ENV_PATH=
 06 0,1,10 * * * node /scripts/jd_sendBeans.js >> /log/jd_sendBeans.log 2>&1
 12 */6 * * * node /scripts/jd_cfd_loop.js >> /log/jd_cfd_loop.log 2>&1
 10 0,10 * * * node /scripts/jd_twz-star.js >> /log/jd_twz-star.log 2>&1
+30 * * * * node /scripts/jd_big_winner.js >> /log/jd_big_winner.log 2>&1
+0 * * * * node /scripts/jd_big_winner.js >> /log/jd_big_winner.log 2>&1
+
 
 
 
