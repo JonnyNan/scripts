@@ -115,7 +115,7 @@ ENV_PATH=
 13 6,8 * * * bash /root/jd/jd.sh jd_paoku
 15 0-23/4 * * * node /scripts/jd_jxmc.js >> /log/jd_jxmc.log 2>&1
 29 0-23/4 * * * node /scripts/jd_ddnc_farmpark.js >> /log/jd_ddnc_farmpark.log 2>&1
-1 0,1 * * * node /scripts/jd_qmqjd.js >> log/jd_qmqjd.log 2>&1
+1 8,10 * * * node /scripts/jd_qmqjd.js >> log/jd_qmqjd.log 2>&1
 20 10,12 * * * node /scripts/Captain01.js >> log/Captain01.log 2>&1
 2 0,2 * * * node /scripts/jd_zjb.js >> /log/jd_zjb.log 2>&1
 18 6,9 * * * node /scripts/jd_superBrand.js >> log/jd_superBrand.log 2>&1
@@ -128,9 +128,8 @@ ENV_PATH=
 3 4,6,11 * * * node /scripts/jd_joy_park.js >> /log/jd_joy_park.log 2>&1
 13 4,6,11 * * * node /scripts/jd_goodMorning.js >> /log/jd_goodMorning.log 2>&1
 23 4,7,11 * * * node /scripts/jd_NewSign.js >> /log/jd_NewSign.log 2>&1
-33 4,6,16 * * * node /scripts/jd_qjd.js >> /log/jd_qjd.log 2>&1
+33 12,8,16 * * * node /scripts/jd_qjd.js >> /log/jd_qjd.log 2>&1
 43 4,8,13 * * * node /scripts/jd_summer_movement.js >> /log/jd_summer_movement.log 2>&1
-53 4,6,15 * * * node /scripts/MovementFaker.js >> /log/MovementFaker.log 2>&1
 02 9,18,20 * * * node /scripts/jd_summer_movement_help.js >> /log/jd_summer_movement_help.log 2>&1
 06 0,1,10 * * * node /scripts/jd_sendBeans.js >> /log/jd_sendBeans.log 2>&1
 12 */6 * * * node /scripts/jd_cfd_loop.js >> /log/jd_cfd_loop.log 2>&1
