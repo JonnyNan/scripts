@@ -90,7 +90,7 @@ ENV_PATH=
 0 */6 * * * bash /root/jd/jd.sh jd_plantBean.js >> /log/jd_plantBean.log 2>&1
 8 9 * * * bash /root/jd/jd.sh  jd_plus_bean.js >> /log/jd_plus_bean.log 2>&1
 11 9 * * * bash /root/jd/jd.sh jd_rankingList.js >> /log/jd_rankingList.log 2>&1
-1 1 * * * bash /root/jd/jd.sh jd_redPacket.js >> /log/jd_redPacket.log 2>&1
+1 1,12 * * * bash /root/jd/jd.sh jd_redPacket.js >> /log/jd_redPacket.log 2>&1
 27 8 * * * bash /root/jd/jd.sh jd_sgmh.js >> /log/jd_sgmh.log 2>&1
 26 5 * * * bash /root/jd/jd.sh  jd_shake.js >> /log/jd_shake.log 2>&1
 10 0 * * * bash /root/jd/jd.sh jd_shop.js >> /log/jd_shop.log 2>&1
