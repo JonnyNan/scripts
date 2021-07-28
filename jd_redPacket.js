@@ -101,14 +101,7 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
       }
     }
   }
-})()
-    .catch((e) => {
-      $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
-    })
-    .finally(() => {
-      $.done();
-    })
-	
+  
   for (let v = 0; v < cookiesArr.length; v++) {
     cookie = cookiesArr[v];
     $.index = v + 1;
@@ -127,14 +120,17 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
         }
       }
     }
-  }
+  }  
 })()
     .catch((e) => {
       $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
     })
     .finally(() => {
       $.done();
-    })   
+    })
+	
+
+
 async function redPacket() {
   try {
     await doLuckDrawFun();//券后9.9抽奖
