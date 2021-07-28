@@ -81,7 +81,7 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
       console.log(`\n\n自己账号内部互助`);
       for (let item of $.redPacketId) {
         console.log(`账号 ${$.index} ${$.UserName} 开始给账号1进行助力`)
-		item = redPacketId[0];
+		item = $.redPacketId[0];
         await jinli_h5assist(item);
         if (!$.canHelp) {
           console.log(`次数已用完或活动火爆，跳出助力`)
