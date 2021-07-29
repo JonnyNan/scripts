@@ -137,7 +137,9 @@ ENV_PATH=
 30 * * * * node /scripts/jd_big_winner.js >> /log/jd_big_winner.log 2>&1
 0 * * * * node /scripts/jd_big_winner.js >> /log/jd_big_winner.log 2>&1
 10 1 * * * node /scripts/jd_NewSign.js >> /log/jd_NewSign.log 2>&1
-18 1,5,16,18 * * * node /scripts/jd_productZ4Brand.js >> /log/jd_productZ4Brand.log 2>&1
+10 1 * * * node /scripts/jd_NewSign.js >> /log/jd_NewSign.log 2>&1
+18 1,5,16 * * * node /scripts/jd_chinajoy.js >> /log/jd_chinajoy.log 2>&1
+
 
 
 
