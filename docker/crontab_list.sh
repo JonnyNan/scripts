@@ -2,7 +2,6 @@ ENV_PATH=
 #0622 更新scripts目录wyw
 # 每3天的23:50分清理一次日志(互助码不清理，proc_file.sh对该文件进行了去重)
 50 23 */3 * * find /log -name '*.log' | grep -v 'sharecodeCollection' | xargs rm -rf
-50 23 */3 * * find /log -name '*.log' | grep -v 'sharecodeCollection' | xargs rm -rf
 #收集助力码
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /log/auto_help_collect.log 2>&1
 
@@ -67,7 +66,7 @@ ENV_PATH=
 0 0,8,12,16 * * * bash /root/jd/jd.sh jd_joy_reward.js >> /log/jd_joy_reward.log 2>&1
 10 10-20/2 * * * bash /root/jd/jd.sh jd_joy_run.js >> /log/jd_joy_run.log 2>&1
 11 2 * * * bash /root/jd/jd.sh  jd_joy_steal.js >> /log/jd_joy_steal.log 2>&1
-0 0 * * * bash /root/jd/jd.sh  jd_joy500.js >> /log/jd_joy500.log 2>&1
+0 00,8 * * * bash /root/jd/jd.sh jd_joy500.js >> /log/jd_joy500.log 2>&1
 1 0,11,21 * * * bash /root/jd/jd.sh jd_jump.js >> /log/jd_jump.log 2>&1
 38 5 * * * bash /root/jd/jd.sh  jd_jxd.js >> /log/jd_jxd.log 2>&1
 8 7 * * * bash /root/jd/jd.sh  jd_jxfactory.js >> /log/jd_jxfactory.log 2>&1
