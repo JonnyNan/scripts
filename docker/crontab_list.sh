@@ -2,6 +2,7 @@ ENV_PATH=
 #0622 更新scripts目录wyw
 # 每3天的23:50分清理一次日志(互助码不清理，proc_file.sh对该文件进行了去重)
 50 23 */3 * * find /log -name '*.log' | grep -v 'sharecodeCollection' | xargs rm -rf
+35 23 */3 * * find /root/jd/log -name '*.log' | grep -v 'sharecodeCollection' | xargs rm -rf
 #收集助力码
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /log/auto_help_collect.log 2>&1
 
