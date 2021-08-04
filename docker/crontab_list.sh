@@ -139,6 +139,7 @@ ENV_PATH=
 10 1 * * * node /scripts/jd_NewSign.js >> /log/jd_NewSign.log 2>&1
 10 1 * * * node /scripts/jd_NewSign.js >> /log/jd_NewSign.log 2>&1
 18 1,5,16 * * * node /scripts/jd_chinajoy.js >> /log/jd_chinajoy.log 2>&1
+22 2,8 * * * node /scripts/jd_wxFans.js >> /log/jd_wxFans.log 2>&1
 
 
 
