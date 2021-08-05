@@ -142,6 +142,8 @@ ENV_PATH=
 22 2,8 * * * node /scripts/jd_wxFans.js >> /log/jd_wxFans.log 2>&1
 25 2,8 * * * node /scripts/jd_wish.js >> /log/jd_wish.log 2>&1
 01 0,8 * * * node /scripts/jd_sgmh.js >> /log/jd_sgmh.log 2>&1
+06 0,9 * * * node /scripts/jd_sign_graphics.js >> /log/jd_sign_graphics.log 2>&1
+
 
 
 
