@@ -136,13 +136,12 @@ ENV_PATH=
 10 0,10 * * * node /scripts/jd_twz-star.js >> /log/jd_twz-star.log 2>&1
 30 * * * * node /scripts/jd_big_winner.js >> /log/jd_big_winner.log 2>&1
 0 * * * * node /scripts/jd_big_winner.js >> /log/jd_big_winner.log 2>&1
-10 1 * * * node /scripts/jd_NewSign.js >> /log/jd_NewSign.log 2>&1
-10 1 * * * node /scripts/jd_NewSign.js >> /log/jd_NewSign.log 2>&1
 18 1,5,16 * * * node /scripts/jd_chinajoy.js >> /log/jd_chinajoy.log 2>&1
 22 2,8 * * * node /scripts/jd_wxFans.js >> /log/jd_wxFans.log 2>&1
 25 2,8 * * * node /scripts/jd_wish.js >> /log/jd_wish.log 2>&1
 01 0,8 * * * node /scripts/jd_sgmh.js >> /log/jd_sgmh.log 2>&1
 06 0,9 * * * node /scripts/jd_sign_graphics.js >> /log/jd_sign_graphics.log 2>&1
+03 1,2,8,17 * * * node /scripts/jd_qmqjd.js >> /log/jd_qjd.log 2>&1
 
 
 
