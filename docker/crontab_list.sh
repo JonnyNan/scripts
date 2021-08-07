@@ -142,7 +142,9 @@ ENV_PATH=
 01 0,8 * * * node /scripts/jd_sgmh.js >> /log/jd_sgmh.log 2>&1
 06 0,9 * * * node /scripts/jd_sign_graphics.js >> /log/jd_sign_graphics.log 2>&1
 03 1,2,8,17 * * * node /scripts/jd_qmqjd.js >> /log/jd_qjd.log 2>&1
-
+22 8,18 * * * node /scripts/jd_opencard1.js >> /log/jd_opencard1.log 2>&1
+32 8,18 * * * node /scripts/jd_opencard2.js >> /log/jd_opencard2.log 2>&1
+42 8,18 * * * node /scripts/jd_opencard3.js >> /log/jd_opencard3.log 2>&1
 
 
 
