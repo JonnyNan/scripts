@@ -97,7 +97,7 @@ message = ""
       $.attrTouXiang = 'https://img10.360buyimg.com/imgzone/jfs/t1/7020/27/13511/6142/5c5138d8E4df2e764/5a1216a3a5043c5d.png'
       $.actorUuid = '';
       $.actorUuid = await getActorUuid();
-      console.log($.actorUuid');
+      console.log($.actorUuid);
       if(!$.actorUuid){
         console.log('获取不到[actorUuid]退出执行，请重新执行')
         if (i === 0) {
