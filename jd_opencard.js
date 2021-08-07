@@ -60,7 +60,7 @@ message = ""
   }
 
   guaopencard_addSku4 = false
-  $.shareUuid = [''][Math.floor((Math.random() * 3))]
+  $.shareUuid = ['tOaImEmz34KVIaa5zT8u'][Math.floor((Math.random() * 3))]
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
     if (cookie) {
@@ -97,6 +97,7 @@ message = ""
       $.attrTouXiang = 'https://img10.360buyimg.com/imgzone/jfs/t1/7020/27/13511/6142/5c5138d8E4df2e764/5a1216a3a5043c5d.png'
       $.actorUuid = '';
       $.actorUuid = await getActorUuid();
+      console.log($.actorUuid');
       if(!$.actorUuid){
         console.log('获取不到[actorUuid]退出执行，请重新执行')
         if (i === 0) {
