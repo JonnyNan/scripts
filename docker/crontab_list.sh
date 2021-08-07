@@ -129,7 +129,7 @@ ENV_PATH=
 13 4,6,11 * * * node /scripts/jd_goodMorning.js >> /log/jd_goodMorning.log 2>&1
 23 4,7,11 * * * node /scripts/jd_NewSign.js >> /log/jd_NewSign.log 2>&1
 33 12,8,16 * * * node /scripts/jd_qjd.js >> /log/jd_qjd.log 2>&1
-43 4,8,13 * * * node /scripts/jd_summer_movement.js >> /log/jd_summer_movement.log 2>&1
+43 4,8,13 * * * node /scripts/gua_doge.js >> /log/gua_doge.log 2>&1
 02 9,18,20 * * * node /scripts/jd_summer_movement_help.js >> /log/jd_summer_movement_help.log 2>&1
 06 0,1,10 * * * node /scripts/jd_sendBeans.js >> /log/jd_sendBeans.log 2>&1
 12 */6 * * * node /scripts/jd_cfd_loop.js >> /log/jd_cfd_loop.log 2>&1
