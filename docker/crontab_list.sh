@@ -130,7 +130,7 @@ ENV_PATH=
 23 4,7,11 * * * node /scripts/jd_NewSign.js >> /log/jd_NewSign.log 2>&1
 33 12,8,16 * * * node /scripts/jd_qjd.js >> /log/jd_qjd.log 2>&1
 43 4,8,13 * * * node /scripts/gua_doge.js >> /log/gua_doge.log 2>&1
-02 9,18,20 * * * node /scripts/jd_summer_movement_help.js >> /log/jd_summer_movement_help.log 2>&1
+02 8,18 * * * node /scripts/jd_opencard.js >> /log/jd_opencard.log 2>&1
 06 0,1,10 * * * node /scripts/jd_sendBeans.js >> /log/jd_sendBeans.log 2>&1
 12 */6 * * * node /scripts/jd_cfd_loop.js >> /log/jd_cfd_loop.log 2>&1
 10 0,10 * * * node /scripts/jd_twz-star.js >> /log/jd_twz-star.log 2>&1
@@ -142,6 +142,7 @@ ENV_PATH=
 01 0,8 * * * node /scripts/jd_sgmh.js >> /log/jd_sgmh.log 2>&1
 06 0,9 * * * node /scripts/jd_sign_graphics.js >> /log/jd_sign_graphics.log 2>&1
 03 1,2,8,17 * * * node /scripts/jd_qmqjd.js >> /log/jd_qjd.log 2>&1
+
 
 
 
