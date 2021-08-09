@@ -145,6 +145,9 @@ ENV_PATH=
 22 8,18 * * * node /scripts/jd_opencard1.js >> /log/jd_opencard1.log 2>&1
 32 8,18 * * * node /scripts/jd_opencard2.js >> /log/jd_opencard2.log 2>&1
 42 8,18 * * * node /scripts/jd_opencard3.js >> /log/jd_opencard3.log 2>&1
+02 6,9,12,18 * * * bash /root/jd/jd.sh jd_carnivalcity.js >> /log/jd_carnivalcity.log 2>&1
+08 2,9 * * * bash /root/jd/jd.sh jd_carnivalcity_help.js >> /log/jd_carnivalcity_help.log 2>&1
+
 
 
 
