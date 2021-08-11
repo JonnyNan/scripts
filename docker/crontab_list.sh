@@ -48,8 +48,6 @@ ENV_PATH=
 20 * * * * bash /root/jd/jd.sh jd_dreamFactory.js >> /log/jd_dreamFactory.log 2>&1
 40 3 * * * bash /root/jd/jd.sh  jd_factory.js >> /log/jd_factory.log 2>&1
 51 10 * * * bash /root/jd/jd.sh jd_family.js >> /log/jd_family.log 2>&1
-45 4 * * * bash /root/jd/jd.sh  jd_fanslove.js >> /log/jd_fanslove.log 2>&1
-45 3 * * * bash /root/jd/jd.sh  jd_friend.js >> /log/jd_friend.log 2>&1
 5 6-18/6 * * * bash /root/jd/jd.sh jd_fruit.js >> /log/jd_fruit.log 2>&1
 47 7 * * * bash /root/jd/jd.sh jd_get_share_code.js >> /log/jd_get_share_code.log 2>&1
 38 2 * * * bash /root/jd/jd.sh  jd_getFanslove.js >> /log/jd_getFanslove.log 2>&1
@@ -109,7 +107,6 @@ ENV_PATH=
 
 #东东电竞经理 格式ok
 22 22 * * * bash /root/jd/jd.sh jd_djjl
-33 6,8 * * * bash /root/jd/jd.sh jd_europeancup.js >> log/jd_europeancup.log 2>&1
 13 6,8 * * * bash /root/jd/jd.sh jd_paoku
 15 0-23/4 * * * node /scripts/jd_jxmc.js >> /log/jd_jxmc.log 2>&1
 29 0-23/4 * * * node /scripts/jd_ddnc_farmpark.js >> /log/jd_ddnc_farmpark.log 2>&1
@@ -118,7 +115,6 @@ ENV_PATH=
 2 0,2 * * * node /scripts/jd_zjb.js >> /log/jd_zjb.log 2>&1
 18 6,9 * * * node /scripts/jd_superBrand.js >> log/jd_superBrand.log 2>&1
 20 8,10 * * * node /scripts/jd_DrawEntrance.js >> log/jd_DrawEntrance.log 2>&1
-5 9,11 * * * node /scripts/jd_ddo_pk.js >> /log/jd_ddo_pk.log 2>&1
 23 6,8 * * * node /scripts/jd_qqxing.js >> /log/jd_qqxing.log 2>&1
 20 0,10 * * * node /scripts/jd_lsj.js >> /log/jd_lsj.log 2>&1
 26 0,8 * * * node /scripts/jd_nzmh.js >> /log/jd_nzmh.log 2>&1
