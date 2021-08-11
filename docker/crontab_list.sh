@@ -39,8 +39,6 @@ ENV_PATH=
 0 0 * * * bash /root/jd/jd.sh jd_cash_exchange.js >> /log/jd_cash_exchange.log 2>&1
 30 * * * * bash /root/jd/jd.sh jd_cfd.js >> /log/jd_cfd.log 2>&1
 0 0 * * * bash /root/jd/jd.sh jd_club_lottery.js >> /log/jd_club_lottery.log 2>&1
-10 7 * * * bash /root/jd/jd.sh jd_crazy_joy.js >> /log/jd_crazy_joy.log 2>&1
-1 1 * * * bash /root/jd/jd.sh  jd_crazy_joy_coin.js >> /log/jd_crazy_joy_coin.log 2>&1
 18 * * * * bash /root/jd/jd.sh jd_daily_egg.js >> /log/jd_daily_egg.log 2>&1
 13 1,22,23 * * * bash /root/jd/jd.sh jd_daily_lottery.js >> /log/jd_daily_lottery.log 2>&1
 35 2 * * * bash /root/jd/jd.sh  jd_daydlt.js >> /log/jd_daydlt.log 2>&1
