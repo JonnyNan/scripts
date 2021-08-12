@@ -143,6 +143,7 @@ ENV_PATH=
 08 2,9 * * * node /root/jd/jd.sh jd_carnivalcity_help.js >> /log/jd_carnivalcity_help.log 2>&1
 12 8,9,11 * * * node /root/jd/jd.sh zy_ryhxj.js >> /log/zy_ryhxj.log 2>&1
 22 4,8,12,18 * * * node /root/jd/jd.sh zy_ldhwj.js >> /log/zy_ldhwj.log 2>&1
+30 7,20 12-20 8 * node /root/jd/jd.sh jd_qcshj.js >> /log/jd_qcshj.log 2>&1
 
 
 
