@@ -144,8 +144,8 @@ ENV_PATH=
 12 8,9,11 * * * node /scripts/zy_ryhxj.js >> /log/zy_ryhxj.log 2>&1
 22 4,8,12,18 * * * node /scripts/zy_ldhwj.js >> /log/zy_ldhwj.log 2>&1
 30 7,20 12-20 8 * node /scripts/jd_qcshj.js >> /log/jd_qcshj.log 2>&1
-01 1,9,12,18 * * * node /scripts/jd_goldPhone.js.js >> /log/jd_goldPhone.js.log 2>&1
-11 1,9,12,18 * * * node /scripts/jd_goldPhone1.js.js >> /log/jd_goldPhone1.js.log 2>&1
+01 1,9,13,18 * * * node /scripts/jd_goldPhone.js.js >> /log/jd_goldPhone.js.log 2>&1
+11 1,9,14,18 * * * node /scripts/jd_goldPhone1.js.js >> /log/jd_goldPhone1.js.log 2>&1
 
 
 
