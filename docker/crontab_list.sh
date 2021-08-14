@@ -149,6 +149,8 @@ ENV_PATH=
 24 7,14 * * * node /scripts/jd_decompression.js >> /log/jd_decompression.log 2>&1
 20 7,14 * * * node /scripts/gua_xiaolong.js >> /log/gua_xiaolong.log 2>&1
 28 7,14 * * * node /scripts/gua_xmGame.js >> /log/gua_xmGame.log 2>&1
+08 2,10 * * * node /scripts/jd_split.js >> /log/jd_split.log 2>&1
+
 
 
 
