@@ -106,8 +106,8 @@ ENV_PATH=
 0 0-23/1 * * * bash /root/jd/jd.sh jd_super_redrain.js >> /log/jd_super_redrain.log 2>&1
 
 #东东电竞经理 格式ok
-22 22 * * * bash /root/jd/jd.sh jd_djjl
-13 6,8 * * * bash /root/jd/jd.sh jd_paoku
+22 22 * * * node /scripts/jd_djjl.js >> /log/jd_djjl.log 2>&1
+33 0,12,18 * * * node /scripts/jd_gold_creator.js >> /log/jd_gold_creator.log 2>&1
 15 0-23/4 * * * node /scripts/jd_jxmc.js >> /log/jd_jxmc.log 2>&1
 29 0-23/4 * * * node /scripts/jd_ddnc_farmpark.js >> /log/jd_ddnc_farmpark.log 2>&1
 1 8,10 * * * node /scripts/jd_qmqjd.js >> log/jd_qmqjd.log 2>&1
