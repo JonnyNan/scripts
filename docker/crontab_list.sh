@@ -150,6 +150,7 @@ ENV_PATH=
 20 7,14 * * * node /scripts/gua_xiaolong.js >> /log/gua_xiaolong.log 2>&1
 28 7,14 * * * node /scripts/gua_xmGame.js >> /log/gua_xmGame.log 2>&1
 08 2,10 * * * node /scripts/jd_split.js >> /log/jd_split.log 2>&1
+38 12,18 * * * node /scripts/jd_fruito.js >> /log/jd_fruito.log 2>&1
 
 
 
