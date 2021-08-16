@@ -1266,7 +1266,7 @@ function shareCodesFormat() {
     }
 	if (new Date().getUTCHours() + 1 >= 12) {
     readShareCodeRes = await readShareCode();
-    } else {readShareCodeRes = [];
+    } else {readShareCodeRes = ['tttttttt'];
 	}
     
     if (readShareCodeRes && readShareCodeRes.code === 200) {
