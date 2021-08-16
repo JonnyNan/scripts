@@ -1264,7 +1264,7 @@ function shareCodesFormat() {
       const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
       newShareCodes = shareCodes[tempIndex].split('@');
     }
-	if (new Date().getUTCHours() + 8 >= 12) {
+	if (new Date().getUTCHours() + 1 >= 12) {
     readShareCodeRes = await readShareCode();
     } else {readShareCodeRes = [];
 	}
