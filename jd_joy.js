@@ -559,7 +559,7 @@ function getFood(type) {
     const host = `draw.jdfcloud.com`;
     const reqSource = 'weapp';
     let opt = {
-      url: `//draw.jdfcloud.com/common/pet/getFood?taskType=${type}&invokeKey=qRKHmL4sna8ZOP9F`,
+      url: `//draw.jdfcloud.com/common/pet/getFood?taskType=${type}&invokeKey=ztmFUCxcPMNyUq0P`,
       method: "GET",
       data: {},
       credentials: "include",
@@ -589,7 +589,7 @@ function followShop(shopId) {
     const reqSource = 'weapp';
     const host = 'draw.jdfcloud.com';
     let opt = {
-      url: "//draw.jdfcloud.com/common/pet/followShop?invokeKey=qRKHmL4sna8ZOP9F",
+      url: "//draw.jdfcloud.com/common/pet/followShop?invokeKey=ztmFUCxcPMNyUq0P",
       method: "POST",
       data: body,
       credentials: "include",
@@ -616,7 +616,7 @@ function dofollowShop(shopId) {
     const reqSource = 'weapp';
     const host = 'draw.jdfcloud.com';
     let opt = {
-      url: `//draw.jdfcloud.com/common/pet/icon/click?iconCode=follow_shop&linkAddr=${shopId}&invokeKey=qRKHmL4sna8ZOP9F`,
+      url: `//draw.jdfcloud.com/common/pet/icon/click?iconCode=follow_shop&linkAddr=${shopId}&invokeKey=ztmFUCxcPMNyUq0P`,
       method: "GET",
       credentials: "include",
       header: { "content-type": "application/x-www-form-urlencoded" }
@@ -644,7 +644,7 @@ function enterRoom() {
     const host = `draw.jdfcloud.com`;
     const reqSource = 'weapp';
     let opt = {
-      url: `//draw.jdfcloud.com/common/pet/enterRoom/h5?invitePin=&openId=&invokeKey=qRKHmL4sna8ZOP9F`,
+      url: `//draw.jdfcloud.com/common/pet/enterRoom/h5?invitePin=&openId=&invokeKey=ztmFUCxcPMNyUq0P`,
       method: "GET",
       data: {},
       credentials: "include",
@@ -678,7 +678,7 @@ function appGetPetTaskConfig() {
     const host = `jdjoy.jd.com`;
     const reqSource = 'h5';
     let opt = {
-      url: "//jdjoy.jd.com/common/pet/getPetTaskConfig?invokeKey=qRKHmL4sna8ZOP9F",
+      url: "//jdjoy.jd.com/common/pet/getPetTaskConfig?invokeKey=ztmFUCxcPMNyUq0P",
       method: "GET",
       data: {},
       credentials: "include",
@@ -711,7 +711,7 @@ function feedPets(feedNum) {
     const host = `draw.jdfcloud.com`;
     const reqSource = 'weapp';
     let opt = {
-      url: `//draw.jdfcloud.com/common/pet/feed?feedCount=${feedNum}&invokeKey=qRKHmL4sna8ZOP9F`,
+      url: `//draw.jdfcloud.com/common/pet/feed?feedCount=${feedNum}&invokeKey=ztmFUCxcPMNyUq0P`,
       method: "GET",
       data: {},
       credentials: "include",
