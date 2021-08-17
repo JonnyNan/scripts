@@ -91,7 +91,6 @@ ENV_PATH=
 26 5 * * * bash /root/jd/jd.sh  jd_shake.js >> /log/jd_shake.log 2>&1
 10 0 * * * bash /root/jd/jd.sh jd_shop.js >> /log/jd_shop.log 2>&1
 58 8 * * * bash /root/jd/jd.sh jd_ShopSign.js >> /log/jd_ShopSign.log 2>&1
-16 6,23 * * * bash /root/jd/jd.sh jd_small_home.js >> /log/jd_small_home.log 2>&1
 10 0,1 * * * bash /root/jd/jd.sh  jd_speed.js >> /log/jd_speed.log 2>&1
 40 0,8 * * * bash /root/jd/jd.sh jd_speed_redpocke.js >> /log/jd_speed_redpocke.log 2>&1
 48 0,12,18 * * * bash /root/jd/jd.sh jd_speed_sign.js >> /log/jd_speed_sign.log 2>&1
