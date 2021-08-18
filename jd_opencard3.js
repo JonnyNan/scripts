@@ -56,7 +56,7 @@ message = ""
     });
     return;
   }
-  $.shareUuid = ['c048e5d6492d486b985f4153c2823e80','b7c478d1d58340e29f3d8caa0fa8e048','6755f56184f64af294c58f28779f664f','36fd8e0a7b62407794c0b0730a56ce27','bd9b8f0905f64e1bbb887ba4b90a050e'][Math.floor((Math.random() * 5))]
+  $.shareUuid = ['c048e5d6492d23e80','b7c478d1fa8e048','6755f56184f64a79f664f','36fd8e94c0b0730a56ce27','b0a050e'][Math.floor((Math.random() * 5))]
   $.activityId = '02d54511202b4d1781088b66b9e07b9c'
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity/7768835?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
   for (let i = 0; i < cookiesArr.length; i++) {
@@ -95,6 +95,7 @@ async function run(){
     await getUserInfo();
     $.actorUuid = '';
     await getActorUuid();
+	console.log($.actorUuid)
     if(!$.actorUuid){
       console.log('获取不到[actorUuid]退出执行，请重新执行')
       return
