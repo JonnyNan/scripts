@@ -9,9 +9,8 @@ const stream = require('stream');
 const zlib = require('zlib');
 const vm = require('vm');
 const PNG = require('png-js');
-const UA = require('./USER_AGENTS.js').USER_AGENT;
-const { promisify } = require('util');
-const pipelineAsync = promisify(stream.pipeline);
+const UA = require('../USER_AGENTS.js').USER_AGENT;
+
 
 Math.avg = function average() {
   var sum = 0;
@@ -323,10 +322,11 @@ class JDJRValidator {
         let res = response;
         if (res.headers['content-encoding'] === 'gzip') {
           const unzipStream = new stream.PassThrough();
-          pipelineAsync(
+          stream.pipeline(
             response,
             zlib.createGunzip(),
             unzipStream,
+            reject,
           );
           res = unzipStream;
         }
