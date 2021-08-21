@@ -83,6 +83,7 @@ async function run(){
     $.isvObfuscatorToken = $.MixNick = ''
     $.howManyOpenCard = -1
     await getIsvObfuscatorToken();
+    console.log($.isvObfuscatorToken);
     if($.isvObfuscatorToken == ''){
       console.log('获取[token]失败！')
       return
