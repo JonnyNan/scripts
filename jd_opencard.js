@@ -62,7 +62,7 @@ message = ""
   $.appkey = '51B59BB805903DA4CE513D29EC448375'
   $.userId = '10299171'
   $.actId = 'c2a69b3596a948d8b8028b9_820'
-  $.inviteNick = ['5xxxxx','xxxxxx'][Math.floor((Math.random() * 6))]
+  $.inviteNick = ['AAFhIXCgADDam5ljNLDgsmdMQA3dqdKpoJ7itkK_-r7n4KHw0nitOz48PmzibCSBUHZmVpEfuiU','AAFhIXCgADDam5ljNLDgsmdMQA3dqdKpoJ7itkK_-r7n4KHw0nitOz48PmzibCSBUHZmVpEfuiU'][Math.floor((Math.random() * 6))]
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
     if (cookie) {
