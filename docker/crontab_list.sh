@@ -102,7 +102,7 @@ ENV_PATH=
 15 0-23/4 * * * bash /root/jd/jd.sh jd_unsubscribe.js >> /log/jd_unsubscribe.log 2>&1
 1 0 * * * bash /root/jd/jd.sh jx_cfdtx.js >> /log/jx_cfdtx.log 2>&1
 18 3,9 * * * node /scripts/jx_sign.js >> /log/jx_sign.log 2>&1
-0 0-23/1 * * * bash /root/jd/jd.sh jd_super_redrain.js >> /log/jd_super_redrain.log 2>&1
+22 0,9 * * * node /scripts/jd_ccSign.js >> /log/jd_ccSign.log 2>&1
 
 #东东电竞经理 格式ok
 22 22 * * * node /scripts/jd_djjl.js >> /log/jd_djjl.log 2>&1
