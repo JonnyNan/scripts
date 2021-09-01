@@ -1,9 +1,14 @@
-/*
+﻿/*
 京东价格保护：脚本更新地址 https://raw.githubusercontent.com/ZCY01/daily_scripts/main/jd/jd_try.js
-脚本兼容: QuantumultX, Node.js 
+脚本兼容: QuantumultX, Node.js
+
 ⚠️ 非常耗时的脚本。最多可能执行半小时！
-每天最多关注300个商店，但用户商店关注上限为500个。
+⚠️ 每天最多关注300个商店，但用户商店关注上限为500个。
 请配合取关脚本试用，使用 jd_unsubscribe.js 提前取关至少250个商店确保京东试用脚本正常运行。
+
+商品最低价格（包含）（默认60）：JD_TRY_MIN_PRICE
+收集商品时每页的商品数量（默认12）：JD_TRY_PAGE_SIZE
+
 ==========================Quantumultx=========================
 [task_local]
 # 取关京东店铺商品，请在 boxjs 修改取消关注店铺数量
@@ -13,6 +18,7 @@
 30 10 * * * https://raw.githubusercontent.com/ZCY01/daily_scripts/main/jd/jd_try.js, tag=京东试用, img-url=https://raw.githubusercontent.com/ZCY01/img/master/jdtryv1.png, enabled=true
  */
 const $ = new Env('京东试用')
+let allMessage = '';
 let cookiesArr = [],
 	cookie = '',
 	jdNotify = false,
@@ -22,14 +28,17 @@ const selfdomain = 'https://try.m.jd.com'
 let allGoodList = []
 
 // default params
-$.pageSize = 12
-let cidsList =["家用电器", "手机数码", "电脑办公","美妆护肤", "生鲜美食","家居家装","食品饮料","服饰鞋包","母婴玩具"]
-let typeList = ["普通试用", "闪电试用"]
-let goodFilters = "教程@软件@英语@大理@丽江@辅导@联通卡@培训@靓美@益生菌@备孕@哺乳@脚气@震动@阳具@云南旅游@旅游@飞机杯@卷尺@看房@鞋带@丰胸@课程培训@体验班@精品课@红参@益生元@御夫王@苗霸@北海游@购房@键盘膜@情趣内衣@种子@三元催化@男用喷剂@玉石@万向轮@档案袋@癣@中年@玉坠@老太太@妇女@私处@孕妇@卫生条@课@培训@阴道@生殖器@肛门@狐臭@洋娃娃@鱼饵@钓鱼@吊带@黑丝@婴儿@幼儿@娃娃@网课@网校@手机壳@钢化膜@车载充电器@网络课程@疣@避孕套@女纯棉@按键贴@背膜@后膜@背贴@贝尔思力@卡薇尔@三角裤@痔疮@神皂@美少女@纸尿裤@英语@俄语@四级@六级@四六级@在线网络@在线@阴道炎@宫颈@螺丝@延时@糜烂@和田玉@白玉@打底裤@手机膜@早早孕@增时@狗".split('@')
-let minPrice = 50
+$.pageSize = 30
+let cidsList = ["全部商品","精选试用","闪电试用","家用电器", "手机数码", "电脑办公", "家居家装","美妆护肤","服饰鞋包","母婴玩具","钟表奢品","个人护理","家庭清洁","食品饮料","更多惊喜"]
+let typeList = ["免费试用", "闪电试用","30天试用"]
+let goodFilters = "茶@粽子@玻璃@教程@软件@英语@辅导@花盆@电信@移动@门票@杆菌@联通@培训@靓美@脚气@文胸@卷尺@看房@鞋带@益生菌@丰胸@课@体验班@精品课@红参@益生元@御夫王@苗霸@北海游@购房@键盘膜@情趣内衣@种子@三元催化@万向轮@档案袋@癣@中年@老太太@妇女@私处@孕妇@卫生巾@卫生条@课@培训@阴道@生殖器@肛门@狐臭@少女内衣@胸罩@洋娃娃@女孩玩具@少女@女性内衣@女性内裤@女内裤@女内衣@女孩@鱼饵@钓鱼@吊带@黑丝@钢圈@婴儿@幼儿@娃娃@网课@网校@手机壳@网络课程@疣@避孕套@女纯棉@按键贴@背膜@后膜@背贴@贝尔思力@卡薇尔@三角裤@痔疮@神皂@美少女@纸尿@英语@俄语@四级@六级@四六级@在线网络@在线@宫颈@螺丝@糜烂@打底裤@手机膜@早早孕@鱼@狗@艾草@灸@贴@膏@药@北海@在线@膜@旅游@云南@泰国@系统@会计@火锅@隔离@零食@眼镜@眼睛@精华露".split('@')
+let minPrice = 70
+let maxPrice = 9999999999999
 
 const cidsMap = {
 	"全部商品": "0",
+	"精选试用": "0",
+	"闪电试用": "0",
 	"家用电器": "737",
 	"手机数码": "652,9987",
 	"电脑办公": "670",
@@ -47,7 +56,7 @@ const cidsMap = {
 }
 const typeMap = {
 	"全部试用": "0",
-	"普通试用": "1",
+	"免费试用": "1",
 	"闪电试用": "2",
 	"30天试用": "5",
 }
@@ -63,7 +72,7 @@ const typeMap = {
 	for (let i = 0; i < cookiesArr.length; i++) {
 		if (cookiesArr[i]) {
 			cookie = cookiesArr[i];
-			$.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
+			$.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
 			$.index = i + 1;
 			$.isLogin = true;
 			$.nickName = '';
@@ -74,7 +83,7 @@ const typeMap = {
 					"open-url": "https://bean.m.jd.com/bean/signIndex.action"
 				});
 
-				if ($.isNode()) {
+				if ($.isNode()&& allMessage) {
 					await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
 				}
 				continue
@@ -141,10 +150,10 @@ function requireConfig() {
 				goodFilters = process.env.JD_TRY_GOOD_FILTERS.split('@')
 			}
 			if (process.env.JD_TRY_MIN_PRICE) {
-				minPrice = process.env.JD_TRY_MIN_PRICE * 1
+				minPrice = process.env.JD_TRY_MIN_PRICE * 80
 			}
 			if (process.env.JD_TRY_PAGE_SIZE) {
-				$.pageSize = process.env.JD_TRY_PAGE_SIZE * 1
+				$.pageSize = process.env.JD_TRY_PAGE_SIZE * 30
 			}
 		} else {
 			let qxCidsList = []
@@ -215,13 +224,14 @@ async function getGoodList() {
 async function filterGoodList() {
 	console.log(`⏰ 过滤商品列表，当前共有${allGoodList.length}个商品`)
 	const now = Date.now()
-	const oneMoreDay = now + 24 * 60 * 60 * 033300
+	const oneMoreDay = now + 24 * 60 * 60 * 1000
 	$.goodList = allGoodList.filter(good => {
 		// 1. good 有问题
 		// 2. good 距离结束不到10min
 		// 3. good 的结束时间大于一天
 		// 4. good 的价格小于最小的限制
-		if (!good || good.endTime < now + 10 * 60  || good.endTime > oneMoreDay || good.jdPrice < minPrice) {
+		// 5. good 的价格大于最大的限制
+		if (!good || good.endTime < now + 10 * 60 * 1000 || good.endTime > oneMoreDay || good.jdPrice < minPrice || good.jdPrice > maxPrice) {
 			return false
 		}
 		for (let item of goodFilters) {
@@ -351,7 +361,7 @@ async function tryGoodList() {
 		// 如果没有关注且关注失败
 		if (good.shopId && !await isFollowed(good) && !await followShop(good)) continue
 		// 两个申请间隔不能太短，放在下面有利于确保 follwShop 完成
-		await $.wait(5000)
+		await $.wait(7000)
 		// 关注完毕，即将试用
 		await doTry(good)
 	}
@@ -465,7 +475,7 @@ function TotalBean() {
 				"Connection": "keep-alive",
 				"Cookie": cookie,
 				"Referer": "https://wqs.jd.com/my/jingdou/my.shtml?sceneval=2",
-				"User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.2.2;14.2;%E4%BA%AC%E4%B8%9C/9.2.2 CFNetwork/1206 Darwin/20.1.0")
+				"User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
 			},
 			"timeout": 10000,
 		}
