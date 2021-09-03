@@ -49,15 +49,13 @@ ENV_PATH=
 40 3 * * * bash /root/jd/jd.sh  jd_factory.js >> /log/jd_factory.log 2>&1
 51 10 * * * bash /root/jd/jd.sh jd_family.js >> /log/jd_family.log 2>&1
 5 6-18/6 * * * bash /root/jd/jd.sh jd_fruit.js >> /log/jd_fruit.log 2>&1
-47 7 * * * bash /root/jd/jd.sh jd_get_share_code.js >> /log/jd_get_share_code.log 2>&1
 38 2 * * * bash /root/jd/jd.sh  jd_getFanslove.js >> /log/jd_getFanslove.log 2>&1
-30 * * * * bash /root/jd/jd.sh  jd_half_redrain.js >> /log/jd_half_redrain.log 2>&1
 13 1,7,22 * * * bash /root/jd/jd.sh jd_health.js >> /log/jd_health.log 2>&1
 5-45/20 * * * * bash /root/jd/jd.sh jd_health_collect.js >> /log/jd_health_collect.log 2>&1
 28 2 * * * bash /root/jd/jd.sh  jd_jbczy.js >> /log/jd_jbczy.log 2>&1
 30 0,1,2 * * * bash /root/jd/jd.sh jd_jdzz.js >> /log/jd_jdzz.log 2>&1
 15 6 * * * bash /root/jd/jd.sh  jd_jintie.js >> /log/jd_jintie.log 2>&1
-25 12 * * * bash /root/jd/jd.sh  jd_jintie_wx.js >> /log/jd_jintie_wx.log 2>&1
+
 15 */2 * * * bash /root/jd/jd.sh jd_joy.js >> /log/jd_joy.log 2>&1
 15 */1 * * * bash /root/jd/jd.sh jd_joy_feedPets.js >> /log/jd_joy_feedPets.log 2>&1
 59 23,7,11,15 * * * bash /root/jd/jd.sh jd_joy_reward.js >> /log/jd_joy_reward.log 2>&1
@@ -70,7 +68,7 @@ ENV_PATH=
 0 6,9,12,18 * * * bash /root/jd/jd.sh jd_jxnc.js >> /log/jd_jxnc.log 2>&1
 23 1 * * * bash /root/jd/jd.sh jd_kd.js >> /log/jd_kd.log 2>&1
 10-20/5 12 * * * bash /root/jd/jd.sh jd_live.js >> /log/jd_live.log 2>&1
-0 3,9,18 * * * bash /root/jd/jd.sh jd_jxsign.js >> /log/jd_jxsign.log 2>&1
+
 28 14 * * * bash /root/jd/jd.sh  jd_live_lottery_social.js >> /log/jd_live_lottery_social.log 2>&1
 0,30 0-23/1 * * * bash /root/jd/jd.sh jd_live_redrain.js >> /log/jd_live_redrain.log 2>&1
 22 0,12,18 * * * bash /root/jd/jd.sh jd_lotteryMachine.js >> /log/jd_lotteryMachine.log 2>&1
@@ -105,6 +103,10 @@ ENV_PATH=
 22 0,9 * * * node /scripts/jd_ccSign.js >> /log/jd_ccSign.log 2>&1
 
 #东东电竞经理 格式ok
+0 3,9,18 * * * node /scripts/jd_jxsign.js >> /log/jd_jxsign.log 2>&1
+25 12 * * * node /scripts/jd_jintie_wx.js >> /log/jd_jintie_wx.log 2>&1
+30 * * * * node /scripts/jd_half_redrain.js >> /log/jd_half_redrain.log 2>&1
+47 7 * * * node /scripts/jd_get_share_code.js >> /log/jd_get_share_code.log 2>&1
 22 22 * * * node /scripts/jd_djjl.js >> /log/jd_djjl.log 2>&1
 33 0,12,18 * * * node /scripts/jd_gold_creator.js >> /log/jd_gold_creator.log 2>&1
 15 0-23/4 * * * node /scripts/jd_jxmc.js >> /log/jd_jxmc.log 2>&1
