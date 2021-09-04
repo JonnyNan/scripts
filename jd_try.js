@@ -68,14 +68,12 @@ const typeMap = {
     !(async () => {
         console.log(`\n本脚本默认不运行，也不建议运行\n如需运行请自行添加环境变量：JD_TRY，值填：true\n`)
         await $.wait(1000)
-        if (process.env.JD_TRY && process.env.JD_TRY === 'true') {
-            await requireConfig()
+        await requireConfig()
             if (!$.cookiesArr[0]) {
                 $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/', {
                     "open-url": "https://bean.m.jd.com/"
                 })
-                return
-            }
+               
             for (let i = 0; i < $.cookiesArr.length; i++) {
                 if ($.cookiesArr[i]) {
                     try {
