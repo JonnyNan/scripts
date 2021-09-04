@@ -52,7 +52,7 @@ if ($.isNode()) {
 } else {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
-let guaopencard_addSku = "false"
+let guaopencard_addSku = "true"
 guaopencard_addSku = $.isNode() ? (process.env.guaopencard_addSku22 ? process.env.guaopencard_addSku22 : guaopencard_addSku) : ($.getdata('guaopencard_addSku22') ? $.getdata('guaopencard_addSku22') : guaopencard_addSku);
 let guaopencard_draw = "0"
 guaopencard_draw = $.isNode() ? (process.env.guaopencard_draw22 ? process.env.guaopencard_draw22 : guaopencard_draw) : ($.getdata('guaopencard_draw22') ? $.getdata('guaopencard_draw22') : guaopencard_draw);
@@ -66,14 +66,7 @@ message = ""
     });
     return;
   }
-  if ($.isNode()) {
-    if(guaopencard+"" != "true"){
-      console.log('如需执行脚本请设置环境变量[guaopencard22]为"true"')
-    }
-    if(guaopencard+"" != "true"){
-      return
-    }
-  }
+
   $.shareUuid = 'a7b700'
   $.activityId = '902090301'
   console.log(`入口:\nhttps://lzdz-isv.isvjcloud.com/dingzhi/union/kxj/activity/2451572?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
