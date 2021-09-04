@@ -3,7 +3,7 @@
 */
 const $ = new Env('京东试用')
 
-const selfDomain = 'https://prodev.m.jd.com/mall/active/G7sQ92vWSBsTHzk4e953qUGWQJ4'
+const selfDomain = 'https://prodev.m.jd.com/mall/active/G7sQ92vWSBsTHzk4e953qUGWQJ4/index.html'
 let allGoodList = []
 let notifyMsg = ''
 
