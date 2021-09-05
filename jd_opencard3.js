@@ -67,7 +67,7 @@ message = ""
     return;
   }
 
-  $.shareUuid = '6f1ecdba29d543d1b842c68dfbb0e357;0ee05604f07947019a196ccdd8a18d18;27d4ca72dd4b4cdd9168f11ac885f7ca'
+  $.shareUuid = '6f1ecdba29d543d1b842c68dfbb0e357'
   $.activityId = '902090301'
   console.log(`入口:\nhttps://lzdz-isv.isvjcloud.com/dingzhi/union/kxj/activity/2451572?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
   for (let i = 0; i < cookiesArr.length && true; i++) {
