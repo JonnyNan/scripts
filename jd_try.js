@@ -1,3 +1,4 @@
+  
 /*
  * 由ZCY01二次修改：脚本默认不运行
  * 由 X1a0He 修复：依然保持脚本默认不运行
@@ -115,7 +116,7 @@ let args_xh = {
     console.log('X1a0He留：遇到问题请把脚本内的注释看一遍再来问，谢谢')
     console.log(`本脚本默认不运行，也不建议运行\n如需运行请自行添加环境变量：JD_TRY，值填：true\n`)
     await $.wait(500)
-    if(process.env.JD_TRY && process.env.JD_TRY === 'true'){
+    if(true){
         await requireConfig()
         if(!$.cookiesArr[0]){
             $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/', {
