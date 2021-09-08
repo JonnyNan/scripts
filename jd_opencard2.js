@@ -147,8 +147,8 @@ async function run(){
     if(!$.signStatus) await $.wait(parseInt(Math.random() * 1000 + 2000, 10))
     console.log(`加购商品:${$.skuAddCart}`)
     if(guaopencard_addSku+"" == "true"){
-      if(!$.skuAddCart) await saveTask('加购商品', 21, 21);
-      if(!$.skuAddCart) await $.wait(parseInt(Math.random() * 1000 + 2000, 10))
+      if(true) await saveTask('加购商品', 21, 21);
+      if(true) await $.wait(parseInt(Math.random() * 1000 + 2000, 10))
     }else console.log('如需加购请设置环境变量[guaopencard_addSku23]为"true"');
     let flag = 1
     for (let s of $.skuVisit && $.skuVisit || []) {
