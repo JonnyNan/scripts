@@ -56,7 +56,7 @@ let guaopencard_addSku = "false"
 guaopencard_addSku = $.isNode() ? (process.env.guaopencard_addSku23 ? process.env.guaopencard_addSku23 : guaopencard_addSku) : ($.getdata('guaopencard_addSku23') ? $.getdata('guaopencard_addSku23') : guaopencard_addSku);
 let guaopencard_draw = "0"
 guaopencard_draw = $.isNode() ? (process.env.guaopencard_draw23 ? process.env.guaopencard_draw23 : guaopencard_draw) : ($.getdata('guaopencard_draw23') ? $.getdata('guaopencard_draw23') : guaopencard_draw);
-let guaopencard = "false"
+let guaopencard = "true"
 guaopencard = $.isNode() ? (process.env.guaopencard23 ? process.env.guaopencard23 : guaopencard) : ($.getdata('guaopencard23') ? $.getdata('guaopencard23') : guaopencard);
 message = ""
 !(async () => {
@@ -66,14 +66,7 @@ message = ""
     });
     return;
   }
-  if ($.isNode()) {
-    if(true){
-      console.log('如需执行脚本请设置环境变量[guaopencard23]为"true"')
-    }
-    if(guaopencard+"" != "true"){
-      return
-    }
-  }
+
   $.shareUuid = 'xxxxxxx'
   $.activityId = 'dz2109100000119501'
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/midautumn/jointactivity/activity/9367058?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
