@@ -165,7 +165,7 @@ async function run(){
     await getActorUuid()
     console.log(`总积分:${$.score} 剩余积分:${$.score2} 游戏机会:${$.assistCount}`)
     let gameFlag = 0
-    if(guaopencard_draw+"" !== "0"){
+    if(true){
       let count = parseInt($.score2/100, 10)
       guaopencard_draw = parseInt(guaopencard_draw, 10)
       if(count > guaopencard_draw) count = guaopencard_draw
