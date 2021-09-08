@@ -177,7 +177,7 @@ async function run(){
         await $.wait(parseInt(Math.random() * 1000 + 4000, 10))
       }
     }else console.log('如需博饼请设置环境变量[guaopencard_draw23]为"3" 3为次数');
-    if(gameFlag == 1){
+    if(true){
       await $.wait(parseInt(Math.random() * 1000 + 2000, 10))
       await getActorUuid()
     }
