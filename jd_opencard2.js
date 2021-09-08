@@ -54,8 +54,8 @@ if ($.isNode()) {
 }
 let guaopencard_addSku = "false"
 guaopencard_addSku = $.isNode() ? (process.env.guaopencard_addSku23 ? process.env.guaopencard_addSku23 : guaopencard_addSku) : ($.getdata('guaopencard_addSku23') ? $.getdata('guaopencard_addSku23') : guaopencard_addSku);
-let guaopencard_draw = "0"
-guaopencard_draw = $.isNode() ? (process.env.guaopencard_draw23 ? process.env.guaopencard_draw23 : guaopencard_draw) : ($.getdata('guaopencard_draw23') ? $.getdata('guaopencard_draw23') : guaopencard_draw);
+let guaopencard_draw = "3"
+// guaopencard_draw = $.isNode() ? (process.env.guaopencard_draw23 ? process.env.guaopencard_draw23 : guaopencard_draw) : ($.getdata('guaopencard_draw23') ? $.getdata('guaopencard_draw23') : guaopencard_draw);
 let guaopencard = "true"
 guaopencard = $.isNode() ? (process.env.guaopencard23 ? process.env.guaopencard23 : guaopencard) : ($.getdata('guaopencard23') ? $.getdata('guaopencard23') : guaopencard);
 message = ""
