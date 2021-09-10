@@ -21,7 +21,7 @@ message = ""
         });
         return;
     }
-    $.shareUuid='2111111111111'
+    $.shareUuid='3048e5d88140435a9a492d67284ff029'
     $.activityId = 'ae2674803c574c26af90243148a98312'
     console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity/?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
     for (let i = 0; i < cookiesArr.length; i++) {
