@@ -89,7 +89,6 @@ ENV_PATH=
 58 8 * * * bash /root/jd/jd.sh jd_ShopSign.js >> /log/jd_ShopSign.log 2>&1
 10 0,1 * * * bash /root/jd/jd.sh  jd_speed.js >> /log/jd_speed.log 2>&1
 40 0,8 * * * bash /root/jd/jd.sh jd_speed_redpocke.js >> /log/jd_speed_redpocke.log 2>&1
-48 0,12,18 * * * bash /root/jd/jd.sh jd_speed_sign.js >> /log/jd_speed_sign.log 2>&1
 0 0-23 * * * bash /root/jd/jd.sh  jd_super_redrain.js >> /log/jd_super_redrain.log 2>&1
 11 */6 * * * bash /root/jd/jd.sh jd_superMarket.js >> /log/jd_superMarket.log 2>&1
 36 0-23/4 * * * bash /root/jd/jd.sh jd_syj.js >> /log/jd_syj.log 2>&1
@@ -139,6 +138,7 @@ ENV_PATH=
 24 7,14 * * * node /scripts/jd_decompression.js >> /log/jd_decompression.log 2>&1
 32 8,18 * * * node /scripts/jd_dwapp.js >> /log/jd_dwapp.log 2>&1
 42 9,15 * * * node /scripts/jd_wishingPool.js >> /log/jd_wishingPool.log 2>&1
+48 0,12,18 * * * node /scripts/jd_speed_sign.js >> /log/jd_speed_sign.log 2>&1
 
 
 
