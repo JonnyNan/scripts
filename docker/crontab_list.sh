@@ -140,6 +140,7 @@ ENV_PATH=
 42 9,15 * * * node /scripts/jd_wishingPool.js >> /log/jd_wishingPool.log 2>&1
 48 0,12,18 * * * node /scripts/jd_speed_sign.js >> /log/jd_speed_sign.log 2>&1
 27 0,12,18 * * * node /scripts/jd_connoisseur.js >> /log/jd_connoisseur.log 2>&1
+22 01,9 * * * node /scripts/jd_star_shop.js >> /log/jd_star_shop.log 2>&1
 
 
 
