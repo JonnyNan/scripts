@@ -141,6 +141,8 @@ ENV_PATH=
 48 0,12,18 * * * node /scripts/jd_speed_sign.js >> /log/jd_speed_sign.log 2>&1
 27 0,12,18 * * * node /scripts/jd_connoisseur.js >> /log/jd_connoisseur.log 2>&1
 22 01,9 * * * node /scripts/jd_star_shop.js >> /log/jd_star_shop.log 2>&1
+08 * * * * node /scripts/jd_cfd_mooncake.js >> /log/jd_cfd_mooncake.log 2>&1
+52 01,9 * * * node /scripts/jd_jxg.js >> /log/jd_jxg.log 2>&1
 
 
 
