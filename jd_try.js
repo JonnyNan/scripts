@@ -351,7 +351,7 @@ function try_feedsList(tabId, page){
                                 }
                             }
                             if(item.skuTitle && $.isPush){
-                                args_xh.printLog ? console.log(`检测 tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${$.totalPages} 页 第 ${$.nowItem++ + 1} 个商品\n${item.skuTitle}`) : ''
+                                //args_xh.printLog ? console.log(`检测 tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${$.totalPages} 页 第 ${$.nowItem++ + 1} 个商品\n${item.skuTitle}`) : ''
                                 if(args_xh.whiteList){
                                     if(args_xh.whiteListKeywords.some(fileter_word => item.skuTitle.includes(fileter_word))){
                                         args_xh.printLog ? console.log(`商品通过，将加入试用组，trialActivityId为${item.trialActivityId}\n`) : ''
