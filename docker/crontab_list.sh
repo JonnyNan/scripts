@@ -25,7 +25,6 @@ ENV_PATH=
 # 运行lxk0301大佬的js脚本，仅列出长期任务作初始化用，AutoAddCron=true时，将自动添加短期任务。
 # 请保留任务名称中的前缀"jd_"，去掉后缀".js"，如果有些任务你不想运行，注释掉就好了，不要删除。否则会重新添加上。
 # 非lxk0301/jd_scripts仓库中的脚本不能以“jd_”、“jr_”、“jx_”开头。请在最后保留一个空行。
-0 10 * * * bash /root/jd/jd.sh jd_bean_change
 0 10 * * * bash /root/jd/jd.sh jd_bean_change.js >> /log/jd_bean_change.log 2>&1
 33 0-23/4 * * * bash /root/jd/jd.sh jd_bean_home.js >> /log/jd_bean_home.log 2>&1
 0 0 * * * bash /root/jd/jd.sh jd_bean_sign.js >> /log/jd_bean_sign.log 2>&1
@@ -72,8 +71,8 @@ ENV_PATH=
 22 0,12,18 * * * bash /root/jd/jd.sh jd_lotteryMachine.js >> /log/jd_lotteryMachine.log 2>&1
 38 13 * * * bash /root/jd/jd.sh  jd_market_lottery.js >> /log/jd_market_lottery.log 2>&1
 28 15 * * * bash /root/jd/jd.sh  jd_mgold.js >> /log/jd_mgold.log 2>&1
-0 */4 * * * bash /root/jd/jd.sh jd_mohe.js >> /log/jd_mohe.log 2>&1
-0 */2 * * * bash /root/jd/jd.sh jd_moneyTree.js >> /log/jd_moneyTree.log 2>&1
+50 */4 * * * bash /root/jd/jd.sh jd_mohe.js >> /log/jd_mohe.log 2>&1
+40 */2 * * * bash /root/jd/jd.sh jd_moneyTree.js >> /log/jd_moneyTree.log 2>&1
 10 7 * * * bash /root/jd/jd.sh jd_ms.js >> /log/jd_ms.log 2>&1
 5 1,10 * * * bash /root/jd/jd.sh  jd_necklace.js >> /log/jd_necklace.log 2>&1
 5 6-18/6 * * * bash /root/jd/jd.sh jd_pet.js >> /log/jd_pet.log 2>&1
@@ -85,9 +84,9 @@ ENV_PATH=
 1 1,12 * * * bash /root/jd/jd.sh jd_redPacket.js >> /log/jd_redPacket.log 2>&1
 27 8 * * * bash /root/jd/jd.sh jd_sgmh.js >> /log/jd_sgmh.log 2>&1
 26 5 * * * bash /root/jd/jd.sh  jd_shake.js >> /log/jd_shake.log 2>&1
-10 0 * * * bash /root/jd/jd.sh jd_shop.js >> /log/jd_shop.log 2>&1
+10 04 * * * bash /root/jd/jd.sh jd_shop.js >> /log/jd_shop.log 2>&1
 58 8 * * * bash /root/jd/jd.sh jd_ShopSign.js >> /log/jd_ShopSign.log 2>&1
-10 0,1 * * * bash /root/jd/jd.sh  jd_speed.js >> /log/jd_speed.log 2>&1
+10 01,3 * * * bash /root/jd/jd.sh  jd_speed.js >> /log/jd_speed.log 2>&1
 40 0,8 * * * bash /root/jd/jd.sh jd_speed_redpocke.js >> /log/jd_speed_redpocke.log 2>&1
 0 0-23 * * * bash /root/jd/jd.sh  jd_super_redrain.js >> /log/jd_super_redrain.log 2>&1
 11 */6 * * * bash /root/jd/jd.sh jd_superMarket.js >> /log/jd_superMarket.log 2>&1
@@ -110,15 +109,15 @@ ENV_PATH=
 18 6,9 * * * node /scripts/jd_superBrand.js >> log/jd_superBrand.log 2>&1
 20 8,10 * * * node /scripts/jd_DrawEntrance.js >> log/jd_DrawEntrance.log 2>&1
 23 6,8 * * * node /scripts/jd_qqxing.js >> /log/jd_qqxing.log 2>&1
-20 0,10 * * * node /scripts/jd_lsj.js >> /log/jd_lsj.log 2>&1
-26 0,8 * * * node /scripts/jd_nzmh.js >> /log/jd_nzmh.log 2>&1
+20 02,10 * * * node /scripts/jd_lsj.js >> /log/jd_lsj.log 2>&1
+26 02,8 * * * node /scripts/jd_nzmh.js >> /log/jd_nzmh.log 2>&1
 33 0,9 * * * node /scripts/jd_superBrand.js >> /log/jd_superBrand.log 2>&1
 3 4,6,11 * * * node /scripts/jd_joy_park.js >> /log/jd_joy_park.log 2>&1
 13 4,6,11 * * * node /scripts/jd_goodMorning.js >> /log/jd_goodMorning.log 2>&1
 23 4,7,11 * * * node /scripts/jd_NewSign.js >> /log/jd_NewSign.log 2>&1
 43 4,8,13 * * * node /scripts/jd_superBrand.js >> /log/jd_superBrand.log 2>&1
 02 8,18 * * * node /scripts/jd_opencard.js >> /log/jd_opencard.log 2>&1
-06 0,1,10 * * * node /scripts/jd_sendBeans.js >> /log/jd_sendBeans.log 2>&1
+06 03,1,10 * * * node /scripts/jd_sendBeans.js >> /log/jd_sendBeans.log 2>&1
 12 */6 * * * node /scripts/jd_cfd_loop.js >> /log/jd_cfd_loop.log 2>&1
 10 0,10 * * * node /scripts/jd_twz-star.js >> /log/jd_twz-star.log 2>&1
 30 * * * * node /scripts/jd_big_winner.js >> /log/jd_big_winner.log 2>&1
@@ -126,8 +125,8 @@ ENV_PATH=
 18 1,5,16 * * * node /scripts/jd_chinajoy.js >> /log/jd_chinajoy.log 2>&1
 22 2,8 * * * node /scripts/jd_wxFans.js >> /log/jd_wxFans.log 2>&1
 25 2,8 * * * node /scripts/jd_wish.js >> /log/jd_wish.log 2>&1
-01 0,8 * * * node /scripts/jd_sgmh.js >> /log/jd_sgmh.log 2>&1
-06 0,9 * * * node /scripts/jd_sign_graphics.js >> /log/jd_sign_graphics.log 2>&1
+01 01,8 * * * node /scripts/jd_sgmh.js >> /log/jd_sgmh.log 2>&1
+06 02,9 * * * node /scripts/jd_sign_graphics.js >> /log/jd_sign_graphics.log 2>&1
 #03 1,2,8,17 * * * node /scripts/jd_qmqjd.js >> /log/jd_qjd.log 2>&1
 22 8,18 * * * node /scripts/jd_opencard1.js >> /log/jd_opencard1.log 2>&1
 32 8,18 * * * node /scripts/jd_opencard2.js >> /log/jd_opencard2.log 2>&1
@@ -139,9 +138,9 @@ ENV_PATH=
 32 8,18 * * * node /scripts/jd_dwapp.js >> /log/jd_dwapp.log 2>&1
 42 9,15 * * * node /scripts/jd_wishingPool.js >> /log/jd_wishingPool.log 2>&1
 48 0,12,18 * * * node /scripts/jd_speed_sign.js >> /log/jd_speed_sign.log 2>&1
-27 0,12,18 * * * node /scripts/jd_connoisseur.js >> /log/jd_connoisseur.log 2>&1
+27 01,12,18 * * * node /scripts/jd_connoisseur.js >> /log/jd_connoisseur.log 2>&1
 22 01,9 * * * node /scripts/jd_star_shop.js >> /log/jd_star_shop.log 2>&1
-08 * * * * node /scripts/jd_cfd_mooncake.js >> /log/jd_cfd_mooncake.log 2>&1
+18 * * * * node /scripts/jd_cfd_mooncake.js >> /log/jd_cfd_mooncake.log 2>&1
 52 01,9 * * * node /scripts/jd_jxg.js >> /log/jd_jxg.log 2>&1
 
 
