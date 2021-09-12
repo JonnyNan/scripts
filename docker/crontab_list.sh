@@ -105,7 +105,7 @@ ENV_PATH=
 33 0,12,18 * * * node /scripts/jd_gold_creator.js >> /log/jd_gold_creator.log 2>&1
 15 0-23/4 * * * node /scripts/jd_jxmc.js >> /log/jd_jxmc.log 2>&1
 29 0-23/4 * * * node /scripts/jd_ddnc_farmpark.js >> /log/jd_ddnc_farmpark.log 2>&1
-2 0,2 * * * node /scripts/jd_zjb.js >> /log/jd_zjb.log 2>&1
+2 01,7 * * * node /scripts/jd_zjb.js >> /log/jd_zjb.log 2>&1
 18 6,9 * * * node /scripts/jd_superBrand.js >> log/jd_superBrand.log 2>&1
 20 8,10 * * * node /scripts/jd_DrawEntrance.js >> log/jd_DrawEntrance.log 2>&1
 23 6,8 * * * node /scripts/jd_qqxing.js >> /log/jd_qqxing.log 2>&1
