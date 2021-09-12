@@ -166,12 +166,12 @@ let args_xh = {
                         await try_feedsList(args_xh.tabId[$.nowTabIdIndex], $.nowPage++)  //获取对应tabId的试用页面
                     }
                     if(trialActivityIdList.length < args_xh.maxLength){
-                        console.log(`间隔等待中，请等待 2 秒\n`)
+                        //console.log(`间隔等待中，请等待 2 秒\n`)
                         await $.wait(3000);
                     }
                 }
                 if($.isForbidden === false && $.isLimit === false){
-                    console.log(`稍后将执行试用申请，请等待 2 秒\n`)
+                    //console.log(`稍后将执行试用申请，请等待 2 秒\n`)
                     await $.wait(3000);
                     for(let i = 0; i < trialActivityIdList.length && $.isLimit === false; i++){
                         if($.isLimit){
@@ -179,7 +179,7 @@ let args_xh = {
                             break
                         }
                         await try_apply(trialActivityTitleList[i], trialActivityIdList[i])
-                        console.log(`间隔等待中，请等待 ${args_xh.applyInterval} ms\n`)
+                        //console.log(`间隔等待中，请等待 ${args_xh.applyInterval} ms\n`)
                         await $.wait(args_xh.applyInterval);
                     }
                     console.log("试用申请执行完毕...")
@@ -318,7 +318,7 @@ function try_feedsList(tabId, page){
                         if($.nowTabIdIndex > args_xh.tabId.length){
                             console.log(`不再获取商品，边缘越界，提交试用中...`)
                         } else {
-                            console.log(`第 ${size++} 次获取试用商品成功，tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${$.totalPages} 页`)
+                            //console.log(`第 ${size++} 次获取试用商品成功，tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${$.totalPages} 页`)
                         }
                         console.log(`获取到商品 ${data.data.feedList.length} 条`)
                         for(let item of data.data.feedList){
@@ -331,7 +331,7 @@ function try_feedsList(tabId, page){
                                 break
                             }
                             if(item.applyState === 1){
-                                args_xh.printLog ? console.log(`商品已申请试用：${item.skuTitle}\n`) : ''
+                                //args_xh.printLog ? console.log(`商品已申请试用：${item.skuTitle}\n`) : ''
                                 continue
                             }
                             if(item.applyState !== null){
@@ -343,7 +343,7 @@ function try_feedsList(tabId, page){
                                 if(item.tagList.length !== 0){
                                     for(let itemTag of item.tagList){
                                         if(itemTag.tagType === 3){
-                                            args_xh.printLog ? console.log('商品被过滤，该商品是种草官专属') : ''
+                                            //args_xh.printLog ? console.log('商品被过滤，该商品是种草官专属') : ''
                                             $.isPush = false;
                                             break;
                                         }
