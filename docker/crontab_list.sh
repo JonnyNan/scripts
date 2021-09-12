@@ -91,7 +91,7 @@ ENV_PATH=
 0 0-23 * * * bash /root/jd/jd.sh  jd_super_redrain.js >> /log/jd_super_redrain.log 2>&1
 11 */6 * * * bash /root/jd/jd.sh jd_superMarket.js >> /log/jd_superMarket.log 2>&1
 36 0-23/4 * * * bash /root/jd/jd.sh jd_syj.js >> /log/jd_syj.log 2>&1
-58 5 * * * bash /root/jd/jd.sh jd_try.js >> /log/jd_try.log 2>&1
+18 1,8 * * * bash /root/jd/jd.sh jd_try.js >> /log/jd_try.log 2>&1
 38 17 * * * bash /root/jd/jd.sh  jd_unbind.js >> /log/jd_unbind.log 2>&1
 15 0-23/4 * * * bash /root/jd/jd.sh jd_unsubscribe.js >> /log/jd_unsubscribe.log 2>&1
 1 0 * * * bash /root/jd/jd.sh jx_cfdtx.js >> /log/jx_cfdtx.log 2>&1
