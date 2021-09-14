@@ -346,7 +346,7 @@ function try_feedsList(tabId, page){
                                 break
                             }
                             if(item.applyState === 1){
-                                args_xh.printLog ? console.log(`商品已申请试用：${item.skuTitle}\n`) : ''
+                               // args_xh.printLog ? console.log(`商品已申请试用：${item.skuTitle}\n`) : ''
                                 continue
                             }
                             if(item.applyState !== null){
@@ -376,13 +376,13 @@ function try_feedsList(tabId, page){
                                 } else {
                                     tempKeyword = ``;
                                     if(parseFloat(item.jdPrice) <= args_xh.jdPrice){
-                                        args_xh.printLog ? console.log(`商品被过滤，${item.jdPrice} < ${args_xh.jdPrice} \n`) : ''
+                                       // args_xh.printLog ? console.log(`商品被过滤，${item.jdPrice} < ${args_xh.jdPrice} \n`) : ''
                                     } else if(parseFloat(item.supplyNum) < args_xh.minSupplyNum && item.supplyNum !== null){
                                         args_xh.printLog ? console.log(`商品被过滤，提供申请的份数小于预设申请的份数 \n`) : ''
                                     } else if(parseFloat(item.applyNum) > args_xh.applyNumFilter && item.applyNum !== null){
                                         args_xh.printLog ? console.log(`商品被过滤，已申请试用人数大于预设人数 \n`) : ''
                                     } else if(parseFloat(item.jdPrice) < args_xh.jdPrice){
-                                        args_xh.printLog ? console.log(`商品被过滤，商品原价低于预设商品原价 \n`) : ''
+                                       // args_xh.printLog ? console.log(`商品被过滤，商品原价低于预设商品原价 \n`) : ''
                                     } else if(args_xh.titleFilters.some(fileter_word => item.skuTitle.includes(fileter_word) ? tempKeyword = fileter_word : '')){
                                         args_xh.printLog ? console.log(`商品被过滤，含有关键词 ${tempKeyword}\n`) : ''
                                     } else {
