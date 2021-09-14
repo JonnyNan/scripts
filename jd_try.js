@@ -350,7 +350,7 @@ function try_feedsList(tabId, page){
                                 continue
                             }
                             if(item.applyState !== null){
-                                args_xh.printLog ? console.log(`商品状态异常，未找到skuTitle\n`) : ''
+                                //args_xh.printLog ? console.log(`商品状态异常，未找到skuTitle\n`) : ''
                                 continue
                             }
                             if(args_xh.passZhongCao){
@@ -358,7 +358,7 @@ function try_feedsList(tabId, page){
                                 if(item.tagList.length !== 0){
                                     for(let itemTag of item.tagList){
                                         if(itemTag.tagType === 3){
-                                            args_xh.printLog ? console.log('商品被过滤，该商品是种草官专属') : ''
+                                            //args_xh.printLog ? console.log('商品被过滤，该商品是种草官专属') : ''
                                             $.isPush = false;
                                             break;
                                         }
@@ -378,13 +378,13 @@ function try_feedsList(tabId, page){
                                     if(parseFloat(item.jdPrice) <= args_xh.jdPrice){
                                        // args_xh.printLog ? console.log(`商品被过滤，${item.jdPrice} < ${args_xh.jdPrice} \n`) : ''
                                     } else if(parseFloat(item.supplyNum) < args_xh.minSupplyNum && item.supplyNum !== null){
-                                        args_xh.printLog ? console.log(`商品被过滤，提供申请的份数小于预设申请的份数 \n`) : ''
+                                        //args_xh.printLog ? console.log(`商品被过滤，提供申请的份数小于预设申请的份数 \n`) : ''
                                     } else if(parseFloat(item.applyNum) > args_xh.applyNumFilter && item.applyNum !== null){
-                                        args_xh.printLog ? console.log(`商品被过滤，已申请试用人数大于预设人数 \n`) : ''
+                                        //args_xh.printLog ? console.log(`商品被过滤，已申请试用人数大于预设人数 \n`) : ''
                                     } else if(parseFloat(item.jdPrice) < args_xh.jdPrice){
                                        // args_xh.printLog ? console.log(`商品被过滤，商品原价低于预设商品原价 \n`) : ''
                                     } else if(args_xh.titleFilters.some(fileter_word => item.skuTitle.includes(fileter_word) ? tempKeyword = fileter_word : '')){
-                                        args_xh.printLog ? console.log(`商品被过滤，含有关键词 ${tempKeyword}\n`) : ''
+                                        //args_xh.printLog ? console.log(`商品被过滤，含有关键词 ${tempKeyword}\n`) : ''
                                     } else {
                                         //args_xh.printLog ? console.log(`商品通过，将加入试用组，trialActivityId为${item.trialActivityId}\n`) : ''
                                         trialActivityIdList.push(item.trialActivityId)
@@ -396,7 +396,7 @@ function try_feedsList(tabId, page){
                                 return
                             }
                         }
-                        console.log(`当前试用组长度为：${trialActivityIdList.length}`)
+                        //console.log(`当前试用组长度为：${trialActivityIdList.length}`)
                         args_xh.printLog ? console.log(`${trialActivityIdList}`) : ''
                         if(page === $.totalPages && $.nowTabIdIndex < args_xh.tabId.length){
                             //这个是因为每一个tab都会有对应的页数，获取完如果还不够的话，就获取下一个tab
@@ -444,15 +444,15 @@ function try_apply(title, activityId){
                        // console.log("申请提交成功")
                         $.totalSuccess++
                     } else if(data.code === "-106"){
-                        console.log(data.message)   // 未在申请时间内！
+                       // console.log(data.message)   // 未在申请时间内！
                     } else if(data.code === "-110"){
-                        console.log(data.message)   // 您的申请已成功提交，请勿重复申请…
+                       // console.log(data.message)   // 您的申请已成功提交，请勿重复申请…
                     } else if(data.code === "-120"){
-                        console.log(data.message)   // 您还不是会员，本品只限会员申请试用，请注册会员后申请！
+                        //console.log(data.message)   // 您还不是会员，本品只限会员申请试用，请注册会员后申请！
                     } else if(data.code === "-167"){
-                        console.log(data.message)   // 抱歉，此试用需为种草官才能申请。查看下方详情了解更多。
+                        //console.log(data.message)   // 抱歉，此试用需为种草官才能申请。查看下方详情了解更多。
                     } else if(data.code === "-131"){
-                        console.log(data.message)   // 申请次数上限。
+                       // console.log(data.message)   // 申请次数上限。
                         $.isLimit = true;
                     } else if(data.code === "-113"){
                         console.log(data.message)   // 操作不要太快哦！
