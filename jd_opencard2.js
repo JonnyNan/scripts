@@ -41,7 +41,6 @@ cron "44 2 13-23 9 *" script-path=https://raw.githubusercontent.com/smiek2221/sc
 let guaopencard_addSku = "false"
 let guaopencard = "true"
 let guaopencard_draw = "5"
-const $.shareUuid = 'da9dddb820bf4c9d994675940dabd9f6'
 
 const $ = new Env('9.13~9.23 福满中秋');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
