@@ -366,7 +366,7 @@ function try_feedsList(tabId, page){
                                 }
                             }
                             if(item.skuTitle && $.isPush){
-                                args_xh.printLog ? console.log(`检测 tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${$.totalPages} 页 第 ${$.nowItem++ + 1} 个商品\n${item.skuTitle}`) : ''
+                                //args_xh.printLog ? console.log(`检测 tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${$.totalPages} 页 第 ${$.nowItem++ + 1} 个商品\n${item.skuTitle}`) : ''
                                 if(args_xh.whiteList){
                                     if(args_xh.whiteListKeywords.some(fileter_word => item.skuTitle.includes(fileter_word))){
                                         args_xh.printLog ? console.log(`商品白名单通过，将加入试用组，trialActivityId为${item.trialActivityId}\n`) : ''
@@ -386,7 +386,7 @@ function try_feedsList(tabId, page){
                                     } else if(args_xh.titleFilters.some(fileter_word => item.skuTitle.includes(fileter_word) ? tempKeyword = fileter_word : '')){
                                         args_xh.printLog ? console.log(`商品被过滤，含有关键词 ${tempKeyword}\n`) : ''
                                     } else {
-                                        args_xh.printLog ? console.log(`商品通过，将加入试用组，trialActivityId为${item.trialActivityId}\n`) : ''
+                                        //args_xh.printLog ? console.log(`商品通过，将加入试用组，trialActivityId为${item.trialActivityId}\n`) : ''
                                         trialActivityIdList.push(item.trialActivityId)
                                         trialActivityTitleList.push(item.skuTitle)
                                     }
@@ -420,8 +420,8 @@ function try_feedsList(tabId, page){
 function try_apply(title, activityId){
     return new Promise((resolve, reject) => {
         console.log(`申请试用商品提交中...`)
-        args_xh.printLog ? console.log(`商品：${title}`) : ''
-        args_xh.printLog ? console.log(`id为：${activityId}`) : ''
+        //args_xh.printLog ? console.log(`商品：${title}`) : ''
+        //args_xh.printLog ? console.log(`id为：${activityId}`) : ''
         const body = JSON.stringify({
             "activityId": activityId,
             "previewTime": ""
