@@ -142,6 +142,7 @@ ENV_PATH=
 22 01,9 * * * node /scripts/jd_star_shop.js >> /log/jd_star_shop.log 2>&1
 18 * * * * node /scripts/jd_cfd_mooncake.js >> /log/jd_cfd_mooncake.log 2>&1
 52 01,9 * * * node /scripts/jd_jxg.js >> /log/jd_jxg.log 2>&1
+40 10,18 * * * node /scripts/jd_opencard4.js >> /log/jd_opencard4.log 2>&1
 
 
 
