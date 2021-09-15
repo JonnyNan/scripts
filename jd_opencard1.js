@@ -2,7 +2,6 @@
 9.15~9.21 超店会员福利社 [gua_opencard33.js]
 新增开卡脚本 (脚本已加密
 
-邀请一人30豆 (有可能没有豆
 开21张卡 每张卡获得抽奖机会1次
 关注获得15京豆 (有可能是空气💨
 加购3京豆 (有可能是空气💨 默认不加购 如需加购请设置环境变量[guaopencard_addSku33]为"true"
@@ -11,11 +10,6 @@
 guaopencard_draw33="3"
 填非数字会全都抽奖
 
-第一个账号助力作者 其他依次助力CK1
-第一个CK失效会退出脚本
-
-默认脚本不执行
-如需执行脚本请设置环境变量
 guaopencard33="true" (https://lzdz1-isv.isvjcloud.com/dingzhi/shop/league/activity?activityId=dz2109100001616201&shareUuid=6f4c72733103462aacdcac7520e5fe03)]
 
 ============Quantumultx===============
@@ -33,7 +27,7 @@ cron "13 9 15-21 9 *" script-path=https://raw.githubusercontent.com/smiek2221/sc
 ============小火箭=========
 9.15~9.21 超店会员福利社 = type=cron,script-path=https://raw.githubusercontent.com/smiek2221/scripts/master/gua_opencard33.js, cronexpr="13 9 15-21 9 *", timeout=3600, enable=true
 */
-let guaopencard_addSku = "false"
+let guaopencard_addSku = "true"
 let guaopencard = "true"
 let guaopencard_draw = "5"
 
