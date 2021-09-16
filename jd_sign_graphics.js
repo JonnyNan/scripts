@@ -96,7 +96,7 @@ $.post = validator.injectToRequest($.post.bind($), 'channelSign', $.UA)
       // break
     }
   }
-  await showMsg();
+  //await showMsg();
 })()
   .catch((e) => {
     $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
