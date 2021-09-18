@@ -146,6 +146,7 @@ ENV_PATH=
 15 3,6,12,18 * * * node /scripts/jd_carnivalcity.js >> /log/jd_carnivalcity.log 2>&1
 3 3,6,18 * * * node /scripts/jd_carnivalcity_help.js >> /log/jd_carnivalcity_help.log 2>&1
 22 6,12,18 * * * node /scripts/jd_ddworld.js >> /log/jd_ddworld.log 2>&1
+22 8,14 13-26 9 * node /scripts/jd_film_museum.js >> /log/jd_film_museum.log 2>&1
 
 
 
