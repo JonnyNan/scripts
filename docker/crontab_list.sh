@@ -145,6 +145,7 @@ ENV_PATH=
 40 10,18 * * * node /scripts/jd_opencard4.js >> /log/jd_opencard4.log 2>&1
 15 3,6,12,18 * * * node /scripts/jd_carnivalcity.js >> /log/jd_carnivalcity.log 2>&1
 3 3,6,18 * * * node /scripts/jd_carnivalcity_help.js >> /log/jd_carnivalcity_help.log 2>&1
+22 6,12,18 * * * node /scripts/jd_ddworld.js >> /log/jd_ddworld.log 2>&1
 
 
 
