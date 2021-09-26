@@ -150,6 +150,7 @@ ENV_PATH=
 #25 1,7,11,18 * * * node /scripts/jd_ddwj.js >> /log/jd_ddwj.log 2>&1
 35 1,7,11,18 * * * node /scripts/jd_joy_park_newtask.js >> /log/jd_joy_park_newtask.log 2>&1
 55 2,8,13,19 * * * node /scripts/jd_joy_park_task.js >> /log/jd_joy_park_task.log 2>&1
+45 8,13,19 * * * node /scripts/jd_jmf.js >> /log/jd_jmf.log 2>&1
 
 
 
