@@ -147,11 +147,11 @@ ENV_PATH=
 3 3,6,18 * * * node /scripts/jd_carnivalcity_help.js >> /log/jd_carnivalcity_help.log 2>&1
 22 6,12,18 * * * node /scripts/jd_ddworld.js >> /log/jd_ddworld.log 2>&1
 22 8,14 13-26 9 * node /scripts/jd_film_museum.js >> /log/jd_film_museum.log 2>&1
-25 1,7,11,18 * * * node /scripts/jd_ddwj.js >> /log/jd_ddwj.log 2>&1
+#25 1,7,11,18 * * * node /scripts/jd_ddwj.js >> /log/jd_ddwj.log 2>&1
 35 1,7,11,18 * * * node /scripts/jd_joy_park_newtask.js >> /log/jd_joy_park_newtask.log 2>&1
 55 2,8,13,19 * * * node /scripts/jd_joy_park_task.js >> /log/jd_joy_park_task.log 2>&1
 45 8,13,19 * * * node /scripts/jd_jmf.js >> /log/jd_jmf.log 2>&1
-15 4,13,20 * * * node /scripts/jd_ddwj_help.js >> /log/jd_ddwj_help.log 2>&1
+#15 4,13,20 * * * node /scripts/jd_ddwj_help.js >> /log/jd_ddwj_help.log 2>&1
 
 
 
