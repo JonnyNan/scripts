@@ -29,6 +29,7 @@ let allMessageMonthGp1 = '';
 let allMessage2Gp1 = '';
 let IndexGp1 = 0;
 
+
 let MessageUserGp2 = '';
 let ReceiveMessageGp2 = '';
 let WarnMessageGp2 = '';
@@ -36,7 +37,7 @@ let allMessageGp2 = '';
 let allMessage2Gp2 = '';
 let allMessageMonthGp2 = '';
 let IndexGp2 = 0;
-
+let BEANCHANGE_PERSENT= 1;
 let MessageUserGp3 = '';
 let ReceiveMessageGp3 = '';
 let WarnMessageGp3 = '';
