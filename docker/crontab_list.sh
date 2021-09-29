@@ -152,6 +152,8 @@ ENV_PATH=
 55 2,8,13,19 * * * node /scripts/jd_joy_park_task.js >> /log/jd_joy_park_task.log 2>&1
 45 8,13,19 * * * node /scripts/jd_jmf.js >> /log/jd_jmf.log 2>&1
 #15 4,13,20 * * * node /scripts/jd_ddwj_help.js >> /log/jd_ddwj_help.log 2>&1
+31 9,15 * * * node /scripts/jd_ttpt.js >> /log/jd_ttpt.log 2>&1
+
 
 
 
