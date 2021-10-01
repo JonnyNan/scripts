@@ -378,7 +378,7 @@ async function showMsg() {
 	}
 
 	if ($.levelName || $.JingXiang)
-		ReturnMessage += `【账号信息】`;
+		ReturnMessage += ``;
 
 	if ($.levelName) {
 		if ($.levelName.length > 2)
@@ -431,20 +431,20 @@ async function showMsg() {
 	if ($.errorMsg)
 		ReturnMessage += `\n【数据报错】获取京豆数据异常!`;
 
-	ReturnMessage += `\n【今日京豆】收${$.todayIncomeBean}豆`;
+	ReturnMessage += `【今豆】收${$.todayIncomeBean}豆`;
 
 	if ($.todayOutcomeBean != 0) {
 		ReturnMessage += `,支${$.todayOutcomeBean}豆`;
 	}
-	ReturnMessage += `\n`;
+	ReturnMessage += ``;
 
-	ReturnMessage += `【昨日京豆】收${$.incomeBean}豆`;
+	ReturnMessage += `【昨豆】收${$.incomeBean}豆`;
 
 	if ($.expenseBean != 0) {
 		ReturnMessage += `,支${$.expenseBean}豆`;
 	}
-	ReturnMessage += `\n`;
-	ReturnMessage += `【当前京豆】${$.beanCount}豆(≈${($.beanCount / 100).toFixed(2)}元)\n`;
+	ReturnMessage += ``;
+	ReturnMessage += `【总豆】${$.beanCount}豆(≈${($.beanCount / 100).toFixed(2)}元)\n`;
 
 	if (typeof $.JDEggcnt !== "undefined") {
 		if ($.JDEggcnt == 0) {
