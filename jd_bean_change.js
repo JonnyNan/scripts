@@ -429,7 +429,7 @@ async function showMsg() {
 
 	}
 	if ($.errorMsg)
-		ReturnMessage += `\n【数据报错】获取京豆数据异常!`;
+		ReturnMessage += `\n【数据报错】获取数据异常!`;
 
 	ReturnMessage += `【今豆】收${$.todayIncomeBean}豆`;
 
@@ -448,7 +448,7 @@ async function showMsg() {
 
 	if (typeof $.JDEggcnt !== "undefined") {
 		if ($.JDEggcnt == 0) {
-			ReturnMessage += `【京喜牧场】未开通或提示火爆.\n`;
+			ReturnMessage += `【京喜牧场】未开通或火爆.\n`;
 		} else {
 			ReturnMessage += `【京喜牧场】${$.JDEggcnt}枚鸡蛋\n`;
 		}
@@ -470,7 +470,7 @@ async function showMsg() {
 	if ($.JdFarmProdName != "") {
 		if ($.JdtreeEnergy != 0) {
 			if ($.treeState === 2 || $.treeState === 3) {
-				ReturnMessage += `【东东农场】${$.JdFarmProdName} 可以兑换了!\n`;
+				ReturnMessage += `【东东农场】${$.JdFarmProdName} 可兑换了!\n`;
 				if (userIndex1 != -1) {
 					ReceiveMessageGp1 += `【账号${IndexGp1} ${$.nickName || $.UserName}】${$.JdFarmProdName} (东东农场)\n`;
 				}
@@ -566,9 +566,9 @@ async function showMsg() {
 	if (initPetTownRes.code === '0' && initPetTownRes.resultCode === '0' && initPetTownRes.message === 'success') {
 		$.petInfo = initPetTownRes.result;
 		if ($.petInfo.userStatus === 0) {
-			ReturnMessage += `【东东萌宠】活动未开启!\n`;
+			ReturnMessage += `【东东萌宠】未开启!\n`;
 		} else if ($.petInfo.petStatus === 5) {
-			ReturnMessage += `【东东萌宠】${$.petInfo.goodsInfo.goodsName}已可领取!\n`;
+			ReturnMessage += `【东东萌宠】${$.petInfo.goodsInfo.goodsName}可领取!\n`;
 
 			if (userIndex1 != -1) {
 				ReceiveMessageGp1 += `【账号${IndexGp1} ${$.nickName || $.UserName}】${$.petInfo.goodsInfo.goodsName}可以兑换了! (东东萌宠)\n`;
@@ -616,7 +616,7 @@ async function showMsg() {
 		}
 	}
 
-	ReturnMessage += `🧧🧧🧧红包明细🧧🧧🧧\n`;
+	ReturnMessage += `红包:`;
 	ReturnMessage += `${$.message}`;
 
 	if (userIndex1 != -1) {
@@ -630,7 +630,7 @@ async function showMsg() {
 		allMessageGp3 += ReturnMessage + `\n`;
 	}
 	if (userIndex1 == -1 && userIndex2 == -1 && userIndex3 == -1) {
-		allMessage += ReturnMessage + `\n`;
+		allMessage += ReturnMessage;
 	}
 
 	console.log(`${ReturnMessage}`);
@@ -1525,7 +1525,7 @@ function getJxFactory() {
 								$.unActive = false; //标记是否开启了京喜活动或者选购了商品进行生产
 								if (!data.factoryList) {
 									infoMsg = ""
-										// $.msg($.name, '【提示】', `京东账号${$.index}[${$.nickName}]京喜工厂活动未开始\n请手动去京东APP->游戏与互动->查看更多->京喜工厂 开启活动`);
+										// $.msg($.name, '【提示】', `京东账号${$.index}[${$.nickName}]京喜工厂未开始\n请手动京喜工厂 开启活动`);
 								} else if (data.factoryList && !data.productionList) {
 									infoMsg = ""
 								}
