@@ -336,7 +336,7 @@ function try_feedsList(tabId, page){
                         $.totalPages = data.data.pages
                         $.nowPage === $.totalPages ? $.nowPage = 1 : $.nowPage++;
                         //console.log(`第 ${size++} 次获取试用商品成功，tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${$.totalPages} 页`)
-                        console.log(`获取到商品 ${data.data.feedList.length} 条`)
+                       // console.log(`获取到商品 ${data.data.feedList.length} 条`)
                         for(let item of data.data.feedList){
                             if(item.applyNum === null){
                                // args_xh.printLog ? console.log(`商品未到申请时间：${item.skuTitle}\n`) : ''
@@ -398,7 +398,7 @@ function try_feedsList(tabId, page){
                             }
                         }
                         //console.log(`当前试用组长度为：${trialActivityIdList.length}`)
-                        args_xh.printLog ? console.log(`${trialActivityIdList}`) : ''
+                       // args_xh.printLog ? console.log(`${trialActivityIdList}`) : ''
                         if(page === $.totalPages && $.nowTabIdIndex < args_xh.tabId.length){
                             //这个是因为每一个tab都会有对应的页数，获取完如果还不够的话，就获取下一个tab
                             $.nowTabIdIndex++;
