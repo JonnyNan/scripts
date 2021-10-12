@@ -278,7 +278,7 @@ function requireConfig(){
 //获取tabList的，如果不知道tabList有哪些，跑一遍这个function就行了
 function try_tabList(){
     return new Promise((resolve, reject) => {
-        console.log(`获取tabList中...`)
+       // console.log(`获取tabList中...`)
         const body = JSON.stringify({
             "previewTime": ""
         });
@@ -335,7 +335,7 @@ function try_feedsList(tabId, page){
                     if(data.success){
                         $.totalPages = data.data.pages
                         $.nowPage === $.totalPages ? $.nowPage = 1 : $.nowPage++;
-                        console.log(`第 ${size++} 次获取试用商品成功，tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${$.totalPages} 页`)
+                        //console.log(`第 ${size++} 次获取试用商品成功，tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${$.totalPages} 页`)
                         console.log(`获取到商品 ${data.data.feedList.length} 条`)
                         for(let item of data.data.feedList){
                             if(item.applyNum === null){
@@ -397,7 +397,7 @@ function try_feedsList(tabId, page){
                                 return
                             }
                         }
-                        console.log(`当前试用组长度为：${trialActivityIdList.length}`)
+                        //console.log(`当前试用组长度为：${trialActivityIdList.length}`)
                         args_xh.printLog ? console.log(`${trialActivityIdList}`) : ''
                         if(page === $.totalPages && $.nowTabIdIndex < args_xh.tabId.length){
                             //这个是因为每一个tab都会有对应的页数，获取完如果还不够的话，就获取下一个tab
@@ -420,9 +420,9 @@ function try_feedsList(tabId, page){
 
 function try_apply(title, activityId){
     return new Promise((resolve, reject) => {
-        console.log(`申请试用商品提交中...`)
-        args_xh.printLog ? console.log(`商品：${title}`) : ''
-        args_xh.printLog ? console.log(`id为：${activityId}`) : ''
+       // console.log(`申请试用商品提交中...`)
+        //args_xh.printLog ? console.log(`商品：${title}`) : ''
+       // args_xh.printLog ? console.log(`id为：${activityId}`) : ''
         const body = JSON.stringify({
             "activityId": activityId,
             "previewTime": ""
