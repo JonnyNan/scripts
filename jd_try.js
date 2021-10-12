@@ -335,7 +335,7 @@ function try_feedsList(tabId, page){
                     if(data.success){
                         $.totalPages = data.data.pages
                         $.nowPage === $.totalPages ? $.nowPage = 1 : $.nowPage++;
-                        //console.log(`第 ${size++} 次获取试用商品成功，tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${$.totalPages} 页`)
+                        console.log(`第 ${size++} 次获取试用商品成功，tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${$.totalPages} 页`)
                        // console.log(`获取到商品 ${data.data.feedList.length} 条`)
                         for(let item of data.data.feedList){
                             if(item.applyNum === null){
