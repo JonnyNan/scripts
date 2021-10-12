@@ -296,7 +296,7 @@ function try_tabList(){
                 } else {
                     data = JSON.parse(data)
                     if(data.success){
-                        for(let tabId of data.data.tabList) console.log(`${tabId.tabName} - ${tabId.tabId}`)
+                        for(let tabId of data.data.tabList) console.log()
                     } else {
                         console.log("获取失败", data)
                     }
