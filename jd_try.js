@@ -278,7 +278,7 @@ function requireConfig(){
 //获取tabList的，如果不知道tabList有哪些，跑一遍这个function就行了
 function try_tabList(){
     return new Promise((resolve, reject) => {
-       // console.log(`获取tabList中...`)
+        console.log(`获取tabList中...`)
         const body = JSON.stringify({
             "previewTime": ""
         });
@@ -335,8 +335,8 @@ function try_feedsList(tabId, page){
                     if(data.success){
                         $.totalPages = data.data.pages
                         $.nowPage === $.totalPages ? $.nowPage = 1 : $.nowPage++;
-                        console.log(`第 ${size++} 次获取试用商品成功，tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${$.totalPages} 页`)
-                       // console.log(`获取到商品 ${data.data.feedList.length} 条`)
+                        //console.log(`第 ${size++} 次获取试用商品成功，tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${$.totalPages} 页`)
+                        console.log(`获取到商品 ${data.data.feedList.length} 条`)
                         for(let item of data.data.feedList){
                             if(item.applyNum === null){
                                // args_xh.printLog ? console.log(`商品未到申请时间：${item.skuTitle}\n`) : ''
