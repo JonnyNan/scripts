@@ -89,7 +89,7 @@ ENV_PATH=
 10 01,3 * * * bash /root/jd/jd.sh  jd_speed.js >> /log/jd_speed.log 2>&1
 40 0,8 * * * bash /root/jd/jd.sh jd_speed_redpocke.js >> /log/jd_speed_redpocke.log 2>&1
 0 0-23 * * * bash /root/jd/jd.sh  jd_super_redrain.js >> /log/jd_super_redrain.log 2>&1
-11 */6 * * * bash /root/jd/jd.sh jd_superMarket.js >> /log/jd_superMarket.log 2>&1
+11 */4 * * * bash /root/jd/jd.sh jd_superMarket.js >> /log/jd_superMarket.log 2>&1
 36 0-23/4 * * * bash /root/jd/jd.sh jd_syj.js >> /log/jd_syj.log 2>&1
 18 1,8 * * * bash /root/jd/jd.sh jd_try.js >> /log/jd_try.log 2>&1
 38 17 * * * bash /root/jd/jd.sh  jd_unbind.js >> /log/jd_unbind.log 2>&1
