@@ -126,6 +126,7 @@ ENV_PATH=
 22 2,8 * * * node /scripts/jd_wxFans.js >> /log/jd_wxFans.log 2>&1
 25 2,8 * * * node /scripts/jd_wish.js >> /log/jd_wish.log 2>&1
 01 01,8 * * * node /scripts/jd_sgmh.js >> /log/jd_sgmh.log 2>&1
+22 18,19,20 * * * node /scripts/jd_city.js >> /log/jd_city.log 2>&1
 06 02,9 * * * node /scripts/jd_sign_graphics.js >> /log/jd_sign_graphics.log 2>&1
 03 1,8,18,20 * * * node /scripts/jd_GoldcoinToGift.js >> /log/jd_GoldcoinToGift.log 2>&1
 22 8,18 * * * node /scripts/jd_opencard1.js >> /log/jd_opencard1.log 2>&1
