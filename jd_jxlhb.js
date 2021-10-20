@@ -51,12 +51,7 @@ const BASE_URL = 'https://m.jingxi.com/cubeactive/steprewardv3'
     res = await getAuthorShareCode('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/jxhb.json')
   }
   if (res && res.activeId) $.activeId = res.activeId;
-  let res2 = await getAuthorShareCode('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/jxhb.json')
-  if (!res2) {
-    await $.wait(1000)
-    res2 = await getAuthorShareCode('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/jxhb.json')
-  }
-  $.authorMyShareIds = [...((res && res.codes) || []),...(res2 || [])];
+  $.authorMyShareIds = [...((res && res.codes) || [])];
   //开启红包,获取互助码
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
