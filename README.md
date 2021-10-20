@@ -1,3 +1,7 @@
+双11 脚本目前没有， 大家可以下载爱淘金，里面签到里面支持京东双11任务。
+另外可以用https://github.com/hajiuhajiu/tmall-miao 里面的auto.js 脚本完成任务， 需要下载auto.js 后将脚本导入运行，原作者地址https://github.com/MonsterNone/tmall-miao
+
+
 不要用action跑， 否则github封号，
 低调使用，不要fork！尽量第一时间同步更新脚本。防止失联请收藏gitee备份地址：https://gitee.com/xr2021/jdsign
  Action 打开方式 setting--actions ......Actions permissions
