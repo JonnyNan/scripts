@@ -155,6 +155,7 @@ ENV_PATH=
 31 9,15 * * * node /scripts/jd_ttpt.js >> /log/jd_ttpt.log 2>&1
 15 0,12,18 * * * node /scripts/jd_xsqjd.js >> /log/jd_xsqjd.log 2>&1
 18 0,12,18 * * * node /scripts/jd_ys.js >> /log/jd_ys.log 2>&1
+10 01,11,18 * * * node /scripts/jd_carnivalcity.js >> /log/jd_carnivalcity.log 2>&1
 
 
 
