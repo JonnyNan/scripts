@@ -154,6 +154,7 @@ ENV_PATH=
 15 4,13,20 * * * node /scripts/jd_industrial_task.js >> /log/jd_industrial_task.log 2>&1
 31 9,15 * * * node /scripts/jd_ttpt.js >> /log/jd_ttpt.log 2>&1
 15 0,12,18 * * * node /scripts/jd_xsqjd.js >> /log/jd_xsqjd.log 2>&1
+18 0,12,18 * * * node /scripts/jd_ys.js >> /log/jd_ys.log 2>&1
 
 
 
