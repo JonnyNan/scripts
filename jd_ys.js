@@ -66,6 +66,7 @@ let allMessage = '';
         continue
       }
       await jdYs()
+      await $.wait(80000)
       joinIdInfo[$.UserName] = $.joinId
       AuthorizationInfo[$.UserName] = $.Authorization
     }
@@ -73,7 +74,7 @@ let allMessage = '';
   let res = await getAuthorShareCode('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/ys.json')
   if (!res) {
     $.http.get({url: 'https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/ys.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
-    await $.wait(1000)
+    await $.wait(3000)
     res = await getAuthorShareCode('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/ys.json')
   }
   $.shareCodes = [...new Set([...$.shareCodes, ...(res || [])])]
@@ -95,7 +96,7 @@ let allMessage = '';
           console.log(`CK1 账号${$.UserName} 去助力作者 ${shareCodes[j]}`)
           $.delcode = false
           await share(shareCodes[j])
-          await $.wait(2000)
+          await $.wait(5000)
           if ($.delcode) {
             shareCodes.splice(j, 1)
             j--
@@ -112,7 +113,7 @@ let allMessage = '';
           console.log(`账号${$.UserName} 去助力 ${$.shareCodes[j]}`)
           $.delcode = false
           await share($.shareCodes[j])
-          await $.wait(2000)
+          await $.wait(5000)
           if ($.delcode) {
             $.shareCodes.splice(j, 1)
             j--
