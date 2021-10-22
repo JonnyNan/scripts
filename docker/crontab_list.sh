@@ -156,6 +156,8 @@ ENV_PATH=
 15 0,12,18 * * * node /scripts/jd_xsqjd.js >> /log/jd_xsqjd.log 2>&1
 18 0,12,18 * * * node /scripts/jd_ys.js >> /log/jd_ys.log 2>&1
 10 01,11,18 * * * node /scripts/jd_carnivalcity.js >> /log/jd_carnivalcity.log 2>&1
+39 10,14 * * * node /scripts/jd_ddworld_exchange.js >> /log/jd_ddworld_exchange.log 2>&1
+38 0,12,18 * * * node /scripts/jd_jxdzz.js >> /log/jd_jxdzz.log 2>&1
 
 
 
