@@ -146,7 +146,7 @@ $.shareCodesArr = [];
                                 }
                                 break
                             case 21:
-                                if (process.env.FS_LEVEL != 'card') {
+                                if (process.env.FS_LEVEL = 'card') {
                                     console.log('不入会,FS_LEVEL=card入会')
                                     break
                                 }
