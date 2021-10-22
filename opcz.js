@@ -41,7 +41,7 @@ $.inviteId  = [];
 		cookie = cookiesArr[i];
 		$.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
 		$.index = i + 1;
-		await $.wait(1z2000)
+		await $.wait(12000)
 		$.isLogin = true;
 		$.nickName = '';
 		message = '';
