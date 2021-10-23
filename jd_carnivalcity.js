@@ -21,7 +21,7 @@ if ($.isNode()) {
     cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-let inviteCodes = [
+let inviteCodes = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3W02JyLYFjRWn6u7zB55awQ","ZXASTT019-aksBmRfkjSreH-R1YQFjRWn6u7zB55awQ","ZXASTT019-aklCFpFgSm_WEil7LIFjRWn6u7zB55awQ",""
 
 ]
 $.shareCodesArr = [];
@@ -53,7 +53,7 @@ $.shareCodesArr = [];
             console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
             //   await shareCodesFormat()
             $.newShareCodes = []
-            for (let i = 0; i < $.newShareCodes.length && true; ++i) {
+            for (let i = 0; i < $.newShareCodes.length ; ++i) {
                 console.log(`\n开始助力 【${$.newShareCodes[i]}】`)
                 let res = await getInfo($.newShareCodes[i])
                 if (res && res['data'] && res['data']['bizCode'] === 0) {
@@ -106,6 +106,7 @@ $.shareCodesArr = [];
                                     console.log(`\n\n ${tmp[o].title?tmp[o].title:tmp[o].shopName}`)
                                     if (tmp[o].status == 1) {
                                         conti = true
+					await $.wait(6000)
                                         await travel_collectScore(tmp[o].taskToken, task.taskId)
                                     }
 
@@ -127,6 +128,7 @@ $.shareCodesArr = [];
                                         conti = true
                                         await travel_collectScore(r.productInfoVos[o].taskToken, task.taskId)
                                         t++
+					await $.wait(6000)
                                         if (t >= 5) break
                                     }
 
@@ -138,6 +140,7 @@ $.shareCodesArr = [];
                                 for (var o = 0; o < r.browseShopVo.length; o++) {
                                     if (r.browseShopVo[o].status == 1) {
                                         conti = true
+					await $.wait(6000)
                                         await travel_collectScore(r.browseShopVo[o].taskToken, task.taskId)
                                         t++
                                         if (t >= 5) break
