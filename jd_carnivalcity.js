@@ -24,7 +24,9 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
 let inviteCodes = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3W02JyLYFjRWn6u7zB55awQ","ZXASTT019-aksBmRfkjSreH-R1YQFjRWn6u7zB55awQ","ZXASTT019-aklCFpFgSm_WEil7LIFjRWn6u7zB55awQ",""
 
 ]
-$.shareCodesArr = [];
+$.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3W02JyLYFjRWn6u7zB55awQ","ZXASTT019-aksBmRfkjSreH-R1YQFjRWn6u7zB55awQ","ZXASTT019-aklCFpFgSm_WEil7LIFjRWn6u7zB55awQ",""
+
+];
 
 !(async() => {
     if (!cookiesArr[0]) {
@@ -46,7 +48,7 @@ $.shareCodesArr = [];
             cookie = cookiesArr[i];
             $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
             $.index = i + 1;
-			await $.wait(120000)
+	   await $.wait(120000)
             $.isLogin = true;
             $.nickName = '';
             message = '';
@@ -59,6 +61,7 @@ $.shareCodesArr = [];
                 if (res && res['data'] && res['data']['bizCode'] === 0) {
                     if (res['data']['result']['toasts'] && res['data']['result']['toasts'][0] && res['data']['result']['toasts'][0]['status'] === '3') {
                         console.log(`助力次数已耗尽，跳出`)
+			    await $.wait(6000)
                         break
                     }
                     if (res['data']['result']['toasts'] && res['data']['result']['toasts'][0]) {
@@ -98,8 +101,10 @@ $.shareCodesArr = [];
                                 var tmp = []
                                 if (task.taskType == 7) {
                                     tmp = task.browseShopVo
+				    await $.wait(6000)	
                                 } else {
                                     tmp = task.shoppingActivityVos
+				    await $.wait(6000)
                                 }
 
                                 for (var o = 0; o < tmp.length; o++) {
@@ -115,6 +120,7 @@ $.shareCodesArr = [];
                                 for (var o = 0; o < tmp.length; o++) {
                                     if (tmp[o].status == 1) {
                                         conti = true
+					await $.wait(6000)
                                         await qryViewkitCallbackResult(tmp[o].taskToken)
                                     }
 
@@ -149,7 +155,7 @@ $.shareCodesArr = [];
                                 }
                                 break
                             case 21:
-                                if (process.env.FS_LEVEL = 'card') {
+                                if (false) {
                                     console.log('不入会,FS_LEVEL=card入会')
                                     break
                                 }
@@ -160,6 +166,7 @@ $.shareCodesArr = [];
                                         memberUrl = transform(memberUrl)
                                         if (i < 10) //限制开卡账号数目
                                             await join(task.brandMemberVos[o].vendorIds, memberUrl.channel, memberUrl.shopId ? memberUrl.shopId : "")
+					    await $.wait(6000)
                                         await travel_collectScore(task.brandMemberVos[o].taskToken, task.taskId)
                                     }
 
