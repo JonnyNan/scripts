@@ -99,6 +99,7 @@ $.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3
                             case 6:
                             case 26:
                                 var tmp = []
+				
                                 if (task.taskType == 7) {
                                     tmp = task.browseShopVo
 				    await $.wait(6000)	
@@ -109,6 +110,7 @@ $.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3
 
                                 for (var o = 0; o < tmp.length; o++) {
                                     console.log(`\n\n ${tmp[o].title?tmp[o].title:tmp[o].shopName}`)
+				    console.log(task.taskType)
                                     if (tmp[o].status == 1) {
                                         conti = true
 					await $.wait(6000)
