@@ -162,7 +162,7 @@ ENV_PATH=
 22 02,15 * * * node /scripts/jd_jxmc_help.js >> /log/jd_jxmc_help.log 2>&1
 28 04,13 * * * node /scripts/jd_mohe.js >> /log/jd_mohe.log 2>&1
 33 03,14 * * * node /scripts/jd_qqxing.js >> /log/jd_qqxingp.log 2>&1
-22 00,12,18 * * * node /scripts/jd_djyyj.js >> /log/jd_djyyj.log 2>&1
+22 00,12,17 * * * node /scripts/jd_djyyj.js >> /log/jd_djyyj.log 2>&1
 
 
 
