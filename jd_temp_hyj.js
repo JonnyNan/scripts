@@ -48,8 +48,7 @@ $.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3
             cookie = cookiesArr[i];
             $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
             $.index = i + 1;
-			console.log(`\漫长的等待开始\n`);
-	        await $.wait(120000)
+	   await $.wait(120000)
             $.isLogin = true;
             $.nickName = '';
             message = '';
@@ -100,7 +99,7 @@ $.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3
                             case 6:
                             case 26:
                                 var tmp = []
-				                var t = 0;
+				
                                 if (task.taskType == 7) {
                                     tmp = task.browseShopVo
 				    await $.wait(6000)	
@@ -111,13 +110,10 @@ $.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3
 
                                 for (var o = 0; o < tmp.length; o++) {
                                     console.log(`\n\n ${tmp[o].title?tmp[o].title:tmp[o].shopName}`)
-				                    console.log(task.taskType)
+				    console.log(task.taskType)
                                     if (tmp[o].status == 1) {
                                         conti = true
-										 t++
-					                    await $.wait(6000)
-                                        if (t >= 5) break
-					                    await $.wait(6000)
+					await $.wait(6000)
                                         await travel_collectScore(tmp[o].taskToken, task.taskId)
                                     }
 
@@ -140,7 +136,7 @@ $.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3
                                         conti = true
                                         await travel_collectScore(r.productInfoVos[o].taskToken, task.taskId)
                                         t++
-					                    await $.wait(6000)
+					await $.wait(6000)
                                         if (t >= 5) break
                                     }
 
@@ -357,7 +353,7 @@ function travel_getTaskDetail() {
                         if (data.code === 0) {
                             if (data.data && data['data']['bizCode'] === 0) {
                                 if (data.data.result.inviteId == null) {
-                                    console.log("黑号了/助力次数耗尽")
+                                    console.log("黑号")
                                     resolve("")
                                 }
                                 inviteId.push(data.data.result.inviteId)
