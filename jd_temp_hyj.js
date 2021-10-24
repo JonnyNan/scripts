@@ -11,7 +11,6 @@ let cookiesArr = [],
     message;
 let secretp = '',
     inviteId = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3W02JyLYFjRWn6u7zB55awQ","ZXASTT019-aksBmRfkjSreH-R1YQFjRWn6u7zB55awQ","ZXASTT019-aklCFpFgSm_WEil7LIFjRWn6u7zB55awQ","ZXASTT0195qwpGVtBpA6OZRj0kvAFjRWn6u7zB55awQ"
-
 ]
 
 if ($.isNode()) {
@@ -24,10 +23,8 @@ if ($.isNode()) {
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 let inviteCodes = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3W02JyLYFjRWn6u7zB55awQ","ZXASTT019-aksBmRfkjSreH-R1YQFjRWn6u7zB55awQ","ZXASTT019-aklCFpFgSm_WEil7LIFjRWn6u7zB55awQ",""
-
 ]
 $.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3W02JyLYFjRWn6u7zB55awQ","ZXASTT019-aksBmRfkjSreH-R1YQFjRWn6u7zB55awQ","ZXASTT019-aklCFpFgSm_WEil7LIFjRWn6u7zB55awQ",""
-
 ];
 
 !(async() => {
@@ -50,7 +47,7 @@ $.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3
             cookie = cookiesArr[i];
             $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
             $.index = i + 1;
-			console.log(`\漫长的等待开始\n`);
+			console.log(`\等待120s\n`);
 	        await $.wait(120000)
             $.isLogin = true;
             $.nickName = '';
@@ -98,7 +95,7 @@ $.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3
                         switch (task.taskType) {
                             case 7:
                             case 9:
-                            case 3:
+                            //case 3:
                             case 6:
                             case 26:
                                 var tmp = []
@@ -170,12 +167,12 @@ $.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3
                                 for (var o = 0; o < task.brandMemberVos.length; o++) {
                                     if (task.brandMemberVos[o].status == 1) {
                                         console.log(`\n\n ${task.brandMemberVos[o].title}`)
-										await $.wait(6000)
+										await $.wait(8000)
                                         memberUrl = task.brandMemberVos[o].memberUrl
                                         memberUrl = transform(memberUrl)
-                                        if (i < 10) //限制开卡账号数目
+                                        if (i < 22) //限制开卡账号数目
                                          await join(task.brandMemberVos[o].vendorIds, memberUrl.channel, memberUrl.shopId ? memberUrl.shopId : "")
-					                     await $.wait(10000)
+					                     await $.wait(12000)
                                         await travel_collectScore(task.brandMemberVos[o].taskToken, task.taskId)
                                     }
 
@@ -363,7 +360,7 @@ function travel_getTaskDetail() {
                                     console.log("黑号了/助力次数耗尽")
                                     resolve("")
                                 }
-                                inviteId.push(data.data.result.inviteId)
+                                //inviteId.push(data.data.result.inviteId)
                                 resolve(data.data.result)
                             }
                         } else {
