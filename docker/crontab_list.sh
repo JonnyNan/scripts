@@ -163,6 +163,7 @@ ENV_PATH=
 28 04,13 * * * node /scripts/jd_mohe.js >> /log/jd_mohe.log 2>&1
 33 03,14 * * * node /scripts/jd_qqxing.js >> /log/jd_qqxingp.log 2>&1
 22 00,12,17 * * * node /scripts/jd_djyyj.js >> /log/jd_djyyj.log 2>&1
+22 21 * * * node /scripts/hyj_jinbi.js >> /log/hyj_jinbi.log 2>&1
 
 
 
