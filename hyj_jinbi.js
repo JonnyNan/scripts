@@ -72,7 +72,7 @@ $.inviteId  = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3W02J
         await travel_gethelp()
 
 
-      await $.wait(18000)
+      await $.wait(23000)
 
 		}catch(e){
 			$.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
@@ -104,7 +104,7 @@ $.inviteId  = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3W02J
         }catch(e){
           $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
         }
-        await $.wait(13000)
+        await $.wait(23000)
 	      if ($.max) {
           $.inviteId .splice(j, 1)
           j--
