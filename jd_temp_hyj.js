@@ -99,13 +99,17 @@ $.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3
                             case 6:
                             case 26:
                                 var tmp = []
-				                var t = 0;
+				var t = 0;
                                 if (task.taskType == 7) {
                                     tmp = task.browseShopVo
-				    await $.wait(6000)	
+				    t++
+				    if (t >= 20) break
+				    await $.wait(13000)	
                                 } else {
                                     tmp = task.shoppingActivityVos
-				    await $.wait(6000)
+				    t++
+				    if (t >= 20) break
+				    await $.wait(13000)
                                 }
 
                                 for (var o = 0; o < tmp.length; o++) {
@@ -113,10 +117,10 @@ $.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3
 				                    console.log(p)
                                     if (tmp[o].status == 1) {
                                         conti = true
-										 t++
-					                    await $.wait(6000)
-                                        if (t >= 9) break
-					                    await $.wait(6000)
+					 t++
+					 await $.wait(12000)
+                                        if (t >= 20) break
+					 await $.wait(12000)
                                         await travel_collectScore(tmp[o].taskToken, task.taskId)
                                     }
 
@@ -125,7 +129,7 @@ $.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3
                                 for (var o = 0; o < tmp.length; o++) {
                                     if (tmp[o].status == 1) {
                                         conti = true
-					await $.wait(6000)
+					await $.wait(13000)
                                         await qryViewkitCallbackResult(tmp[o].taskToken)
                                     }
 
@@ -139,8 +143,8 @@ $.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3
                                         conti = true
                                         await travel_collectScore(r.productInfoVos[o].taskToken, task.taskId)
                                         t++
-					                    await $.wait(6000)
-                                        if (t >= 5) break
+					                    await $.wait(10000)
+                                        if (t >= 8) break
                                     }
 
                                 }
@@ -151,10 +155,10 @@ $.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3
                                 for (var o = 0; o < r.browseShopVo.length; o++) {
                                     if (r.browseShopVo[o].status == 1) {
                                         conti = true
-					await $.wait(6000)
+					await $.wait(12000)
                                         await travel_collectScore(r.browseShopVo[o].taskToken, task.taskId)
                                         t++
-                                        if (t >= 5) break
+                                        if (t >= 8) break
                                     }
 
                                 }
@@ -167,12 +171,12 @@ $.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3
                                 for (var o = 0; o < task.brandMemberVos.length; o++) {
                                     if (task.brandMemberVos[o].status == 1) {
                                         console.log(`\n\n ${task.brandMemberVos[o].title}`)
-										await $.wait(8000)
+										await $.wait(12000)
                                         memberUrl = task.brandMemberVos[o].memberUrl
                                         memberUrl = transform(memberUrl)
                                         if (i < 22) //限制开卡账号数目
                                          await join(task.brandMemberVos[o].vendorIds, memberUrl.channel, memberUrl.shopId ? memberUrl.shopId : "")
-					                     await $.wait(12000)
+					                     await $.wait(18000)
                                         await travel_collectScore(task.brandMemberVos[o].taskToken, task.taskId)
                                     }
 
