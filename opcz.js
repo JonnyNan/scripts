@@ -10,7 +10,8 @@ let cookiesArr = [],
     cookie = '',
     message;
 let secretp = '',
-    inviteId = [""]
+    inviteId = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3W02JyLYFjRWn6u7zB55awQ","ZXASTT019-aksBmRfkjSreH-R1YQFjRWn6u7zB55awQ","ZXASTT019-aklCFpFgSm_WEil7LIFjRWn6u7zB55awQ","ZXASTT0195qwpGVtBpA6OZRj0kvAFjRWn6u7zB55awQ","ZXASTT0205KkcPUtgghSRdWSyzY5_FjRWn6u7zB55awQ","ZXASTT0225KkcRRYfo1bTdBigxfMCIAFjRWn6u7zB55awQ","",""
+]
 
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
@@ -21,8 +22,10 @@ if ($.isNode()) {
     cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-let inviteCodes = []
-$.shareCodesArr = [];
+let inviteCodes = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3W02JyLYFjRWn6u7zB55awQ","ZXASTT019-aksBmRfkjSreH-R1YQFjRWn6u7zB55awQ","ZXASTT019-aklCFpFgSm_WEil7LIFjRWn6u7zB55awQ",""
+]
+$.shareCodesArr = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3W02JyLYFjRWn6u7zB55awQ","ZXASTT019-aksBmRfkjSreH-R1YQFjRWn6u7zB55awQ","ZXASTT019-aklCFpFgSm_WEil7LIFjRWn6u7zB55awQ",""
+];
 
 !(async() => {
     if (!cookiesArr[0]) {
@@ -44,19 +47,21 @@ $.shareCodesArr = [];
             cookie = cookiesArr[i];
             $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
             $.index = i + 1;
+			console.log(`\等待120s\n`);
+	        await $.wait(120000)
             $.isLogin = true;
             $.nickName = '';
             message = '';
             console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
             //   await shareCodesFormat()
-            $.newShareCodes = [];
+            $.newShareCodes = []
             for (let i = 0; i < $.newShareCodes.length ; ++i) {
                 console.log(`\n开始助力 【${$.newShareCodes[i]}】`)
                 let res = await getInfo($.newShareCodes[i])
                 if (res && res['data'] && res['data']['bizCode'] === 0) {
                     if (res['data']['result']['toasts'] && res['data']['result']['toasts'][0] && res['data']['result']['toasts'][0]['status'] === '3') {
                         console.log(`助力次数已耗尽，跳出`)
-			    await $.wait(16000)
+			    await $.wait(6000)
                         break
                     }
                     if (res['data']['result']['toasts'] && res['data']['result']['toasts'][0]) {
@@ -84,8 +89,9 @@ $.shareCodesArr = [];
                     }
                     let task = []
                     let r = []
-                    for (var p = 0; p < res.taskVos.length; p++) {
+                    for (var p = 2; p < res.taskVos.length; p++) {
                         task = res.taskVos[p]
+			if (p = 3 ) break
                         if (task.status != 1) continue
                         switch (task.taskType) {
                             case 7:
@@ -97,27 +103,21 @@ $.shareCodesArr = [];
 				                var t = 0;
                                 if (task.taskType == 7) {
                                     tmp = task.browseShopVo
-				    t++
-				    if (t >= 20) break
-				    await $.wait(13000)	
+				    await $.wait(6000)	
                                 } else {
                                     tmp = task.shoppingActivityVos
-				    t++
-				    if (t >= 20) break
-				    await $.wait(13000)
+				    await $.wait(6000)
                                 }
-                                var m = 0;
+
                                 for (var o = 0; o < tmp.length; o++) {
                                     console.log(`\n\n ${tmp[o].title?tmp[o].title:tmp[o].shopName}`)
 				                    console.log(p)
-									m++
-									if (m >= 20) break
                                     if (tmp[o].status == 1) {
                                         conti = true
-					 t++
-					 await $.wait(12000)
-                                        if (t >= 20) break
-					 await $.wait(12000)
+										 t++
+					                    await $.wait(6000)
+                                        if (t >= 9) break
+					                    await $.wait(6000)
                                         await travel_collectScore(tmp[o].taskToken, task.taskId)
                                     }
 
@@ -126,7 +126,7 @@ $.shareCodesArr = [];
                                 for (var o = 0; o < tmp.length; o++) {
                                     if (tmp[o].status == 1) {
                                         conti = true
-					await $.wait(13000)
+					await $.wait(6000)
                                         await qryViewkitCallbackResult(tmp[o].taskToken)
                                     }
 
@@ -140,8 +140,8 @@ $.shareCodesArr = [];
                                         conti = true
                                         await travel_collectScore(r.productInfoVos[o].taskToken, task.taskId)
                                         t++
-					                    await $.wait(10000)
-                                        if (t >= 8) break
+					                    await $.wait(6000)
+                                        if (t >= 5) break
                                     }
 
                                 }
@@ -152,10 +152,10 @@ $.shareCodesArr = [];
                                 for (var o = 0; o < r.browseShopVo.length; o++) {
                                     if (r.browseShopVo[o].status == 1) {
                                         conti = true
-					await $.wait(12000)
+					await $.wait(6000)
                                         await travel_collectScore(r.browseShopVo[o].taskToken, task.taskId)
                                         t++
-                                        if (t >= 8) break
+                                        if (t >= 5) break
                                     }
 
                                 }
@@ -168,12 +168,12 @@ $.shareCodesArr = [];
                                 for (var o = 0; o < task.brandMemberVos.length; o++) {
                                     if (task.brandMemberVos[o].status == 1) {
                                         console.log(`\n\n ${task.brandMemberVos[o].title}`)
-										await $.wait(12000)
+										await $.wait(8000)
                                         memberUrl = task.brandMemberVos[o].memberUrl
                                         memberUrl = transform(memberUrl)
                                         if (i < 22) //限制开卡账号数目
                                          await join(task.brandMemberVos[o].vendorIds, memberUrl.channel, memberUrl.shopId ? memberUrl.shopId : "")
-					                     await $.wait(18000)
+					                     await $.wait(12000)
                                         await travel_collectScore(task.brandMemberVos[o].taskToken, task.taskId)
                                     }
 
@@ -357,12 +357,12 @@ function travel_getTaskDetail() {
                         data = JSON.parse(data);
                         if (data.code === 0) {
                             if (data.data && data['data']['bizCode'] === 0) {
-                                if (data.data.result.inviteId) {
-                                inviteId.push(data.data.result.inviteId)
+                                if (data.data.result.inviteId == null) {
+                                    console.log("黑号了/助力次数耗尽")
+                                    resolve("")
+                                }
+                                //inviteId.push(data.data.result.inviteId)
                                 resolve(data.data.result)
-                                }
-                                else {   console.log(`\n\n 获取邀请码失败\n`)
-                                }
                             }
                         } else {
                             console.log(`\n\nsecretp失败:${JSON.stringify(data)}\n`)
