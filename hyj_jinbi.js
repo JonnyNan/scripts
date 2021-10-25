@@ -38,7 +38,8 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
 let inviteCodes = []
 $.shareCodesArr = [];
 $.inviteId  = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3W02JyLYFjRWn6u7zB55awQ","ZXASTT019-aksBmRfkjSreH-R1YQFjRWn6u7zB55awQ","ZXASTT019-aklCFpFgSm_WEil7LIFjRWn6u7zB55awQ","ZXASTT0195qwpGVtBpA6OZRj0kvAFjRWn6u7zB55awQ","ZXASTT0205KkcPUtgghSRdWSyzY5_FjRWn6u7zB55awQ","ZXASTT0225KkcRRYfo1bTdBigxfMCIAFjRWn6u7zB55awQ","ZXASTT0144KQ2GkdM8V3RKQFjRWn6u7zB55awQ","ZXASTT0195qwpGVtBpA6OZRj0kvAFjRWn6u7zB55awQ"
-,"ZXASTT0195qwpGVtBpA6OZRjzl_QFjRWn6u7zB55awQ","ZXASTT0205KkcPUtgghSRdWSyzY5_FjRWn6u7zB55awQ","ZXASTT0225KkcRBoY9VbQdhillaIKIAFjRWn6u7zB55awQ","ZXASTT0225KkcRB1P9weBc0jykKQMdQFjRWn6u7zB55awQ","ZXASTT0144KQ2GkdM8V3RKQFjRWn6u7zB55awQ","ZXASTT0195qwpGVtBpA6OZRjzl_QFjRWn6u7zB55awQ","ZXASTT0225KkcRh8aplLfIx79kKFedgFjRWn6u7zB55awQ","ZXASTT0225KkcRR9N_AGCIRP2kPZfdgFjRWn6u7zB55awQ",
+,"ZXASTT0195qwpGVtBpA6OZRjzl_QFjRWn6u7zB55awQ","ZXASTT0205KkcPUtgghSRdWSyzY5_FjRWn6u7zB55awQ","ZXASTT0225KkcRBoY9VbQdhillaIKIAFjRWn6u7zB55awQ","ZXASTT0225KkcRB1P9weBc0jykKQMdQFjRWn6u7zB55awQ","ZXASTT0144KQ2GkdM8V3RKQFjRWn6u7zB55awQ","ZXASTT0195qwpGVtBpA6OZRjzl_QFjRWn6u7zB55awQ","ZXASTT0225KkcRRYfo1bTdBigxfMCIAFjRWn6u7zB55awQ
+","ZXASTT0225KkcRh8aplLfIx79kKFedgFjRWn6u7zB55awQ","ZXASTT0225KkcRR9N_AGCIRP2kPZfdgFjRWn6u7zB55awQ",
 	      ];
 !(async () => {
   if (!cookiesArr[0]) {
@@ -73,7 +74,7 @@ $.inviteId  = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3W02J
         await travel_gethelp()
 
 
-      await $.wait(23000)
+      await $.wait(123000)
 
 		}catch(e){
 			$.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
@@ -97,7 +98,7 @@ $.inviteId  = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3W02J
         try {
           await get_secretp()
         
-         
+             await $.wait(13000)
               await travel_help($.inviteId [j])
 
           
