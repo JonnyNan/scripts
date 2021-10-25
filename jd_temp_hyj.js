@@ -44,9 +44,7 @@ $.shareCodesArr = [];
         if (cookiesArr[i]) {
             cookie = cookiesArr[i];
             $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
-            $.index = i + 1;
-			console.log(`\等待120s\n`);
-	        await $.wait(120000)
+            $.index = i + 1;		
             $.isLogin = true;
             $.nickName = '';
             message = '';
