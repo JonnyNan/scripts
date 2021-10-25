@@ -78,8 +78,10 @@ $.shareCodesArr = [];
                     var conti = false
                     await travel_collectAtuoScore()
                     res = await travel_getTaskDetail()
-
+                    var m=0
                     for (var p = 0; p < res.lotteryTaskVos[0].badgeAwardVos.length; p++) {
+			m++
+			if (m >= 20) break
                         if (res.lotteryTaskVos[0].badgeAwardVos[p].status == 3) {
                             await travel_getBadgeAward(res.lotteryTaskVos[0].badgeAwardVos[p].awardToken)
                         }
@@ -109,10 +111,14 @@ $.shareCodesArr = [];
 				    if (t >= 20) break
 				    await $.wait(13000)
                                 }
-
+                                 var n=0
                                 for (var o = 0; o < tmp.length; o++) {
                                     console.log(`\n\n ${tmp[o].title?tmp[o].title:tmp[o].shopName}`)
-				                    console.log(p)
+				    console.log(p)
+				     n++
+				    if (n >= 20) break
+				    console.log(`xxxxxxxxxxxxxxxxxxxx`) 
+				    console.log(n)
                                     if (tmp[o].status == 1) {
                                         conti = true
 					 t++
