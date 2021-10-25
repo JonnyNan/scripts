@@ -44,21 +44,20 @@ $.shareCodesArr = [];
             cookie = cookiesArr[i];
             $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
             $.index = i + 1;
-			console.log(`\等待120s\n`);
-	        await $.wait(120000)
             $.isLogin = true;
             $.nickName = '';
             message = '';
             console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
             //   await shareCodesFormat()
-            $.newShareCodes = []
+            $.newShareCodes = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3W02JyLYFjRWn6u7zB55awQ","ZXASTT019-aksBmRfkjSreH-R1YQFjRWn6u7zB55awQ","ZXASTT019-aklCFpFgSm_WEil7LIFjRWn6u7zB55awQ","ZXASTT0195qwpGVtBpA6OZRj0kvAFjRWn6u7zB55awQ","ZXASTT0205KkcPUtgghSRdWSyzY5_FjRWn6u7zB55awQ","ZXASTT0225KkcRRYfo1bTdBigxfMCIAFjRWn6u7zB55awQ","ZXASTT0144KQ2GkdM8V3RKQFjRWn6u7zB55awQ","ZXASTT0195qwpGVtBpA6OZRj0kvAFjRWn6u7zB55awQ"
+,"ZXASTT0195qwpGVtBpA6OZRjzl_QFjRWn6u7zB55awQ","ZXASTT0205KkcPUtgghSRdWSyzY5_FjRWn6u7zB55awQ","ZXASTT0225KkcRBoY9VbQdhillaIKIAFjRWn6u7zB55awQ","","",];
             for (let i = 0; i < $.newShareCodes.length ; ++i) {
                 console.log(`\n开始助力 【${$.newShareCodes[i]}】`)
                 let res = await getInfo($.newShareCodes[i])
                 if (res && res['data'] && res['data']['bizCode'] === 0) {
                     if (res['data']['result']['toasts'] && res['data']['result']['toasts'][0] && res['data']['result']['toasts'][0]['status'] === '3') {
                         console.log(`助力次数已耗尽，跳出`)
-			    await $.wait(6000)
+			    await $.wait(16000)
                         break
                     }
                     if (res['data']['result']['toasts'] && res['data']['result']['toasts'][0]) {
@@ -96,7 +95,7 @@ $.shareCodesArr = [];
                             case 6:
                             case 26:
                                 var tmp = []
-				var t = 0;
+				                var t = 0;
                                 if (task.taskType == 7) {
                                     tmp = task.browseShopVo
 				    t++
@@ -108,10 +107,12 @@ $.shareCodesArr = [];
 				    if (t >= 20) break
 				    await $.wait(13000)
                                 }
-
+                                var m = 0;
                                 for (var o = 0; o < tmp.length; o++) {
                                     console.log(`\n\n ${tmp[o].title?tmp[o].title:tmp[o].shopName}`)
 				                    console.log(p)
+									m++
+									if (m >= 20) break
                                     if (tmp[o].status == 1) {
                                         conti = true
 					 t++
