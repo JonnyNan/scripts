@@ -38,7 +38,8 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
 let inviteCodes = []
 $.shareCodesArr = [];
 $.inviteId  = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3W02JyLYFjRWn6u7zB55awQ","ZXASTT019-aksBmRfkjSreH-R1YQFjRWn6u7zB55awQ","ZXASTT019-aklCFpFgSm_WEil7LIFjRWn6u7zB55awQ","ZXASTT0195qwpGVtBpA6OZRj0kvAFjRWn6u7zB55awQ","ZXASTT0205KkcPUtgghSRdWSyzY5_FjRWn6u7zB55awQ","ZXASTT0225KkcRRYfo1bTdBigxfMCIAFjRWn6u7zB55awQ","ZXASTT0144KQ2GkdM8V3RKQFjRWn6u7zB55awQ","ZXASTT0195qwpGVtBpA6OZRj0kvAFjRWn6u7zB55awQ"
-,"ZXASTT0195qwpGVtBpA6OZRjzl_QFjRWn6u7zB55awQ","ZXASTT0205KkcPUtgghSRdWSyzY5_FjRWn6u7zB55awQ","ZXASTT0225KkcRBoY9VbQdhillaIKIAFjRWn6u7zB55awQ","ZXASTT0225KkcRB1P9weBc0jykKQMdQFjRWn6u7zB55awQ","",];
+,"ZXASTT0195qwpGVtBpA6OZRjzl_QFjRWn6u7zB55awQ","ZXASTT0205KkcPUtgghSRdWSyzY5_FjRWn6u7zB55awQ","ZXASTT0225KkcRBoY9VbQdhillaIKIAFjRWn6u7zB55awQ","ZXASTT0225KkcRB1P9weBc0jykKQMdQFjRWn6u7zB55awQ","ZXASTT0144KQ2GkdM8V3RKQFjRWn6u7zB55awQ","ZXASTT0195qwpGVtBpA6OZRjzl_QFjRWn6u7zB55awQ","","",
+	      ];
 !(async () => {
   if (!cookiesArr[0]) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
