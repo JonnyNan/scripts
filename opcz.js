@@ -49,8 +49,7 @@ $.shareCodesArr = [];
             message = '';
             console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
             //   await shareCodesFormat()
-            $.newShareCodes = ["ZXASTT0124KQ2GkdM81PfFjRWn6u7zB55awQ","ZXASTT019-ak0PWRKgCO3W02JyLYFjRWn6u7zB55awQ","ZXASTT019-aksBmRfkjSreH-R1YQFjRWn6u7zB55awQ","ZXASTT019-aklCFpFgSm_WEil7LIFjRWn6u7zB55awQ","ZXASTT0195qwpGVtBpA6OZRj0kvAFjRWn6u7zB55awQ","ZXASTT0205KkcPUtgghSRdWSyzY5_FjRWn6u7zB55awQ","ZXASTT0225KkcRRYfo1bTdBigxfMCIAFjRWn6u7zB55awQ","ZXASTT0144KQ2GkdM8V3RKQFjRWn6u7zB55awQ","ZXASTT0195qwpGVtBpA6OZRj0kvAFjRWn6u7zB55awQ"
-,"ZXASTT0195qwpGVtBpA6OZRjzl_QFjRWn6u7zB55awQ","ZXASTT0205KkcPUtgghSRdWSyzY5_FjRWn6u7zB55awQ","ZXASTT0225KkcRBoY9VbQdhillaIKIAFjRWn6u7zB55awQ","","",];
+            $.newShareCodes = [];
             for (let i = 0; i < $.newShareCodes.length ; ++i) {
                 console.log(`\n开始助力 【${$.newShareCodes[i]}】`)
                 let res = await getInfo($.newShareCodes[i])
