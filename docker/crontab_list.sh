@@ -163,8 +163,9 @@ ENV_PATH=
 28 04,13 * * * node /scripts/jd_mohe.js >> /log/jd_mohe.log 2>&1
 33 03,14 * * * node /scripts/jd_qqxing.js >> /log/jd_qqxingp.log 2>&1
 22 00,12,17 * * * node /scripts/jd_djyyj.js >> /log/jd_djyyj.log 2>&1
-22 21 * * * node /scripts/hyj_jinbi.js >> /log/hyj_jinbi.log 2>&1
-
+22 20 * * * node /scripts/hyj_jinbi.js >> /log/hyj_jinbi.log 2>&1
+# 加入半残环游记，无助力，根据我3天跑的结果，可以运行部分任务，收集金币，没有出现黑号问题
+22 01,7,9,12,17 * * * node /scripts/jd_temp_hyj.js.js >> /log/jd_temp_hyj.js.log 2>&1
 
 
 
