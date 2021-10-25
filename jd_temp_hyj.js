@@ -75,6 +75,7 @@ $.shareCodesArr = [];
                 do {
                     var conti = false
                     await travel_collectAtuoScore()
+		    console.log(`执行到78行`)
                     res = await travel_getTaskDetail()
                     var m=0
                     for (var p = 0; p < res.lotteryTaskVos[0].badgeAwardVos.length; p++) {
