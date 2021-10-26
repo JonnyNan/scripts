@@ -89,7 +89,6 @@ ENV_PATH=
 10 01,3 * * * bash /root/jd/jd.sh  jd_speed.js >> /log/jd_speed.log 2>&1
 40 0,8 * * * bash /root/jd/jd.sh jd_speed_redpocke.js >> /log/jd_speed_redpocke.log 2>&1
 0 0-23 * * * bash /root/jd/jd.sh  jd_super_redrain.js >> /log/jd_super_redrain.log 2>&1
-11 */4 * * * bash /root/jd/jd.sh jd_superMarket.js >> /log/jd_superMarket.log 2>&1
 36 0-23/4 * * * bash /root/jd/jd.sh jd_syj.js >> /log/jd_syj.log 2>&1
 18 1,8 * * * bash /root/jd/jd.sh jd_try.js >> /log/jd_try.log 2>&1
 38 17 * * * bash /root/jd/jd.sh  jd_unbind.js >> /log/jd_unbind.log 2>&1
@@ -164,6 +163,7 @@ ENV_PATH=
 33 03,14 * * * node /scripts/jd_qqxing.js >> /log/jd_qqxingp.log 2>&1
 22 00,12,17 * * * node /scripts/jd_djyyj.js >> /log/jd_djyyj.log 2>&1
 22 20,21 * * * node /scripts/hyj_jinbi.js >> /log/jd_hyj_jinbi.log 2>&1
+11 */3 * * * node /scripts/jd_superMarket.js >> /log/jd_superMarket.log 2>&1
 10 */6 * * * node /scripts/jd_fcdyj.js >> /log/jd_fcdyj.log 2>&1
 # 加入半残环游记，无助力，根据我3天跑的结果，可以运行部分任务，收集金币，没有出现黑号问题
 #22 01,7,9,12,17 * * * node /scripts/jd_temp_hyj.js.js >> /log/jd_temp_hyj.js.log 2>&1
