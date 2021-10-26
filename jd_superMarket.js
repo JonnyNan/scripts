@@ -26,7 +26,7 @@ helpAu = $.isNode() ? (process.env.HELP_AUTHOR ? process.env.HELP_AUTHOR === 'tr
 let jdNotify = true;//用来是否关闭弹窗通知，true表示关闭，false表示开启。
 let superMarketUpgrade = true;//自动升级,顺序:解锁升级商品、升级货架,true表示自动升级,false表示关闭自动升级
 let businessCircleJump = true;//小于对方300热力值自动更换商圈队伍,true表示运行,false表示禁止
-let drawLotteryFlag = true;//是否用500蓝币去抽奖，true表示开启，false表示关闭。默认关闭
+let drawLotteryFlag = false;//是否用500蓝币去抽奖，true表示开启，false表示关闭。默认关闭
 let joinPkTeam = true;//是否自动加入PK队伍
 let message = '', subTitle;
 const JD_API_HOST = 'https://api.m.jd.com/api';
@@ -78,8 +78,8 @@ let shareCodes = []
     })
 async function jdSuperMarket() {
   try {
-    await receiveGoldCoin();//收金币
-    await businessCircleActivity();//商圈活动
+    // await receiveGoldCoin();//收金币
+    // await businessCircleActivity();//商圈活动
     await receiveBlueCoin();//收蓝币（小费）
     // await receiveLimitProductBlueCoin();//收限时商品的蓝币
     await daySign();//每日签到
@@ -307,7 +307,7 @@ async function businessCircleActivity() {
     if (joinStatus === 0) {
       if (joinPkTeam === 'true') {
         console.log(`\n注：PK会在每天的七点自动随机加入作者创建的队伍\n`)
-        await updatePkActivityIdCDN('https://cdn.jsdelivr.net/gh/gitupdate/updateTeam@master/shareCodes/jd_updateTeam.json');
+        await updatePkActivityIdCDN('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/jd_updateTeam.json');
         console.log(`\nupdatePkActivityId[pkActivityId]:::${$.updatePkActivityIdRes && $.updatePkActivityIdRes.pkActivityId}`);
         console.log(`\n京东服务器返回的[pkActivityId] ${pkActivityId}`);
         if ($.updatePkActivityIdRes && ($.updatePkActivityIdRes.pkActivityId === pkActivityId)) {
@@ -834,7 +834,7 @@ function smtg_sellMerchandise(body) {
   })
 }
 //新版东东超市
-function updatePkActivityId(url = 'https://raw.githubusercontent.com/xxx/updateTeam/master/jd_updateTeam.json') {
+function updatePkActivityId(url = 'https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/jd_updateTeam.json') {
   return new Promise(resolve => {
     $.get({url}, async (err, resp, data) => {
       try {
@@ -1528,7 +1528,7 @@ function TotalBean() {
 function getTeam() {
   return new Promise(async resolve => {
     $.getTeams = [];
-    $.get({url: `http://jd.turinglabs.net/api/v2/jd/s111upermarket/read/100000/`, timeout: 100000}, (err, resp, data) => {
+    $.get({url: `http://jd.turinglabs.net/api/v2/jd/supermarket/read/100000/`, timeout: 100000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
@@ -1578,10 +1578,10 @@ function jsonParse(str) {
     }
   }
 }
-//==============================================
+//==========================以下是给作者助力 免费拿,省钱大赢家等活动======================
 async function helpAuthor() {
-  await barGain();
-  await bigWinner();
+  await barGain();//免费拿
+  await bigWinner();//省钱大赢家
 }
 async function barGain() {
   let res = await getAuthorShareCode2('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/jd_barGain.json')
