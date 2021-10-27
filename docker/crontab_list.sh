@@ -132,7 +132,6 @@ ENV_PATH=
 42 8,18 * * * node /scripts/jd_opencard3.js >> /log/jd_opencard3.log 2>&1
 02 6,9,12,18 * * * node /scripts/jd_jxlhb.js >> /log/jd_jxlhb.log 2>&1
 30 7,20 12-20 8 * node /scripts/jd_qcshj.js >> /log/jd_qcshj.log 2>&1
-24 7,14 * * * node /scripts/jd_decompression.js >> /log/jd_decompression.log 2>&1
 32 8,18 * * * node /scripts/jd_dwapp.js >> /log/jd_dwapp.log 2>&1
 42 9,15 * * * node /scripts/jd_wishingPool.js >> /log/jd_wishingPool.log 2>&1
 48 0,12,18 * * * node /scripts/jd_speed_sign.js >> /log/jd_speed_sign.log 2>&1
