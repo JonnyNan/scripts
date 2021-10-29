@@ -161,7 +161,8 @@ ENV_PATH=
 22 00,12,17 * * * node /scripts/jd_djyyj.js >> /log/jd_djyyj.log 2>&1
 11 */3 * * * node /scripts/jd_superMarket.js >> /log/jd_superMarket.log 2>&1
 40 */6 * * * node /scripts/jd_tyt.js >> /log/jd_tyt.log 2>&1
-10 */6 * * * node /scripts/jd_fcdyj.js >> /log/jd_fcdyj.log 2>&1
+32 */6 * * * node /scripts/jd_fcdyj.js >> /log/jd_fcdyj.log 2>&1
+02 1,4,10,12 * * * node /scripts/jd_qjd.js >> /log/jd_qjd.log 2>&1
 
 
 
