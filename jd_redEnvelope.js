@@ -50,7 +50,7 @@ let nowTime = new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000 
     }
   }
   if (message) {
-    $.msg($.name, ``, `${message}\nhttps://u.jd.com/3tVMzEv\n\n跳转到app 可查看助力情况`);
+    $.msg($.name, ``, `${message}\n`);
     if ($.isNode()) {
       await notify.sendNotify(`${$.name}`, `${message}\n\nhttps://u.jd.com/3tVMzEv\n跳转到app 可查看助力情况`);
     }
