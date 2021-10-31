@@ -171,6 +171,7 @@ ENV_PATH=
 05 1,8,13,20 * * * node /scripts/jd_jddj_getPoints.js >> /log/jd_jddj_getPoints.log 2>&1
 18 3,8,13,17 * * * node /scripts/jd_jddj_plantBeans.js >> /log/jd_jddj_plantBeans.log 2>&1
 28 2,9,15,17 * * * node /scripts/jd_fcwb.js >> /log/jd_fcwb.log 2>&1
+3,15 20 31 10 * node /scripts/jd_hotNeight.js >> /log/jd_hotNeight.log 2>&1
 
 
 
