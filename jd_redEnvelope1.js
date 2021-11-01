@@ -1,7 +1,7 @@
 /*
 京享红包
-3tVMzEv  可替换8处为自己ID
-https://u.jd.com/3tVMzEv
+yMi62Zo  可替换8处为自己ID
+https://u.jd.com/yMi62Zo
 0 0,12,18 * * *
 */
 
@@ -38,12 +38,13 @@ let nowTime = new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000 
     if ($.isNode()) await notify.sendNotify($.name + '活动已结束', `请删除此脚本\n咱江湖再见`);
     return
   }
-  $.shareCode = 'T1Adi'
+  $.shareCode = 'yMi62Zo'
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
     if (cookie) {
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
       $.index = i + 1;
+	  await $.wait(9000)
       getUA()
       console.log(`\n\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
       await run();
@@ -52,7 +53,7 @@ let nowTime = new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000 
   if (message) {
     $.msg($.name, ``, `${message}\n`);
     if ($.isNode()) {
-      await notify.sendNotify(`${$.name}`, `${message}\n\nhttps://u.jd.com/3tVMzEv\n跳转到app 可查看情况`);
+      await notify.sendNotify(`${$.name}`, `${message}\n\nhttps://u.jd.com/yMi62Zo\n跳转到app 可查看情况`);
     }
   }
 })()
@@ -100,6 +101,7 @@ async function run() {
     if (resMsg) {
       message += `【京东账号${$.index}】${$.nickName || $.UserName}\n${resMsg}`
     }
+	await $.wait(9000)
     await $.wait(parseInt(Math.random() * 2000 + 2000, 10))
   } catch (e) {
     console.log(e)
@@ -109,7 +111,7 @@ async function run() {
 function getCoupons(shareId = '') {
   return new Promise(resolve => {
     let opts = {
-      url: `https://api.m.jd.com/api?functionId=getCoupons&appid=u&_=${Date.now()}&loginType=2&body={%22platform%22:4,%22unionActId%22:%2231134%22,%22actId%22:%22${$.actId}%22,%22d%22:%223tVMzEv%22,%22unionShareId%22:%22${shareId}%22,%22type%22:1,%22eid%22:%22${$.eid}%22}&client=apple&clientVersion=8.3.6&h5st=undefined`,
+      url: `https://api.m.jd.com/api?functionId=getCoupons&appid=u&_=${Date.now()}&loginType=2&body={%22platform%22:4,%22unionActId%22:%2231134%22,%22actId%22:%22${$.actId}%22,%22d%22:%22yMi62Zo%22,%22unionShareId%22:%22${shareId}%22,%22type%22:1,%22eid%22:%22${$.eid}%22}&client=apple&clientVersion=8.3.6&h5st=undefined`,
       headers: {
         "Accept-Language": "zh-cn",
         "Accept-Encoding": "gzip, deflate, br",
@@ -166,7 +168,7 @@ function getCoupons(shareId = '') {
 function shareUnionCoupon() {
   return new Promise(resolve => {
     let opts = {
-      url: `https://api.m.jd.com/api?functionId=shareUnionCoupon&appid=u&_=${Date.now()}&loginType=2&body={%22unionActId%22:%2231134%22,%22actId%22:%22${$.actId}%22,%22platform%22:4,%22unionShareId%22:%22${$.shareCode}%22,%22d%22:%223tVMzEv%22,%22supportPic%22:2,%22supportLuckyCode%22:0,%22eid%22:%22${$.eid}%22}&client=apple&clientVersion=8.3.6`,
+      url: `https://api.m.jd.com/api?functionId=shareUnionCoupon&appid=u&_=${Date.now()}&loginType=2&body={%22unionActId%22:%2231134%22,%22actId%22:%22${$.actId}%22,%22platform%22:4,%22unionShareId%22:%22${$.shareCode}%22,%22d%22:%22yMi62Zo%22,%22supportPic%22:2,%22supportLuckyCode%22:0,%22eid%22:%22${$.eid}%22}&client=apple&clientVersion=8.3.6`,
       headers: {
         "Accept-Language": "zh-cn",
         "Accept-Encoding": "gzip, deflate, br",
@@ -184,7 +186,7 @@ function shareUnionCoupon() {
           let res = $.toObj(data, data);
           if (typeof res == 'object') {
             if (res.code == 0 && res.data && res.data.shareUrl) {
-              $.shareCode = res.data.shareUrl.match(/3tVMzEv\?s=([^&]+)/) && res.data.shareUrl.match(/3tVMzEv\?s=([^&]+)/)[1] || ''
+              $.shareCode = res.data.shareUrl.match(/yMi62Zo\?s=([^&]+)/) && res.data.shareUrl.match(/yMi62Zo\?s=([^&]+)/)[1] || ''
               console.log('分享码:' + $.shareCode)
               if ($.shareCode) console.log(`以下账号会助力【京东账号${$.index}】${$.nickName || $.UserName}`)
             }
@@ -230,7 +232,7 @@ function getUrl1() {
 function getUrl() {
   return new Promise(resolve => {
     const options = {
-      url: `https://u.jd.com/3tVMzEv?s=${$.shareCode}`,
+      url: `https://u.jd.com/yMi62Zo?s=${$.shareCode}`,
       followRedirect: false,
       headers: {
         'Cookie': `${cookie} ${newCookie}`,
