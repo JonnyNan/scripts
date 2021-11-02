@@ -71,10 +71,10 @@ let allMessage = '';
       await jdConnoisseur()
     }
   }
-  let res2 = await getAuthorShareCode('https://raw.githubusercontent.com/zero205/updateTeam/main/shareCodes/connoisseur.json')
+  let res2 = await getAuthorShareCode('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/connoisseur.json')
   if (!res2) {
     await $.wait(1000)
-    res2 = await getAuthorShareCode('https://raw.fastgit.org/zero205/updateTeam/main/shareCodes/connoisseur.json')
+    res2 = await getAuthorShareCode('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/connoisseur.json')
   }
   $.shareCodes = [...$.shareCodes, ...(res || []), ...(res2 || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
