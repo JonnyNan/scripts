@@ -172,6 +172,8 @@ ENV_PATH=
 18 3,8,13,17 * * * node /scripts/jd_jddj_plantBeans.js >> /log/jd_jddj_plantBeans.log 2>&1
 28 2,9,15,17 * * * node /scripts/jd_fcwb.js >> /log/jd_fcwb.log 2>&1
 3,15 20 31 10 * node /scripts/jd_hotNeight.js >> /log/jd_hotNeight.log 2>&1
+01 0,6,12,20 * * * node /scripts/jd_hello_wind_xtg.js >> /log/jd_hello_wind_xtg.log 2>&1
+03 0,6,12,20 * * * node /scripts/jd_xtgsign.js >> /log/jd_xtgsign.log 2>&1
 
 
 
