@@ -175,6 +175,8 @@ ENV_PATH=
 01 0,6,12,20 * * * node /scripts/jd_hello_wind_xtg.js >> /log/jd_hello_wind_xtg.log 2>&1
 03 0,6,12,20 * * * node /scripts/jd_xtgsign.js >> /log/jd_xtgsign.log 2>&1
 26 0,9,18,23 * * * node /scripts/jd_nnfls.js >> /log/jd_nnfls.js 2>&1
+26 0,9,18,23 * * * node /scripts/jd_nnfls.js >> /log/jd_nnfls.js 2>&1
+36 0,9,18,23 * * * node /scripts/jd_global.js >> /log/jd_global.js 2>&1
 
 
 
