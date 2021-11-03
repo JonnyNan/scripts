@@ -54,7 +54,7 @@
      // const author = Math.random() > 0.5 ? 'zero205' : 'zxx'
     //  const author = 'zero205'
     //  await getShareCode('nnfls.json',author,3,true)
-     shareCodes = [...new Set([...shareCodes,'AFm0wNk','AFm0wNk','AFm0wNk'])];
+     shareCodes = [...new Set([...shareCodes,'0orCRgxepMGbg8pNWGvzQjaY_NHaohe-TKdcwEh-EYQ=','CVA3RV4l95DEbSB_Lj0ndvahW6q3OX6INr70h01Pvwc=','BS46LkunGTZtoR1S3w3LapdOPTDTWRdeEN3DyECUelM='])];
      if (shareCodes.length > 0) {
          console.log(`\n开始互助\n`);
      }
