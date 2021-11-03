@@ -31,7 +31,7 @@ if ($.isNode()) {
     cookiesArr.push(jdCookieNode[item])
   })
   if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {};
-  if (JSON.stringify(process.env).indexOf('GITHUB') > -1) process.exit(0)
+  //if (JSON.stringify(process.env).indexOf('GITHUB') > -1) process.exit(0)
 } else {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
@@ -73,7 +73,7 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
       }
       await shareCodesFormat();
       await JD818();
-      await $.wait(1000)
+      await $.wait(10000)
     }
   }
   for (let i = 0; i < cookiesArr.length; i++) {
@@ -273,7 +273,7 @@ function getAuthorShareCode(url) {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `http://share.turinglabs.net/api/v3/carnivalcity/query/20/`, 'timeout': 20000}, (err, resp, data) => {
+    $.get({url: `https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/jd_cityShareCodes.json`, 'timeout': 20000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
