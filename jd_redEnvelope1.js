@@ -6,7 +6,7 @@ cron 0 10,12,20 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/
 const $ = new Env('双11红包');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
-const flCode = $.isNode() ? (process.env.FLCODE ? process.env.FLCODE : 'ywnCZZF'):'ywnCZZF';
+const flCode = $.isNode() ? (process.env.FLCODE ? process.env.FLCODE : 'yt2Fj0r'):'yt2Fj0r';
 let cookiesArr = [];
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
@@ -22,7 +22,7 @@ if ($.isNode()) {
 }
 let cookie = '';
 $.code = flCode;
-$.shareCode = '';
+$.shareCode = 'DQO3Y';
 !(async () => {
     if (!cookiesArr[0]) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
