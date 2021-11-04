@@ -176,7 +176,9 @@ ENV_PATH=
 03 0,6,12,20 * * * node /scripts/jd_xtgsign.js >> /log/jd_xtgsign.log 2>&1
 26 0,9,18,23 * * * node /scripts/jd_nnfls.js >> /log/jd_nnfls.js 2>&1
 26 0,9,18,23 * * * node /scripts/jd_nnfls.js >> /log/jd_nnfls.js 2>&1
-36 0,9,18,23 * * * node /scripts/jd_global.js >> /log/jd_global.js 2>&1
+46 0,9,18,23 * * * node /scripts/jd_global.js >> /log/jd_global.js 2>&1
+36 5,8,16,22 * * * node /scripts/jd_star.js >> /log/jd_star.js 2>&1
+
 
 
 
