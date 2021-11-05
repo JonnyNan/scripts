@@ -77,8 +77,8 @@ async function help(){
     } else  {
       //console.log(`\n\n有剩余助力机会则给作者进行助力`);
 	    for (let j = 0; j < authorMyShareIds.length; j++){
-        let result = await requestApi('jinli_h5assist', {"redPacketId":shareCodes[j],"followShop":0,"random":random(000000, 999999),"log":"42588613~8,~0iuxyee","sceneid":"JLHBhPageh5"})
-        console.log(`账号【${$.index}】 助力: ${shareCodes[j]}\n${result.data.result.statusDesc}\n`);
+        let result = await requestApi('jinli_h5assist', {"redPacketId":$.authorMyShareIds[j],"followShop":0,"random":random(000000, 999999),"log":"42588613~8,~0iuxyee","sceneid":"JLHBhPageh5"})
+        console.log(`账号【${$.index}】 助力: ${$.authorMyShareIds[j]}\n${result.data.result.statusDesc}\n`);
         if (result.data.result.status == 3) {break;}
         await $.wait(3500);
         }
