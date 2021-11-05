@@ -31,16 +31,16 @@ let shareCodes = [];
 
         let data = await requestApi('h5launch', {"followShop":1,"random":random(000000, 999999),"log":"4817e3a2~8,~1wsv3ig","sceneid":"JLHBhPageh5"});
         if (data?.data?.result?.status == 1) {
-            console.log(`账号【${$.index}】`, 火爆)
+            console.log(`账号【${$.index}】`, `火爆`)
             continue;
         }
 
         console.log(`\n账号【${$.index}】${$.UserName}`);
         data = await requestApi('h5activityIndex', {"isjdapp":1});
         if (data?.data?.code == 20002) {
-            console.log(`账号${$.index}`, 已达拆红包数量限制)
+            console.log(`账号${$.index}`, `已达拆红包数量限制`)
         }else if (data?.data?.code == 10002) {
-            console.log(`账号${$.index}`, 火爆)
+            console.log(`账号${$.index}`, `火爆`)
         }else if (data?.data?.code == 20001) {//红包活动正在进行，可拆
             console.log(`互助码: ${data.data.result.redpacketInfo.id}`);
             shareCodes.push(data.data.result.redpacketInfo.id);
