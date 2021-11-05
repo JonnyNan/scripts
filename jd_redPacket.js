@@ -60,7 +60,7 @@ let authorMyShareIds = [];
 async function help(){
   //shareCodes = [...shareCodes, ...];
   let res = await getAuthorShareCode('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/jd_red.json')
-  $.authorMyShareIds = [...(res || [])];
+  authorMyShareIds = [...(res || [])];
   for (let v = 0; v < cookiesArr.length; v++) {
     cookie = cookiesArr[v];
     $.index = v + 1;
@@ -77,8 +77,8 @@ async function help(){
     } else  {
       //console.log(`\n\n有剩余助力机会则给作者进行助力`);
 	    for (let j = 0; j < authorMyShareIds.length; j++){
-        let result = await requestApi('jinli_h5assist', {"redPacketId":$.authorMyShareIds[j],"followShop":0,"random":random(000000, 999999),"log":"42588613~8,~0iuxyee","sceneid":"JLHBhPageh5"})
-        console.log(`账号【${$.index}】 助力: ${$.authorMyShareIds[j]}\n${result.data.result.statusDesc}\n`);
+        let result = await requestApi('jinli_h5assist', {"redPacketId":authorMyShareIds[j],"followShop":0,"random":random(000000, 999999),"log":"42588613~8,~0iuxyee","sceneid":"JLHBhPageh5"})
+        console.log(`账号【${$.index}】 助力: ${authorMyShareIds[j]}\n${result.data.result.statusDesc}\n`);
         if (result.data.result.status == 3) {break;}
         await $.wait(3500);
         }
