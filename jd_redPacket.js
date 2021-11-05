@@ -20,8 +20,8 @@ const $ = new Env("锦鲤红包互助")
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 const ua = `jdltapp;iPhone;3.1.0;${Math.ceil(Math.random()*4+10)}.${Math.ceil(Math.random()*4)};${randomString(40)}`
 let cookiesArr = [], cookie = '';
-let shareCodes = [];
 let authorMyShareIds = [];
+let shareCodes = [];
 !(async () => {
     requireConfig()
     for (let i = 0; i < cookiesArr.length; i++) {
@@ -61,6 +61,7 @@ async function help(){
   //shareCodes = [...shareCodes, ...];
   let res = await getAuthorShareCode('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/jd_red.json')
   authorMyShareIds = [...(res || [])];
+  console.log(authorMyShareIds);
   for (let v = 0; v < cookiesArr.length; v++) {
     cookie = cookiesArr[v];
     $.index = v + 1;
@@ -76,6 +77,7 @@ async function help(){
         await $.wait(3500);}
     } else  {
       //console.log(`\n\n有剩余助力机会则给作者进行助力`);
+      
 	    for (let j = 0; j < authorMyShareIds.length; j++){
         let result = await requestApi('jinli_h5assist', {"redPacketId":authorMyShareIds[j],"followShop":0,"random":random(000000, 999999),"log":"42588613~8,~0iuxyee","sceneid":"JLHBhPageh5"})
         console.log(`账号【${$.index}】 助力: ${authorMyShareIds[j]}\n${result.data.result.statusDesc}\n`);
