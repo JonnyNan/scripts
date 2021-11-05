@@ -21,6 +21,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
 const ua = `jdltapp;iPhone;3.1.0;${Math.ceil(Math.random()*4+10)}.${Math.ceil(Math.random()*4)};${randomString(40)}`
 let cookiesArr = [], cookie = '';
 let shareCodes = [];
+let authorMyShareIds = [];
 !(async () => {
     requireConfig()
     for (let i = 0; i < cookiesArr.length; i++) {
@@ -186,7 +187,7 @@ function submitCode(shareCode) {
     resolve({"code":500})
   })
 }
-function readShareCode() {
+function getAuthorShareCode() {
   return new Promise(async resolve => {
     $.get({url: `https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/jd_red.json`, 'timeout': 10000}, (err, resp, data) => {
       try {
