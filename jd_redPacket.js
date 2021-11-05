@@ -56,24 +56,50 @@ let shareCodes = [];
     $.done();
   })
 
-
 async function help(){
-    let pool = await readShareCode();
-    shareCodes = [...shareCodes, ...(pool.data)];
-    console.log(`\n******开始助力: 先内部互助，再互助池******\n`);
-    for (let i = 0; i < cookiesArr.length; i++) {
-      cookie = cookiesArr[i]
-      $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
-      $.index = i + 1;
-      $.nickName = '';
+  shareCodes = [...shareCodes, ...];
+  let res = await getAuthorShareCode('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/jd_red.json')
+  $.authorMyShareIds = [...(res || [])];
+  for (let v = 0; v < cookiesArr.length; v++) {
+    cookie = cookiesArr[v];
+    $.index = v + 1;
+    $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
+    
+    
+    if (cookiesArr && cookiesArr.length > 2) {
+      console.log(`\n\n自己账号内部互助`);
       for (let j = 0; j < shareCodes.length; j++){
         let result = await requestApi('jinli_h5assist', {"redPacketId":shareCodes[j],"followShop":0,"random":random(000000, 999999),"log":"42588613~8,~0iuxyee","sceneid":"JLHBhPageh5"})
         console.log(`账号【${$.index}】 助力: ${shareCodes[j]}\n${result.data.result.statusDesc}\n`);
         if (result.data.result.status == 3) {break;}
-        await $.wait(1500);
-      }
-    } 
-}
+        await $.wait(3500);
+    } else  {
+      //console.log(`\n\n有剩余助力机会则给作者进行助力`);
+	    for (let j = 0; j < authorMyShareIds.length; j++){
+        let result = await requestApi('jinli_h5assist', {"redPacketId":shareCodes[j],"followShop":0,"random":random(000000, 999999),"log":"42588613~8,~0iuxyee","sceneid":"JLHBhPageh5"})
+        console.log(`账号【${$.index}】 助力: ${shareCodes[j]}\n${result.data.result.statusDesc}\n`);
+        if (result.data.result.status == 3) {break;}
+        await $.wait(3500);
+        }
+	  
+    }
+  }
+ }
+
+//async function help(){
+//    let pool = await readShareCode();
+ //   shareCodes = [...shareCodes, ...(pool.data)];
+  //  console.log(`\n******开始助力: 先内部互助，再互助池******\n`);
+ //   for (let i = 0; i < cookiesArr.length; i++) {
+
+ //     for (let j = 0; j < shareCodes.length; j++){
+ //       let result = await requestApi('jinli_h5assist', {"redPacketId":shareCodes[j],"followShop":0,"random":random(000000, 999999),"log":"42588613~8,~0iuxyee","sceneid":"JLHBhPageh5"})
+ //       console.log(`账号【${$.index}】 助力: ${shareCodes[j]}\n${result.data.result.statusDesc}\n`);
+ //       if (result.data.result.status == 3) {break;}
+  //      await $.wait(1500);
+  //    }
+ //   } 
+//}
 
 function requestApi(functionId, body = {}) {
     return new Promise(resolve => {
