@@ -178,6 +178,7 @@ ENV_PATH=
 26 0,9,18,23 * * * node /scripts/jd_nnfls.js >> /log/jd_nnfls.js 2>&1
 46 0,9,18,23 * * * node /scripts/jd_global.js >> /log/jd_global.js 2>&1
 36 5,8,16,22 * * * node /scripts/jd_star.js >> /log/jd_star.js 2>&1
+13 1,4,13 * * * node /scripts/jd_travel_shop.js >> /log/jd_travel_shop.js 2>&1
 
 
 
