@@ -43,7 +43,7 @@ if ($.isNode()) {
         } catch (e) {
             $.logErr(e)
         }
-        await $.wait(2000);
+        await $.wait(22000);
     }
 })().catch((e) => {
     $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
@@ -62,7 +62,7 @@ async function main(cookie) {
     let body = `functionId=qryCompositeMaterials&body={"qryParam":"[{\\"type\\":\\"advertGroup\\",\\"mapTo\\":\\"babelCountDownFromAdv\\",\\"id\\":\\"05884370\\"},{\\"type\\":\\"advertGroup\\",\\"mapTo\\":\\"feedBannerT\\",\\"id\\":\\"05860672\\"},{\\"type\\":\\"advertGroup\\",\\"mapTo\\":\\"feedBannerS\\",\\"id\\":\\"05861001\\"},{\\"type\\":\\"advertGroup\\",\\"mapTo\\":\\"feedBannerA\\",\\"id\\":\\"05861003\\"},{\\"type\\":\\"advertGroup\\",\\"mapTo\\":\\"feedBannerB\\",\\"id\\":\\"05861004\\"},{\\"type\\":\\"advertGroup\\",\\"mapTo\\":\\"feedBottomHeadPic\\",\\"id\\":\\"05872092\\"},{\\"type\\":\\"advertGroup\\",\\"mapTo\\":\\"feedBottomData0\\",\\"id\\":\\"05908556\\"},{\\"type\\":\\"advertGroup\\",\\"mapTo\\":\\"fissionData\\",\\"id\\":\\"05863777\\"},{\\"type\\":\\"advertGroup\\",\\"mapTo\\":\\"newProds\\",\\"id\\":\\"05864483\\"}]","activityId":"2vVU4E7JLH9gKYfLQ5EVW6eN2P7B","pageId":"","reqSrc":"","applyKey":"jd_star"}&client=wh5&clientVersion=1.0.0&uuid=8888`;
     let qryCompositeMaterials =await takeRequest('?functionId=qryCompositeMaterials',body,cookie);
     if(qryCompositeMaterials && qryCompositeMaterials.feedBottomData0 && qryCompositeMaterials.feedBottomData0.list){
-        await $.wait(2000);
+        await $.wait(6000);
         let shopList = qryCompositeMaterials.feedBottomData0.list;
         let thisBody = {};
         for (let i = 0; i < shopList.length && !max; i++) {
