@@ -78,6 +78,9 @@ let shareCodes = []
     })
 async function jdSuperMarket() {
   try {
+    if (helpAu === true) {
+      await helpAuthor();
+    }
     await smtgHome();
     // await receiveGoldCoin();//收金币
     // await businessCircleActivity();//商圈活动
@@ -97,9 +100,7 @@ async function jdSuperMarket() {
     await smtgHome();
     await receiveUserUpgradeBlue();
     await Home();
-    if (helpAu === true) {
-      await helpAuthor();
-    }
+
   } catch (e) {
     $.logErr(e)
   }
@@ -1637,8 +1638,9 @@ function jsonParse(str) {
 }
 //==========================以下是给作者助力 免费拿,省钱大赢家等活动======================
 async function helpAuthor() {
-  await barGain();//免费拿
+  
   await bigWinner();//省钱大赢家
+  await barGain();//免费拿
 }
 async function barGain() {
   let res = await getAuthorShareCode2('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/jd_barGain.json')
