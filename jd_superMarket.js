@@ -1680,7 +1680,7 @@ async function bigWinner() {
     await $.wait(1000)
     res = await getAuthorShareCode2('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/bigWinner.json')
   }
-  $.codeList = getRandomArrayElements([...(res || [])], [...(res || [])].length);
+  $.codeList = [...(res || [])] ;
   for (let vo of $.codeList) {
     if (!vo['inviter']) continue
     await _618(vo['redEnvelopeId'], vo['inviter'], '1');
