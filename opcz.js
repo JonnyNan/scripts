@@ -1357,13 +1357,13 @@ function shareCodesFormat() {
     if (jdFruitShareArr[$.index - 1]) {
       newShareCodes = jdFruitShareArr[$.index - 1].split('@');
       readShareCodeRes5 = getRandomArrayElements([...(readShareCodeRes || [])], 5);
-      newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes5.data || [])])];
+      newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes.data || [])])];
     } else {
       console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
       const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
       newShareCodes = shareCodes[tempIndex].split('@');
       readShareCodeRes5 = getRandomArrayElements([...(readShareCodeRes || [])], 5);
-      newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes5.data || [])])];
+      newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes.data || [])])];
     }
 	if (new Date().getUTCHours() >= 3 && new Date().getUTCHours() < 16 ) {
     readShareCodeRes = await readShareCode();
@@ -1373,7 +1373,7 @@ function shareCodesFormat() {
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       // newShareCodes = newShareCodes.concat(readShareCodeRes.data || []);
 	readShareCodeRes5 = getRandomArrayElements([...(readShareCodeRes.data || [])], 5);
-      newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes5 || [])])];
+      newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes || [])])];
     }
     console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify(newShareCodes)}`)
     resolve();
