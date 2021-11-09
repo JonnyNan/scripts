@@ -30,7 +30,7 @@ let shareCodes = [ // 这个列表填入你要助力的好友的shareCode
   '',
 ]
 let message = '', subTitle = '', option = {}, isFruitFinished = false;
-const retainWater = 0;//保留水滴大于多少
+const retainWater = 100;//保留水滴大于多少g,默认100g;
 let jdNotify = false;//是否关闭通知，false打开通知推送，true关闭通知推送
 let jdFruitBeanCard = false;//农场使用水滴换豆卡(如果出现限时活动时100g水换20豆,此时比浇水划算,推荐换豆),true表示换豆(不浇水),false表示不换豆(继续浇水),脚本默认是浇水
 let helpAuthor = true;
@@ -62,7 +62,6 @@ const urlSchema = `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%2
       option = {};
       await shareCodesFormat();
       await jdFruit();
-	  await $.wait(15000);
 
     }
   }
@@ -1328,68 +1327,27 @@ function readShareCode() {
     resolve()
   })
 }
-//function shareCodesFormat() {
- // return new Promise(async resolve => {
-    // console.log(`第${$.index}个京东账号的助力码:::${jdFruitShareArr[$.index - 1]}`)
-   // newShareCodes = [];
-    //if (jdFruitShareArr[$.index - 1]) {
-    //  newShareCodes = jdFruitShareArr[$.index - 1].split('@');
-   // } else {
-   //   console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
-   //   const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
-   //   newShareCodes = shareCodes[tempIndex].split('@');
-   // }
-   // const readShareCodeRes = await readShareCode();
-   // if (readShareCodeRes && readShareCodeRes.code === 200) {
-   //   // newShareCodes = newShareCodes.concat(readShareCodeRes.data || []);
-   //   newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes.data || [])])];
-  //  }
-  //  console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify(newShareCodes)}`)
-  //  resolve();
- // })
-//}
 function shareCodesFormat() {
   return new Promise(async resolve => {
     // console.log(`第${$.index}个京东账号的助力码:::${jdFruitShareArr[$.index - 1]}`)
     newShareCodes = [];
-    readShareCodeRes = [];
-    readShareCodeRes5 = [];
     if (jdFruitShareArr[$.index - 1]) {
       newShareCodes = jdFruitShareArr[$.index - 1].split('@');
-      readShareCodeRes5 = getRandomArrayElements([...(readShareCodeRes || [])], 5);
-      newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes.data || [])])];
     } else {
       console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
       const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
       newShareCodes = shareCodes[tempIndex].split('@');
-      readShareCodeRes5 = getRandomArrayElements([...(readShareCodeRes || [])], 5);
-      newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes.data || [])])];
     }
-	if (new Date().getUTCHours() >= 3 && new Date().getUTCHours() < 16 ) {
-    readShareCodeRes = await readShareCode();
-    } else {readShareCodeRes = ['internl'];
-	}
-    
+    const readShareCodeRes = await readShareCode();
     if (readShareCodeRes && readShareCodeRes.code === 200) {
-      // newShareCodes = newShareCodes.concat(readShareCodeRes.data || []);
-	readShareCodeRes5 = getRandomArrayElements([...(readShareCodeRes.data || [])], 5);
-      newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes || [])])];
+         //readShareCodeRes5 = getRandomArrayElements([...(readShareCodeRes || [])], 5);
+      //newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes.data || [])])];
+      newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes.data || [])])];
     }
     console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify(newShareCodes)}`)
     resolve();
   })
 }
-function getRandomArrayElements(arr, count) {
-  let shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
-  while (i-- > min) {
-    index = Math.floor((i + 1) * Math.random());
-    temp = shuffled[index];
-    shuffled[index] = shuffled[i];
-    shuffled[i] = temp;
-  }
-  return shuffled.slice(min);
-}
-
 function requireConfig() {
   return new Promise(resolve => {
     console.log('开始获取配置文件\n')
