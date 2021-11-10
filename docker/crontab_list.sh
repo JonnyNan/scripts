@@ -177,6 +177,7 @@ ENV_PATH=
 36 5,8,16,22 * * * node /scripts/jd_star.js >> /log/jd_star.js 2>&1
 13 1,13 * * * node /scripts/jd_travel_shop.js >> /log/jd_travel_shop.js 2>&1
 45 1 * * * node /scripts/jd_cart_remove.js >> /log/jd_cart_remove.js 2>&1
+15 8,14 * * * node /scripts/jd_fanli.js >> /log/jd_fanli.js 2>&1
 
 
 
