@@ -12,19 +12,19 @@ apt install nodejs -y
 git clone https://ghproxy.com/https://github.com/hajiuhajiu/scripts.git
 
 #3:进入文件夹目录:
-cd jd-base/
+cd jd-shell/
 
 #4:创建config文件夹:
-mkdir ~/jd-base/config
+mkdir ~/jd-shell/config
 
 #5:复制文件到config文件夹里并重命名为config.sh:
-cp -if ~/jd-base/sample/config.sh.sample ~/jd-base/config/config.sh
+cp -if ~/jd-shell/sample/config.sh.sample ~/jd-shell/config/config.sh
 
 #6:还是复制文件到文件夹:
-cp -if ~/jd-base/sample/termux.list.sample ~/jd-base/config/crontab.list
+cp -if ~/jd-shell/sample/termux.list.sample ~/jd-shell/config/crontab.list
 
 #7:替换文件代码:
-sed 's?storage/shared/jd?jd-base?' ~/jd-base/config/crontab.list
+sed 's?storage/shared/jd?jd-shell?' ~/jd-shell/config/crontab.list
 
 #8:更新脚本库:
 bash git_pull.sh
@@ -33,11 +33,11 @@ bash git_pull.sh
 crond -ipP
 
 #10:启动定时任务:
-crontab ~/jd-base/config/crontab.list
+crontab ~/jd-shell/config/crontab.list
 
 #11:启动控制面板:
-cp -if ~/jd-base/sample/auth.json ~/jd-base/config/auth.json
-cd ~/jd-base/panel
+cp -if ~/jd-shell/sample/auth.json ~/jd-shell/config/auth.json
+cd ~/jd-shell/panel
 npm i
 npm i pm2 -g
 pm2 start server.js
@@ -49,17 +49,16 @@ echo '密码:admin'
 
 #               常见问题合集
 #重新启动挂机:
-#cd jd-base/
+#cd jd-shell/
 #crond -ipP
-#crontab ~/jd-base/config/crontab.list
-#cd ~/jd-base/panel
+#crontab ~/jd-shell/config/crontab.list
+#cd ~/jd-shell/panel
 #pm2 start server.js
 
 #如果你不知道定时任务的脚本是运行什么的，进入下方网址查看:
-
-#https://github.com/hajiuhajiu/scripts/blob/master/docker/crontab_list.sh
+#https://github.com/hajiuhajiu/scripts/blob/main/docker/crontab_list.sh
 if [ -r ~/.bashrc ];then
 echo ""
 else
-echo 'pm2 start /data/data/com.termux/files/home/jd-base/panel/server.js' >> ~/.bashrc 
+echo 'pm2 start /data/data/com.termux/files/home/jd-shell/panel/server.js' >> ~/.bashrc 
 fi
