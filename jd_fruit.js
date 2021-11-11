@@ -1360,7 +1360,7 @@ function shareCodesFormat() {
       const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
       newShareCodes = shareCodes[tempIndex].split('@');
     }
-	if (new Date().getUTCHours() >= 6 && new Date().getUTCHours() < 16 ) {
+	if (new Date().getHours() >= 13) {
     readShareCodeRes = await readShareCode();
     } else {readShareCodeRes = ['internl'];
 	}
