@@ -1,4 +1,5 @@
-双11 脚本目前没有， 大家可以下载爱淘金，里面签到里面支持京东双11任务。
+添加手机支持,
+前几天操作失误,导致config.sh更新,请重置cookie, 并重启设备后即可正常
 另外可以用https://github.com/hajiuhajiu/tmall-miao 里面的auto.js 脚本完成任务， 需要下载auto.js 后将脚本导入运行，原作者地址https://github.com/MonsterNone/tmall-miao
 
 
