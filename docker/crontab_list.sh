@@ -81,7 +81,7 @@ ENV_PATH=
 0 */6 * * * node /scripts/jd_plantBean.js >> /log/jd_plantBean.log 2>&1
 8 9 * * * node /scripts/jd_plus_bean.js >> /log/jd_plus_bean.log 2>&1
 11 9 * * * node /scripts/jd_rankingList.js >> /log/jd_rankingList.log 2>&1
-1 1,12 * * * node /scripts/jd_redPacket.js >> /log/jd_redPacket.log 2>&1
+1 1,12,18 * * * node /scripts/jd_redPacket.js >> /log/jd_redPacket.log 2>&1
 27 8 * * * node /scripts/jd_sgmh.js >> /log/jd_sgmh.log 2>&1
 26 5 * * * node /scripts/jd_shake.js >> /log/jd_shake.log 2>&1
 10 04 * * * node /scripts/jd_shop.js >> /log/jd_shop.log 2>&1
@@ -124,7 +124,7 @@ ENV_PATH=
 22 8,18 * * * node /scripts/jd_opencard1.js >> /log/jd_opencard1.log 2>&1
 32 8,18 * * * node /scripts/jd_opencard2.js >> /log/jd_opencard2.log 2>&1
 42 8,18 * * * node /scripts/jd_opencard3.js >> /log/jd_opencard3.log 2>&1
-02 6,9,12,18 * * * node /scripts/jd_jxlhb.js >> /log/jd_jxlhb.log 2>&1
+02 6,9,12,18,20 * * * node /scripts/jd_jxlhb.js >> /log/jd_jxlhb.log 2>&1
 30 7,20 12-20 8 * node /scripts/jd_qcshj.js >> /log/jd_qcshj.log 2>&1
 32 8,18 * * * node /scripts/jd_dwapp.js >> /log/jd_dwapp.log 2>&1
 42 9,15 * * * node /scripts/jd_wishingPool.js >> /log/jd_wishingPool.log 2>&1
@@ -148,7 +148,7 @@ ENV_PATH=
 10 00,11,18 * * * node /scripts/jd_carnivalcity.js >> /log/jd_carnivalcity.log 2>&1
 39 10,14 * * * node /scripts/jd_ddworld_exchange.js >> /log/jd_ddworld_exchange.log 2>&1
 38 0,12,18 * * * node /scripts/jd_jxdzz.js >> /log/jd_jxdzz.log 2>&1
-18 01,18 * * * node /scripts/jd_carnivalcity_help.js >> /log/jd_carnivalcity_help.log 2>&1
+#18 01,18 * * * node /scripts/jd_carnivalcity_help.js >> /log/jd_carnivalcity_help.log 2>&1
 22 02,15 * * * node /scripts/jd_jxmc_help.js >> /log/jd_jxmc_help.log 2>&1
 28 04,13 * * * node /scripts/jd_mohe.js >> /log/jd_mohe.log 2>&1
 33 03,14 * * * node /scripts/jd_qqxing.js >> /log/jd_qqxingp.log 2>&1
@@ -156,7 +156,6 @@ ENV_PATH=
 40 */6 * * * node /scripts/jd_tyt.js >> /log/jd_tyt.log 2>&1
 32 */6 * * * node /scripts/jd_fcdyj.js >> /log/jd_fcdyj.log 2>&1
 02 1,4,10,12 * * * node /scripts/jd_qjd.js >> /log/jd_qjd.log 2>&1
-00 20,21 * * * node /scripts/jd_redEnvelope1.js >> /log/jd_redEnvelope1.log 2>&1
 25 5,8,13,17 * * * node /scripts/jd_jddj_bean.js >> /log/jd_jddj_bean.log 2>&1
 45 6,8,13,15 * * * node /scripts/jd_jddj_fruit.js >> /log/jd_jddj_fruit.log 2>&1
 55 7,10,13,16 * * * node /scripts/jd_jddj_fruit_collectWater.js >> /log/jd_jddj_fruit_collectWater.log 2>&1
@@ -169,7 +168,6 @@ ENV_PATH=
 26 0,9,18,23 * * * node /scripts/jd_nnfls.js >> /log/jd_nnfls.js 2>&1
 46 0,9,18,23 * * * node /scripts/jd_global.js >> /log/jd_global.js 2>&1
 36 5,8,16,22 * * * node /scripts/jd_star.js >> /log/jd_star.js 2>&1
-13 1,13 * * * node /scripts/jd_travel_shop.js >> /log/jd_travel_shop.js 2>&1
 45 1 * * * node /scripts/jd_cart_remove.js >> /log/jd_cart_remove.js 2>&1
 15 8,14 * * * node /scripts/jd_fanli.js >> /log/jd_fanli.js 2>&1
 15 8,14 * * * node /scripts/jd_temp.js >> /log/jd_temp.js 2>&1
