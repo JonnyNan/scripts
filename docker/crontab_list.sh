@@ -93,7 +93,6 @@ ENV_PATH=
 18 1,8 * * * node /scripts/jd_try.js >> /log/jd_try.log 2>&1
 38 17 * * * node /scripts/jd_unbind.js >> /log/jd_unbind.log 2>&1
 15 0-23/4 * * * node /scripts/jd_unsubscribe.js >> /log/jd_unsubscribe.log 2>&1
-1 0 * * * node /scripts/jx_cfdtx.js >> /log/jx_cfdtx.log 2>&1
 18 3,9 * * * node /scripts/jx_sign.js >> /log/jx_sign.log 2>&1
 22 0,9 * * * node /scripts/jd_ccSign.js >> /log/jd_ccSign.log 2>&1
 0 3,9,18 * * * node /scripts/jd_jxsign.js >> /log/jd_jxsign.log 2>&1
@@ -119,7 +118,6 @@ ENV_PATH=
 10 0,10 * * * node /scripts/jd_twz-star.js >> /log/jd_twz-star.log 2>&1
 30 * * * * node /scripts/jd_big_winner.js >> /log/jd_big_winner.log 2>&1
 0 * * * * node /scripts/jd_big_winner.js >> /log/jd_big_winner.log 2>&1
-18 1,5,16 * * * node /scripts/jd_chinajoy.js >> /log/jd_chinajoy.log 2>&1
 22 2,8 * * * node /scripts/jd_wxFans.js >> /log/jd_wxFans.log 2>&1
 25 2,8 * * * node /scripts/jd_wish.js >> /log/jd_wish.log 2>&1
 01 01,8 * * * node /scripts/jd_sgmh.js >> /log/jd_sgmh.log 2>&1
