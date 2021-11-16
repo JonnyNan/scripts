@@ -47,6 +47,7 @@ ENV_PATH=
 20 * * * * node /scripts/jd_dreamFactory.js >> /log/jd_dreamFactory.log 2>&1
 40 3 * * * node /scripts/jd_factory.js >> /log/jd_factory.log 2>&1
 51 10 * * * node /scripts/jd_family.js >> /log/jd_family.log 2>&1
+28 2,9,15,17 * * * node /scripts/jd_fcwb.js >> /log/jd_fcwb.log 2>&1
 5 6-18/6 * * * node /scripts/jd_fruit.js >> /log/jd_fruit.log 2>&1
 38 2 * * * node /scripts/jd_getFanslove.js >> /log/jd_getFanslove.log 2>&1
 13 1,7,22 * * * node /scripts/jd_health.js >> /log/jd_health.log 2>&1
@@ -80,12 +81,10 @@ ENV_PATH=
 12 * * * * node /scripts/jd_pigPet.js >> /log/jd_pigPet.log 2>&1
 0 */6 * * * node /scripts/jd_plantBean.js >> /log/jd_plantBean.log 2>&1
 8 9 * * * node /scripts/jd_plus_bean.js >> /log/jd_plus_bean.log 2>&1
-11 9 * * * node /scripts/jd_rankingList.js >> /log/jd_rankingList.log 2>&1
-1 1,12,18 * * * node /scripts/jd_redPacket.js >> /log/jd_redPacket.log 2>&1
+1 3,12,18 * * * node /scripts/jd_redPacket.js >> /log/jd_redPacket.log 2>&1
 27 8 * * * node /scripts/jd_sgmh.js >> /log/jd_sgmh.log 2>&1
 26 5 * * * node /scripts/jd_shake.js >> /log/jd_shake.log 2>&1
 10 04 * * * node /scripts/jd_shop.js >> /log/jd_shop.log 2>&1
-#58 8 * * * node /scripts/jd_ShopSign.js >> /log/jd_ShopSign.log 2>&1
 10 01,3 * * * node /scripts/jd_speed.js >> /log/jd_speed.log 2>&1
 40 0,8 * * * node /scripts/jd_speed_redpocke.js >> /log/jd_speed_redpocke.log 2>&1
 0 0-23 * * * node /scripts/jd_super_redrain.js >> /log/jd_super_redrain.log 2>&1
@@ -161,8 +160,6 @@ ENV_PATH=
 55 7,10,13,16 * * * node /scripts/jd_jddj_fruit_collectWater.js >> /log/jd_jddj_fruit_collectWater.log 2>&1
 05 1,8,13,20 * * * node /scripts/jd_jddj_getPoints.js >> /log/jd_jddj_getPoints.log 2>&1
 18 3,8,13,17 * * * node /scripts/jd_jddj_plantBeans.js >> /log/jd_jddj_plantBeans.log 2>&1
-28 2,9,15,17 * * * node /scripts/jd_fcwb.js >> /log/jd_fcwb.log 2>&1
-3,15 20 31 10 * node /scripts/jd_hotNeight.js >> /log/jd_hotNeight.log 2>&1
 01 0,6,12,20 * * * node /scripts/jd_hello_wind_xtg.js >> /log/jd_hello_wind_xtg.log 2>&1
 03 0,6,12,20 * * * node /scripts/jd_xtgsign.js >> /log/jd_xtgsign.log 2>&1
 26 0,9,18,23 * * * node /scripts/jd_nnfls.js >> /log/jd_nnfls.js 2>&1
