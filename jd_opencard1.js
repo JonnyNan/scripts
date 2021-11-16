@@ -16,7 +16,7 @@ guadraw="3"
 第一个CK失效会退出脚本
 默认脚本不执行
 如需执行脚本请设置环境变量
-guaopencard="true"
+guaopencard="false"
 每个账号之间延迟 100=延迟100秒 0=延迟0秒会使用每3个账号延迟60秒
 guaopenwait_All 所有
 guaopenwait68="0"
