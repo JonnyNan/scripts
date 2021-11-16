@@ -33,8 +33,8 @@ cron:47 1 15-20 11 *
 47 1 15-20 11 * https://raw.githubusercontent.com/smiek2121/scripts/master/gua_opencard68.js, tag=11.15~11.20 联合开卡, enabled=true
 */
 let guaopencard_addSku = "false"
-let guaopencard = "false"
-let guaopenwait = "0"
+let guaopencard = "true"
+let guaopenwait = "300"
 let guaopencard_draw = "0"
 
 const $ = new Env('11.15~11.20 联合开卡-68');
