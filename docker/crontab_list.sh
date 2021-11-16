@@ -165,6 +165,7 @@ ENV_PATH=
 33 03,14 * * * node /scripts/jd_qqxing.js >> /log/jd_qqxingp.log 2>&1
 15 8,14 * * * node /scripts/jd_temp.js >> /log/jd_temp.js 2>&1
 15 3,18 * * * node /scripts/jd_zsign.js >> /log/jd_zsign.log 2>&1
+35 5,16 * * * node /scripts/jx_aid_red.js >> /log/jx_aid_red.log 2>&1
 
 
 
