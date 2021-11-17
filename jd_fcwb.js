@@ -56,6 +56,7 @@ let fcwbinviteCode = "";
             }
             try {
                 await main()
+                await $.wait(42000);
             } catch (e) {
                 $.logErr(e)
             }
@@ -88,7 +89,7 @@ async function main() {
     }
     await doTask();
     if($.freshFlag){
-        await $.wait(2000);
+        await $.wait(22000);
         homeInfo = await takeRequest(`happyDigHome`,`{"linkId":"${link}"}`,true);
     }
     let blood = homeInfo.blood;
@@ -107,7 +108,7 @@ async function doTask(){
                 console.log(`任务：${oneTask.taskTitle},${oneTask.taskShowTitle},去执行`);
                 let doTask = await takeRequest(`apDoTask`,`{"linkId":"${link}","taskType":"${oneTask.taskType}","taskId":${oneTask.id},"channel":4,"itemId":"${encodeURIComponent(oneTask.taskSourceUrl)}","checkVersion":false}`);
                 console.log(`执行结果：${JSON.stringify(doTask)}`);
-                await $.wait(2000);
+                await $.wait(12000);
                 $.freshFlag = true;
             }
             if(oneTask.id === 357){
