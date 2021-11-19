@@ -154,7 +154,7 @@ ENV_PATH=
 01 01,8 * * * node /scripts/jd_sgmh.js >> /log/jd_sgmh.log 2>&1
 36 5,8,16,22 * * * node /scripts/jd_star.js >> /log/jd_star.js 2>&1
 22 01,9 * * * node /scripts/jd_star_shop.js >> /log/jd_star_shop.log 2>&1
-18 6,9,15 * * * node /scripts/jd_superBrand1.js >> log/jd_superBrand1.log 2>&1
+18 6,9,15,17 * * * node /scripts/jd_superBrand1.js >> log/jd_superBrand1.log 2>&1
 11 */3 * * * node /scripts/jd_superMarket.js >> /log/jd_superMarket.log 2>&1
 48 04,13 * * * node /scripts/jd_sevenday.js >> /log/jd_sevenday.log 2>&1
 40 */6 * * * node /scripts/jd_tyt.js >> /log/jd_tyt.log 2>&1
