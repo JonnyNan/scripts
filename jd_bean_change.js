@@ -177,7 +177,7 @@ if ($.isNode()) {
 				"babelChannel": "120"
 			});
 			await getjdfruit();
-			await cash();
+			//await cash();
 			await requestAlgo();
 			await JxmcGetRequest();
 			await bean();
