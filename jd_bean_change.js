@@ -56,7 +56,7 @@ let cookiesArr = [], cookie = '';
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 let intPerSent = 0;
 let i = 0;
-let DisableCash = "false";
+let DisableCash = "true";
 let llShowMonth = false;
 let Today = new Date();
 
