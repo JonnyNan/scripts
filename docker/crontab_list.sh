@@ -50,6 +50,7 @@ ENV_PATH=
 13 1,22,23 * * * node /scripts/jd_daily_lottery.js >> /log/jd_daily_lottery.log 2>&1
 35 2 * * * node /scripts/jd_daydlt.js >> /log/jd_daydlt.log 2>&1
 18 1,10 * * * node /scripts/jd_djjl.js >> /log/jd_djjl.log 2>&1
+28 3,13 * * * node /scripts/jd_jddt.js >> /log/jd_jddt.log 2>&1
 13 10 * * * node /scripts/jd_dpqd.js >> /log/jd_dpqd.log 2>&1
 8 9 * * * node /scripts/jd_dpqd2.js >> /log/jd_dpqd2.log 2>&1
 20 * * * * node /scripts/jd_dreamFactory.js >> /log/jd_dreamFactory.log 2>&1
