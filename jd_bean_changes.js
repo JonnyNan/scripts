@@ -448,9 +448,9 @@ async function showMsg() {
 
 	if (typeof $.JDEggcnt !== "undefined") {
 		if ($.JDEggcnt == 0) {
-			ReturnMessage += `【京喜牧场】未开通或火爆.\n`;
+			//ReturnMessage += `【京喜牧场】未开通或火爆.\n`;
 		} else {
-			ReturnMessage += `【京喜牧场】${$.JDEggcnt}枚鸡蛋\n`;
+			//ReturnMessage += `【京喜牧场】${$.JDEggcnt}枚鸡蛋\n`;
 		}
 
 	}
