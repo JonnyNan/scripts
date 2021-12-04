@@ -51,7 +51,7 @@ if ($.isNode()) {
 !(async () => {
   $.CryptoJS = $.isNode() ? require("crypto-js") : CryptoJS;
   await requestAlgo();
-  await $.wait(1000);
+  await $.wait(11000);
   if (!cookiesArr[0]) {
     $.msg($.name, "【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取", "https://bean.m.jd.com/bean/signIndex.action", { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
     return;
@@ -76,7 +76,7 @@ if ($.isNode()) {
       if (i === 0) console.log(`\n正在收集助力码请等待\n`)
       if (!isLoginInfo[$.UserName]) continue
       await signhb(1)
-      await $.wait(500)
+      await $.wait(1500)
     }
   }
   for (let i = 0; i < cookiesArr.length; i++) {
@@ -110,7 +110,7 @@ if ($.isNode()) {
       }
       UA = UAInfo[$.UserName]
       await signhb(2)
-      await $.wait(2000)
+      await $.wait(12000)
       if ($.canHelp) {
         if (i === 0 && (res && res.length)) {
           console.log(`\n账号一助力作者\n`)
@@ -126,7 +126,7 @@ if ($.isNode()) {
               continue
             }
             await helpSignhb(res[j].smp)
-            await $.wait(2000)
+            await $.wait(12000)
             break
           }
         }
