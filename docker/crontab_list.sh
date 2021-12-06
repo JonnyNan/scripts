@@ -167,6 +167,7 @@ ENV_PATH=
 15 8,14 * * * node /scripts/jd_temp.js >> /log/jd_temp.js 2>&1
 42 9,15 * * * node /scripts/jd_wishingPool.js >> /log/jd_wishingPool.log 2>&1
 18 0,12,18 * * * node /scripts/jd_ys.js >> /log/jd_ys.log 2>&1
+38 0,12,18 * * * node /scripts/jd_xiaolongs.js >> /log/jd_xiaolong.log 2>&1
 15 3,18 * * * node /scripts/jd_zsign.js >> /log/jd_zsign.log 2>&1
 2 01,7 * * * node /scripts/jd_zjb.js >> /log/jd_zjb.log 2>&1
 35 5,16 * * * node /scripts/jx_aid_red.js >> /log/jx_aid_red.log 2>&1
