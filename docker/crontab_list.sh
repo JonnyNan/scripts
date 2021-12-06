@@ -72,6 +72,7 @@ ENV_PATH=
 13 1,7,22 * * * node /scripts/jd_health.js >> /log/jd_health.log 2>&1
 5-45/20 * * * * node /scripts/jd_health_collect.js >> /log/jd_health_collect.log 2>&1
 0 3,9,18 * * * node /scripts/jd_jxsign.js >> /log/jd_jxsign.log 2>&1
+25 12 * * * node /scripts/jd_jr_draw.js >> /log/jd_jr_draw.log 2>&1
 25 12 * * * node /scripts/jd_jintie_wx.js >> /log/jd_jintie_wx.log 2>&1
 30 * * * * node /scripts/jd_half_redrain.js >> /log/jd_half_redrain.log 2>&1
 47 7 * * * node /scripts/jd_get_share_code.js >> /log/jd_get_share_code.log 2>&1
@@ -117,6 +118,7 @@ ENV_PATH=
 27 8 * * * node /scripts/jd_sgmh.js >> /log/jd_sgmh.log 2>&1
 26 5 * * * node /scripts/jd_shake.js >> /log/jd_shake.log 2>&1
 10 04 * * * node /scripts/jd_shop.js >> /log/jd_shop.log 2>&1
+10 04,13 * * * node /scripts/jd_sxLottery.js >> /log/jd_sxLottery.log 2>&1
 10 01,3 * * * node /scripts/jd_speed.js >> /log/jd_speed.log 2>&1
 40 0,8 * * * node /scripts/jd_speed_redpocke.js >> /log/jd_speed_redpocke.log 2>&1
 0 0-23 * * * node /scripts/jd_super_redrain.js >> /log/jd_super_redrain.log 2>&1
