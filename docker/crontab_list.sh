@@ -114,7 +114,7 @@ ENV_PATH=
 12 * * * * node /scripts/jd_pigPet.js >> /log/jd_pigPet.log 2>&1
 0 */6 * * * node /scripts/jd_plantBean.js >> /log/jd_plantBean.log 2>&1
 8 9 * * * node /scripts/jd_plus_bean.js >> /log/jd_plus_bean.log 2>&1
-1 3,12,18 * * * node /scripts/jd_redPacket.js >> /log/jd_redPacket.log 2>&1
+15 13,17,19 * * * node /scripts/jd_redPacket.js >> /log/jd_redPacket.log 2>&1
 27 8 * * * node /scripts/jd_sgmh.js >> /log/jd_sgmh.log 2>&1
 26 5 * * * node /scripts/jd_shake.js >> /log/jd_shake.log 2>&1
 10 04 * * * node /scripts/jd_shop.js >> /log/jd_shop.log 2>&1
