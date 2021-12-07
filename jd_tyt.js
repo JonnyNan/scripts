@@ -149,7 +149,7 @@ function tythelp(tytpacketId) {
           console.log(`API请求失败，请检查网路重试`)
         } else {
           data = JSON.parse(data);
-         await $.wait(12000)
+         await $.wait(16000)
           if (data.code == 0) {
             console.log("帮推：" + data.data.amount)
           } else
