@@ -68,7 +68,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
         await coinDozerBackFlow()
         await $.wait(3000)
         await helpCoinDozer(packetId)
-        await $.wait(5000)
+        await $.wait(8000)
         if (tytpacketId !== '') {
           await tythelp(tytpacketId)
         }
@@ -149,6 +149,7 @@ function tythelp(tytpacketId) {
           console.log(`API请求失败，请检查网路重试`)
         } else {
           data = JSON.parse(data);
+         await $.wait(12000)
           if (data.code == 0) {
             console.log("帮推：" + data.data.amount)
           } else
