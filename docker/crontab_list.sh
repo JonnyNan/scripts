@@ -121,7 +121,6 @@ ENV_PATH=
 30 8,12 * * * node /scripts/jd_split.js >> /log/jd_split.log 2>&1
 26 5 * * * node /scripts/jd_shake.js >> /log/jd_shake.log 2>&1
 10 04 * * * node /scripts/jd_shop.js >> /log/jd_shop.log 2>&1
-10 04,13 * * * node /scripts/jd_sxLottery.js >> /log/jd_sxLottery.log 2>&1
 10 01,3 * * * node /scripts/jd_speed.js >> /log/jd_speed.log 2>&1
 10 03,9 * * * node /scripts/jd_sign_graphics.js >> /log/jd_sign_graphics.log 2>&1
 40 0,8 * * * node /scripts/jd_speed_redpocke.js >> /log/jd_speed_redpocke.log 2>&1
