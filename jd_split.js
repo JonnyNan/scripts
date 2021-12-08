@@ -65,8 +65,8 @@ $.shareCodes = [];
       await jdSplit()
     }
   }
-  let res = await getAuthorShareCode('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/mastersplit.json')
-  let res2 = await getAuthorShareCode('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/mastersplit.json')
+  let res = await getAuthorShareCode('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/split.json')
+  let res2 = await getAuthorShareCode('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/split.json')
 
   $.newShareCodes = [...new Set([...$.shareCodes, ...(res || []), ...(res2 || [])])]
   for (let i = 0; i < cookiesArr.length; i++) {
