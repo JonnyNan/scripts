@@ -36,6 +36,7 @@ ENV_PATH=
 0 0 * * * node /scripts/jd_blueCoin20.js >> /log/jd_blueCoin20.log 2>&1
 7 8,12,18 * * * node /scripts/jd_bookshop.js >> /log/jd_bookshop.log 2>&1
 12 */6 * * * node /scripts/jd_cfd_loop.js >> /log/jd_cfd_loop.log 2>&1
+33 */8 * * * node /scripts/jd_cfd_pearl_ex.js >> /log/jd_cfd_pearl_ex.log 2>&1
 0 0 * * * node /scripts/jd_car.js >> /log/jd_car.log 2>&1
 0 0 * * * node /scripts/jd_car_exchange.js >> /log/jd_car_exchange.log 2>&1
 45 1 * * * node /scripts/jd_cart_remove.js >> /log/jd_cart_remove.js 2>&1
@@ -122,6 +123,7 @@ ENV_PATH=
 10 04 * * * node /scripts/jd_shop.js >> /log/jd_shop.log 2>&1
 10 04,13 * * * node /scripts/jd_sxLottery.js >> /log/jd_sxLottery.log 2>&1
 10 01,3 * * * node /scripts/jd_speed.js >> /log/jd_speed.log 2>&1
+10 03,9 * * * node /scripts/jd_sign_graphics.js >> /log/jd_sign_graphics.log 2>&1
 40 0,8 * * * node /scripts/jd_speed_redpocke.js >> /log/jd_speed_redpocke.log 2>&1
 0 0-23 * * * node /scripts/jd_super_redrain.js >> /log/jd_super_redrain.log 2>&1
 36 0-23/4 * * * node /scripts/jd_syj.js >> /log/jd_syj.log 2>&1
