@@ -66,7 +66,7 @@ $.shareCodes = [];
     }
   }
   let res = await getAuthorShareCode('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/split.json')
-  let res2 = await getAuthorShareCode('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/split.json')
+  let res2 = await getAuthorShareCode('https://gitee.com/xr2021/share/raw/master/split.json')
 
   $.newShareCodes = [...new Set([...$.shareCodes, ...(res || []), ...(res2 || [])])]
   for (let i = 0; i < cookiesArr.length; i++) {
