@@ -109,6 +109,7 @@ ENV_PATH=
 28 15 * * * node /scripts/jd_mgold.js >> /log/jd_mgold.log 2>&1
 50 */4 * * * node /scripts/jd_mohe.js >> /log/jd_mohe.log 2>&1
 40 */2 * * * node /scripts/jd_moneyTree.js >> /log/jd_moneyTree.log 2>&1
+12 15 * * * node /scripts/jd_mofang_ex.js >> /log/jd_mofang_ex.log 2>&1
 10 7 * * * node /scripts/jd_ms.js >> /log/jd_ms.log 2>&1
 5 1,10 * * * node /scripts/jd_necklace.js >> /log/jd_necklace.log 2>&1
 5 6-18/6 * * * node /scripts/jd_pet.js >> /log/jd_pet.log 2>&1
