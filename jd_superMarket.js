@@ -82,6 +82,7 @@ async function jdSuperMarket() {
       await helpAuthor();
     }
     await smtgHome();
+    await $.wait(12000)
     // await receiveGoldCoin();//收金币
     // await businessCircleActivity();//商圈活动
     await receiveBlueCoin();//收蓝币（小费）
