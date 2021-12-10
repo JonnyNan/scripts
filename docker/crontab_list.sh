@@ -118,6 +118,7 @@ ENV_PATH=
 0 */6 * * * node /scripts/jd_plantBean.js >> /log/jd_plantBean.log 2>&1
 8 9 * * * node /scripts/jd_plus_bean.js >> /log/jd_plus_bean.log 2>&1
 15 13,17,19 * * * node /scripts/jd_redPacket.js >> /log/jd_redPacket.log 2>&1
+59 19,20,22 * * * node /scripts/jd_redEnvelope.js >> /log/jd_redEnvelope.log 2>&1
 27 8 * * * node /scripts/jd_sgmh.js >> /log/jd_sgmh.log 2>&1
 30 8,12 * * * node /scripts/jd_split.js >> /log/jd_split.log 2>&1
 26 5 * * * node /scripts/jd_shake.js >> /log/jd_shake.log 2>&1
