@@ -144,8 +144,6 @@ ENV_PATH=
 55 7,10,13,16 * * * node /scripts/jd_jddj_fruit_collectWater.js >> /log/jd_jddj_fruit_collectWater.log 2>&1
 05 1,8,13,20 * * * node /scripts/jd_jddj_getPoints.js >> /log/jd_jddj_getPoints.log 2>&1
 18 3,8,13,17 * * * node /scripts/jd_jddj_plantBeans.js >> /log/jd_jddj_plantBeans.log 2>&1
-01 0,6,12,20 * * * node /scripts/jd_hello_wind_xtg.js >> /log/jd_hello_wind_xtg.log 2>&1
-13 4,6,11 * * * node /scripts/jd_goodMorning.js >> /log/jd_goodMorning.log 2>&1
 02 8,18 * * * node /scripts/jd_opencard.js >> /log/jd_opencard.log 2>&1
 06 03,1,10 * * * node /scripts/jd_sendBeans.js >> /log/jd_sendBeans.log 2>&1
 10 0,10 * * * node /scripts/jd_twz-star.js >> /log/jd_twz-star.log 2>&1
@@ -172,7 +170,6 @@ ENV_PATH=
 15 8,14 * * * node /scripts/jd_temp.js >> /log/jd_temp.js 2>&1
 42 9,15 * * * node /scripts/jd_wishingPool.js >> /log/jd_wishingPool.log 2>&1
 18 0,12,18 * * * node /scripts/jd_ys.js >> /log/jd_ys.log 2>&1
-38 0,12,18 * * * node /scripts/jd_xiaolongs.js >> /log/jd_xiaolong.log 2>&1
 15 3,18 * * * node /scripts/jd_zsign.js >> /log/jd_zsign.log 2>&1
 2 01,7 * * * node /scripts/jd_zjb.js >> /log/jd_zjb.log 2>&1
 35 5,16 * * * node /scripts/jx_aid_red.js >> /log/jx_aid_red.log 2>&1
