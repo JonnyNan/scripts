@@ -106,6 +106,7 @@ ENV_PATH=
 0,30 0-23/1 * * * node /scripts/jd_live_redrain.js >> /log/jd_live_redrain.log 2>&1
 22 0,12,18 * * * node /scripts/jd_lotteryMachine.js >> /log/jd_lotteryMachine.log 2>&1
 38 13 * * * node /scripts/jd_market_lottery.js >> /log/jd_market_lottery.log 2>&1
+22 09,18 * * * node /scripts/jd_mall_active.js >> /log/jd_mall_active.log 2>&1
 28 15 * * * node /scripts/jd_mgold.js >> /log/jd_mgold.log 2>&1
 50 */4 * * * node /scripts/jd_mohe.js >> /log/jd_mohe.log 2>&1
 40 */2 * * * node /scripts/jd_moneyTree.js >> /log/jd_moneyTree.log 2>&1
