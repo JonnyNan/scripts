@@ -1,5 +1,5 @@
 ENV_PATH=
-#0622 更新scripts目录wyw
+#2021/12/16 更新scripts目录wyw
 # 每3天的23:50分清理一次日志(互助码不清理，proc_file.sh对该文件进行了去重)
 50 23 */3 * * find /log -name '*.log' | grep -v 'sharecodeCollection' | xargs rm -rf
 35 23 */3 * * find /root/jd/log -name '*.log' | grep -v 'sharecodeCollection' | xargs rm -rf
@@ -25,45 +25,11 @@ ENV_PATH=
 # 运行lxk0301大佬的js脚本，仅列出长期任务作初始化用，AutoAddCron=true时，将自动添加短期任务。
 # 请保留任务名称中的前缀"jd_"，去掉后缀".js"，如果有些任务你不想运行，注释掉就好了，不要删除。否则会重新添加上。
 # 非lxk0301/jd_scripts仓库中的脚本不能以“jd_”、“jr_”、“jx_”开头。请在最后保留一个空行。
-0 10 * * 1 node /scripts/jd_bean_change.js >> /log/jd_bean_change.log 2>&1
-0 19 * * * node /scripts/jd_bean_changes.js >> /log/jd_bean_changes.log 2>&1
-33 0-23/4 * * * node /scripts/jd_bean_home.js >> /log/jd_bean_home.log 2>&1
-0 0 * * * node /scripts/jd_bean_sign.js >> /log/jd_bean_sign.log 2>&1
-1 7,12,19 * * * node /scripts/jd_beauty.js >> /log/jd_beauty.log 2>&1
-30 * * * * node /scripts/jd_big_winner.js >> /log/jd_big_winner.log 2>&1
-0 * * * * node /scripts/jd_big_winner.js >> /log/jd_big_winner.log 2>&1
-0 0 * * * node /scripts/jd_blueCoin.js >> /log/jd_blueCoin.log 2>&1
-0 0 * * * node /scripts/jd_blueCoin20.js >> /log/jd_blueCoin20.log 2>&1
-7 8,12,18 * * * node /scripts/jd_bookshop.js >> /log/jd_bookshop.log 2>&1
-12 */6 * * * node /scripts/jd_cfd_loop.js >> /log/jd_cfd_loop.log 2>&1
-33 */8 * * * node /scripts/jd_cfd_pearl_ex.js >> /log/jd_cfd_pearl_ex.log 2>&1
-0 0 * * * node /scripts/jd_car.js >> /log/jd_car.log 2>&1
-0 0 * * * node /scripts/jd_car_exchange.js >> /log/jd_car_exchange.log 2>&1
-45 1 * * * node /scripts/jd_cart_remove.js >> /log/jd_cart_remove.js 2>&1
-27 6,18,15 * * * node /scripts/jd_cash.js >> /log/jd_cash.log 2>&1
-0 0 * * * node /scripts/jd_cash_exchange.js >> /log/jd_cash_exchange.log 2>&1
-22 0,9 * * * node /scripts/jd_ccSign.js >> /log/jd_ccSign.log 2>&1
-30 * * * * node /scripts/jd_cfd.js >> /log/jd_cfd.log 2>&1
-18 * * * * node /scripts/jd_cfd_mooncake.js >> /log/jd_cfd_mooncake.log 2>&1
-05 0,8 * * * node /scripts/jd_club_lottery.js >> /log/jd_club_lottery.log 2>&1
-27 01,12,18 * * * node /scripts/jd_connoisseur.js >> /log/jd_connoisseur.log 2>&1
-18 * * * * node /scripts/jd_daily_egg.js >> /log/jd_daily_egg.log 2>&1
-13 1,22,23 * * * node /scripts/jd_daily_lottery.js >> /log/jd_daily_lottery.log 2>&1
-35 2 * * * node /scripts/jd_daydlt.js >> /log/jd_daydlt.log 2>&1
-18 1,10 * * * node /scripts/jd_djjl.js >> /log/jd_djjl.log 2>&1
-28 3,13 * * * node /scripts/jd_jddt.js >> /log/jd_jddt.log 2>&1
-13 10 * * * node /scripts/jd_dpqd.js >> /log/jd_dpqd.log 2>&1
-8 9 * * * node /scripts/jd_dpqd2.js >> /log/jd_dpqd2.log 2>&1
-20 8,10 * * * node /scripts/jd_DrawEntrance.js >> log/jd_DrawEntrance.log 2>&1
-33 9,13 * * * node /scripts/jd_dqmh.js >> /log/jd_dqmh.log 2>&1
-20 * * * * node /scripts/jd_dreamFactory.js >> /log/jd_dreamFactory.log 2>&1
-29 0-23/4 * * * node /scripts/jd_ddnc_farmpark.js >> /log/jd_ddnc_farmpark.log 2>&1
-39 10,14 * * * node /scripts/jd_ddworld_exchange.js >> /log/jd_ddworld_exchange.log 2>&1
-33 0-23/4 * * * node /scripts/jd_ddly.js >> /log/jd_ddly.log 2>&1
 22 6,12,18 * * * node /scripts/jd_ddworld.js >> /log/jd_ddworld.log 2>&1
-3 3,6,18 * * * node /scripts/jd_genz.js >> /log/jd_genz.log 2>&1
 32 8,18 * * * node /scripts/jd_dwapp.js >> /log/jd_dwapp.log 2>&1
 32 21 * * * node /scripts/jd_exchangejxbeans.js >> /log/jd_exchangejxbeans.log 2>&1
+3 3,6,18 * * * node /scripts/jd_genz.js >> /log/jd_genz.log 2>&1
+28 3,13 * * * node /scripts/jd_jddt.js >> /log/jd_jddt.log 2>&1
 52 01,9 * * * node /scripts/jd_jxg.js >> /log/jd_jxg.log 2>&1
 32 */6 * * * node /scripts/jd_fcdyj.js >> /log/jd_fcdyj.log 2>&1
 40 3 * * * node /scripts/jd_factory.js >> /log/jd_factory.log 2>&1
@@ -123,9 +89,15 @@ ENV_PATH=
 40 */2 * * * node /scripts/jd_moneyTree.js >> /log/jd_moneyTree.log 2>&1
 12 15 * * * node /scripts/jd_mofang_ex.js >> /log/jd_mofang_ex.log 2>&1
 10 7 * * * node /scripts/jd_ms.js >> /log/jd_ms.log 2>&1
+28 04,13 * * * node /scripts/jd_mohe.js >> /log/jd_mohe.log 2>&1
 26 02,8 * * * node /scripts/jd_nzmh.js >> /log/jd_nzmh.log 2>&1
 26 0,9,18,23 * * * node /scripts/jd_nnfls.js >> /log/jd_nnfls.js 2>&1
 5 1,10 * * * node /scripts/jd_necklace.js >> /log/jd_necklace.log 2>&1
+02 8,18 * * * node /scripts/jd_opencard.js >> /log/jd_opencard.log 2>&1
+22 8,18 * * * node /scripts/jd_opencard1.js >> /log/jd_opencard1.log 2>&1
+32 8,18 * * * node /scripts/jd_opencard2.js >> /log/jd_opencard2.log 2>&1
+42 8,18 * * * node /scripts/jd_opencard3.js >> /log/jd_opencard3.log 2>&1
+40 10,18 * * * node /scripts/jd_opencard4.js >> /log/jd_opencard4.log 2>&1
 5 6-18/6 * * * node /scripts/jd_pet.js >> /log/jd_pet.log 2>&1
 8 9 * * * node /scripts/jd_petTreasureBox.js >> /log/jd_petTreasureBox.log 2>&1
 12 * * * * node /scripts/jd_pigPet.js >> /log/jd_pigPet.log 2>&1
@@ -142,15 +114,6 @@ ENV_PATH=
 40 0,8 * * * node /scripts/jd_speed_redpocke.js >> /log/jd_speed_redpocke.log 2>&1
 0 0-23 * * * node /scripts/jd_super_redrain.js >> /log/jd_super_redrain.log 2>&1
 36 0-23/4 * * * node /scripts/jd_syj.js >> /log/jd_syj.log 2>&1
-18 1,8,13 * * * node /scripts/jd_try.js >> /log/jd_try.log 2>&1
-38 17 * * * node /scripts/jd_unbind.js >> /log/jd_unbind.log 2>&1
-15 0-23/4 * * * node /scripts/jd_unsubscribe.js >> /log/jd_unsubscribe.log 2>&1
-28 04,13 * * * node /scripts/jd_mohe.js >> /log/jd_mohe.log 2>&1
-02 8,18 * * * node /scripts/jd_opencard.js >> /log/jd_opencard.log 2>&1
-22 8,18 * * * node /scripts/jd_opencard1.js >> /log/jd_opencard1.log 2>&1
-32 8,18 * * * node /scripts/jd_opencard2.js >> /log/jd_opencard2.log 2>&1
-42 8,18 * * * node /scripts/jd_opencard3.js >> /log/jd_opencard3.log 2>&1
-40 10,18 * * * node /scripts/jd_opencard4.js >> /log/jd_opencard4.log 2>&1
 33 03,14 * * * node /scripts/jd_qqxing.js >> /log/jd_qqxingp.log 2>&1
 30 7,20 12-20 8 * node /scripts/jd_qcshj.js >> /log/jd_qcshj.log 2>&1
 48 0,12,18 * * * node /scripts/jd_speed_sign.js >> /log/jd_speed_sign.log 2>&1
@@ -162,10 +125,13 @@ ENV_PATH=
 11 */3 * * * node /scripts/jd_superMarket.js >> /log/jd_superMarket.log 2>&1
 48 04,13 * * * node /scripts/jd_sevenday.js >> /log/jd_sevenday.log 2>&1
 06 03,1,10 * * * node /scripts/jd_sendBeans.js >> /log/jd_sendBeans.log 2>&1
+18 1,8,13 * * * node /scripts/jd_try.js >> /log/jd_try.log 2>&1
 40 */6 * * * node /scripts/jd_tyt.js >> /log/jd_tyt.log 2>&1
 31 9,15 * * * node /scripts/jd_ttpt.js >> /log/jd_ttpt.log 2>&1
 10 0,10 * * * node /scripts/jd_twz-star.js >> /log/jd_twz-star.log 2>&1
 15 8,14 * * * node /scripts/jd_temp.js >> /log/jd_temp.js 2>&1
+38 17 * * * node /scripts/jd_unbind.js >> /log/jd_unbind.log 2>&1
+15 0-23/4 * * * node /scripts/jd_unsubscribe.js >> /log/jd_unsubscribe.log 2>&1
 42 9,15 * * * node /scripts/jd_wishingPool.js >> /log/jd_wishingPool.log 2>&1
 22 2,8 * * * node /scripts/jd_wxFans.js >> /log/jd_wxFans.log 2>&1
 25 2,8 * * * node /scripts/jd_wish.js >> /log/jd_wish.log 2>&1
