@@ -25,7 +25,7 @@ ENV_PATH=
 # 运行lxk0301大佬的js脚本，仅列出长期任务作初始化用，AutoAddCron=true时，将自动添加短期任务。
 # 请保留任务名称中的前缀"jd_"，去掉后缀".js"，如果有些任务你不想运行，注释掉就好了，不要删除。否则会重新添加上。
 # 非lxk0301/jd_scripts仓库中的脚本不能以“jd_”、“jr_”、“jx_”开头。请在最后保留一个空行。
-0 10 * * 1 node /scripts/jd_bean_change.js >> /log/jd_bean_change.log 2>&1
+0 10 * * * node /scripts/jd_bean_change.js >> /log/jd_bean_change.log 2>&1
 0 19 * * * node /scripts/jd_bean_changes.js >> /log/jd_bean_changes.log 2>&1
 33 0-23/4 * * * node /scripts/jd_bean_home.js >> /log/jd_bean_home.log 2>&1
 0 0 * * * node /scripts/jd_bean_sign.js >> /log/jd_bean_sign.log 2>&1
@@ -37,7 +37,7 @@ ENV_PATH=
 7 8,12,18 * * * node /scripts/jd_bookshop.js >> /log/jd_bookshop.log 2>&1
 12 */6 * * * node /scripts/jd_cfd_loop.js >> /log/jd_cfd_loop.log 2>&1
 33 */8 * * * node /scripts/jd_cfd_pearl_ex.js >> /log/jd_cfd_pearl_ex.log 2>&1
-0 0 * * * node /scripts/jd_car.js >> /log/jd_car.log 2>&1
+50 05 * * * node /scripts/jd_car.js >> /log/jd_car.log 2>&1
 0 0 * * * node /scripts/jd_car_exchange.js >> /log/jd_car_exchange.log 2>&1
 45 1 * * * node /scripts/jd_cart_remove.js >> /log/jd_cart_remove.js 2>&1
 27 6,18,15 * * * node /scripts/jd_cash.js >> /log/jd_cash.log 2>&1
