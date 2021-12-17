@@ -737,7 +737,7 @@ async function executeWaterRains() {
       }
     }
     if (executeWaterRain) {
-      console.log(`开始水滴雨任务,这是第${$.farmTask.waterRainInit.winTimes + 1}次，剩余${12 - ($.farmTask.waterRainInit.winTimes + 1)}次`);
+      console.log(`开始水滴雨任务,这是第${$.farmTask.waterRainInit.winTimes + 1}次，剩余${2 - ($.farmTask.waterRainInit.winTimes + 1)}次`);
       await waterRainForFarm();
       console.log('水滴雨waterRain');
       if ($.waterRain.code === '0') {
