@@ -61,7 +61,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
         continue
       }
       await initateCoinDozer() //开团
-      await $.wait(6000)
+      await $.wait(12000)
       if ($.canRun) {
         await getCoinDozerInfo()
         await $.wait(3000)
@@ -154,6 +154,7 @@ function tythelp(tytpacketId) {
             console.log("帮推：" + data.data.amount)
           } else
             console.log(data.msg)
+           console.log(`黑号11111111`)
         }
       } catch (e) {
         $.logErr(e, resp);
