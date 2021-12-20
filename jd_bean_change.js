@@ -20,7 +20,6 @@ let allWarnMessage = '';
 let ReturnMessage = '';
 let ReturnMessageMonth = '';
 let allMessageMonth = '';
-intPerSent  = 5;
 
 let MessageUserGp2 = '';
 let ReceiveMessageGp2 = '';
@@ -55,7 +54,7 @@ let ReturnMessageTitle="";
 let cookiesArr = [], cookie = '';
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 let intPerSent = 0;
-let i = 0;
+let i = 5;
 let DisableCash = "false";
 let llShowMonth = false;
 let Today = new Date();
