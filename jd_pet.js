@@ -280,20 +280,20 @@ async function slaveHelp() {
   //return
   let helpPeoples = '';
   for (let code of newShareCodes) {
-    console.log(`开始助力京东账号${$.index} - ${$.nickName}的好友: ${code}`);
+    console.log(`开始助力`);
     if (!code) continue;
     let response = await request(arguments.callee.name.toString(), {'shareCode': code});
     if (response.code === '0' && response.resultCode === '0') {
       if (response.result.helpStatus === 0) {
-        console.log('已给好友: 【' + response.result.masterNickName + '】助力成功');
+        console.log('助力成功');
         helpPeoples += response.result.masterNickName + '，';
       } else if (response.result.helpStatus === 1) {
         // 您今日已无助力机会
-        console.log(`助力好友${response.result.masterNickName}失败，您今日已无助力机会`);
+        console.log(`您今日已无助力机会`);
         break;
       } else if (response.result.helpStatus === 2) {
         //该好友已满5人助力，无需您再次助力
-        console.log(`该好友${response.result.masterNickName}已满5人助力，无需您再次助力`);
+        console.log(`已满5人助力，无需您再次助力`);
       } else {
         console.log(`助力其他情况：${JSON.stringify(response)}`);
       }
