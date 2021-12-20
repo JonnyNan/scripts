@@ -83,6 +83,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
         for (let j = 0; j < $.authorCode.length; j++) {
           let tytpacketId = $.authorCode[j];
           await tythelp(tytpacketId)
+          console.log(i)
           await $.wait(5000)
         }
       }
@@ -153,7 +154,8 @@ function tythelp(tytpacketId) {
           if (data.code == 0) {
             console.log("帮推：" + data.data.amount)
           } else
-            console.log(data.msg)
+           console.log(data.msg)
+           console.log(data.msg)
            console.log(`黑号11111111`)
         }
       } catch (e) {
