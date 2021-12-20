@@ -20,7 +20,7 @@ let allWarnMessage = '';
 let ReturnMessage = '';
 let ReturnMessageMonth = '';
 let allMessageMonth = '';
-let intPerSent  = 5;
+intPerSent  = 5;
 
 let MessageUserGp2 = '';
 let ReceiveMessageGp2 = '';
