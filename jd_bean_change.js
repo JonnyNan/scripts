@@ -12,7 +12,6 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 const JXUserAgent = $.isNode() ? (process.env.JX_USER_AGENT ? process.env.JX_USER_AGENT : ``) : ``;
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-BEANCHANGE_PERSENT='5'; 
 let allMessage = '';
 let allMessage2 = '';
 let allReceiveMessage = '';
@@ -53,7 +52,7 @@ let ReturnMessageTitle="";
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '';
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-let intPerSent = 0;
+let intPerSent = 5;
 let i = 5;
 let DisableCash = "false";
 let llShowMonth = false;
