@@ -102,8 +102,7 @@ let args_xh = {
      * 白名单和黑名单无法共存，白名单永远优先于黑名单
      * 可通过环境变量控制：JD_TRY_WHITELIST，默认为false
      * */
-	@@ -136,17 +139,21 @@
-     * */
+   
     whiteListKeywords: process.env.JD_TRY_WHITELISTKEYWORDS && process.env.JD_TRY_WHITELISTKEYWORDS.split('@') || [],
     /*
      * 每多少个账号发送一次通知，默认为10
@@ -124,7 +123,7 @@ let args_xh = {
     // 如果你要运行京东试用这个脚本，麻烦你把环境变量 JD_TRY 设置为 true
     if(true){
         await requireConfig()
-	@@ -156,37 +163,39 @@ let args_xh = {
+	 let args_xh = {
             })
             return
         }
@@ -164,7 +163,7 @@ let args_xh = {
                     if($.nowTabIdIndex === args_xh.tabId.length){
                         console.log(`tabId组已遍历完毕，不在获取商品\n`);
                         break;
-	@@ -198,31 +207,62 @@ let args_xh = {
+	                  let args_xh = {
                         await $.wait(2000);
                     }
                 }
@@ -227,7 +226,7 @@ let args_xh = {
                     $.sentNum++;
                     console.log(`正在进行第 ${$.sentNum} 次发送通知，发送数量：${args_xh.sendNum}`)
                     await $.notify.sendNotify(`${$.name}`, `${notifyMsg}`)
-	@@ -231,7 +271,7 @@ let args_xh = {
+	             let args_xh = {
             }
         }
         if($.isNode()){
@@ -235,7 +234,7 @@ let args_xh = {
                 console.log(`正在进行最后一次发送通知，发送数量：${($.cookiesArr.length - ($.sentNum * args_xh.sendNum))}`)
                 await $.notify.sendNotify(`${$.name}`, `${notifyMsg}`)
                 notifyMsg = "";
-	@@ -270,18 +310,19 @@ function requireConfig(){
+	            function requireConfig(){
         for(let keyWord of $.innerKeyWords) args_xh.titleFilters.push(keyWord)
         console.log(`共${$.cookiesArr.length}个京东账号\n`)
         console.log('=====环境变量配置如下=====')
@@ -255,7 +254,7 @@ let args_xh = {
         console.log('=======================')
         resolve()
     })
-	@@ -299,7 +340,7 @@ function try_tabList(){
+	 function try_tabList(){
             try{
                 if(err){
                     if(JSON.stringify(err) === `\"Response code 403 (Forbidden)\"`){
@@ -263,7 +262,7 @@ let args_xh = {
                         console.log('账号被京东服务器风控，不再请求该帐号')
                     } else {
                         console.log(JSON.stringify(err))
-	@@ -331,11 +372,11 @@ function try_feedsList(tabId, page){
+	 function try_feedsList(tabId, page){
             "previewTime": ""
         });
         let option = taskurl_xh('newtry', 'try_feedsList', body)
@@ -275,7 +274,7 @@ let args_xh = {
                         console.log('账号被京东服务器风控，不再请求该帐号')
                     } else {
                         console.log(JSON.stringify(err))
-	@@ -388,8 +429,8 @@ function try_feedsList(tabId, page){
+	 function try_feedsList(tabId, page){
                                     }
                                 } else {
                                     tempKeyword = ``;
@@ -284,7 +283,7 @@ let args_xh = {
                                     } else if(parseFloat(item.supplyNum) < args_xh.minSupplyNum && item.supplyNum !== null){
                                         args_xh.printLog ? console.log(`商品被过滤，提供申请的份数小于预设申请的份数 \n`) : ''
                                     } else if(parseFloat(item.applyNum) > args_xh.applyNumFilter && item.applyNum !== null){
-	@@ -399,9 +440,20 @@ function try_feedsList(tabId, page){
+	                         function try_feedsList(tabId, page){
                                     } else if(args_xh.titleFilters.some(fileter_word => item.skuTitle.includes(fileter_word) ? tempKeyword = fileter_word : '')){
                                         args_xh.printLog ? console.log(`商品被过滤，含有关键词 ${tempKeyword}\n`) : ''
                                     } else {
@@ -305,7 +304,7 @@ let args_xh = {
                                     }
                                 }
                             } else if($.isPush !== false){
-	@@ -430,6 +482,63 @@ function try_feedsList(tabId, page){
+	            function try_feedsList(tabId, page){
     })
 }
 
@@ -369,7 +368,7 @@ function try_detail(title, activityId){
 function try_apply(title, activityId){
     return new Promise((resolve, reject) => {
         console.log(`申请试用商品提交中...`)
-	@@ -444,18 +553,18 @@ function try_apply(title, activityId){
+	     function try_apply(title, activityId){
             try{
                 if(err){
                     if(JSON.stringify(err) === `\"Response code 403 (Forbidden)\"`){
@@ -388,7 +387,7 @@ function try_apply(title, activityId){
                     } else if(data.code === "-106"){
                         console.log(data.message)   // 未在申请时间内！
                     } else if(data.code === "-110"){
-	@@ -466,11 +575,11 @@ function try_apply(title, activityId){
+	                function try_apply(title, activityId){
                         console.log(data.message)   // 抱歉，此试用需为种草官才能申请。查看下方详情了解更多。
                     } else if(data.code === "-131"){
                         console.log(data.message)   // 申请次数上限。
@@ -400,7 +399,7 @@ function try_apply(title, activityId){
                     }
                 }
             } catch(e){
-	@@ -555,25 +664,26 @@ function taskurl_xh(appid, functionId, body = JSON.stringify({})){
+	 function taskurl_xh(appid, functionId, body = JSON.stringify({})){
 
 async function showMsg(){
     let message = ``;
