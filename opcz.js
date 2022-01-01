@@ -1,3 +1,4 @@
+
 /*
  * 如需运行请自行添加环境变量：JD_TRY，值填 true 即可运行
  * 脚本兼容: Node.js
@@ -33,14 +34,11 @@ $.cookiesArr = []
 $.innerKeyWords =
     [
         "幼儿园", "教程", "英语", "辅导", "培训",
-        "孩子", "小学", "成人用品", "套套", "情趣",
-        "自慰", "阳具", "飞机杯", "男士用品", "女士用品",
-        "内衣", "高潮", "避孕", "乳腺", "肛塞", "肛门",
-        "宝宝", "玩具", "芭比", "娃娃", "男用",
-        "女用", "神油", "足力健", "老年", "老人",
-        "宠物", "饲料", "丝袜", "黑丝", "磨脚",
-        "脚皮", "除臭", "性感", "内裤", "跳蛋",
-        "安全套", "龟头", "阴道", "阴部"
+        "孩子", "小学", "避孕", "乳腺",  "肛门",
+        "宝宝", "神油", "足力健", "老年", "老人",
+        "宠物", "饲料", "磨脚",
+        "脚皮", "除臭",  
+        "龟头", "阴道", "阴部"
     ]
 //下面很重要，遇到问题请把下面注释看一遍再来问
 let args_xh = {
@@ -59,15 +57,43 @@ let args_xh = {
      * 3 - 家用电器(可能会有变化)
      * 4 - 手机数码(可能会有变化)
      * 5 - 电脑办公(可能会有变化)
-	@@ -62,7 +65,7 @@ let args_xh = {
+     * ...
+     * 下面有一个function是可以获取所有tabId的，名为try_tabList
+     * 2021-09-06 12:32:00时获取到 tabId 16个
      * 可设置环境变量：JD_TRY_TABID，用@进行分隔
      * 默认为 1 到 5
      * */
-    tabId: process.env.JD_TRY_TABID && process.env.JD_TRY_TABID.split('@').map(Number) || [1],
+    tabId: process.env.JD_TRY_TABID && process.env.JD_TRY_TABID.split('@').map(Number) || [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],
     /*
      * 试用商品标题过滤，黑名单，当标题存在关键词时，则不加入试用组
      * 当白名单和黑名单共存时，黑名单会自动失效，优先匹配白名单，匹配完白名单后不会再匹配黑名单，望周知
-	@@ -96,14 +99,14 @@ let args_xh = {
+     * 例如A商品的名称为『旺仔牛奶48瓶特价』，设置了匹配白名单，白名单关键词为『牛奶』，但黑名单关键词存在『旺仔』
+     * 这时，A商品还是会被添加到待提交试用组，白名单优先于黑名单
+     * 已内置对应的 成人类 幼儿类 宠物 老年人类关键词，请勿重复添加
+     * 可设置环境变量：JD_TRY_TITLEFILTERS，关键词与关键词之间用@分隔
+     * */
+    titleFilters: process.env.JD_TRY_TITLEFILTERS && process.env.JD_TRY_TITLEFILTERS.split('@') || [],
+    /*
+     * 试用价格(中了要花多少钱)，高于这个价格都不会试用，小于等于才会试用，意思就是
+     * A商品原价49元，现在试用价1元，如果下面设置为10，那A商品将会被添加到待提交试用组，因为1 < 10
+     * B商品原价49元，现在试用价2元，如果下面设置为1，那B商品将不会被添加到待提交试用组，因为2 > 1
+     * C商品原价49元，现在试用价1元，如果下面设置为1，那C商品也会被添加到带提交试用组，因为1 = 1
+     * 可设置环境变量：JD_TRY_TRIALPRICE，默认为0
+     * */
+    trialPrice: process.env.JD_TRY_TRIALPRICE * 1 || 0,
+    /*
+     * 最小提供数量，例如试用商品只提供2份试用资格，当前设置为1，则会进行申请
+     * 若只提供5分试用资格，当前设置为10，则不会申请
+     * 可设置环境变量：JD_TRY_MINSUPPLYNUM
+     * */
+    minSupplyNum: process.env.JD_TRY_MINSUPPLYNUM * 1 || 1,
+    /*
+     * 过滤大于设定值的已申请人数，例如下面设置的1000，A商品已经有1001人申请了，则A商品不会进行申请，会被跳过
+     * 可设置环境变量：JD_TRY_APPLYNUMFILTER
+     * */
+    applyNumFilter: process.env.JD_TRY_APPLYNUMFILTER * 1 || 10000,
+    /*
+     * 商品试用之间和获取商品之间的间隔, 单位：毫秒(1秒=1000毫秒)
      * 可设置环境变量：JD_TRY_APPLYINTERVAL
      * 默认为3000，也就是3秒
      * */
@@ -102,14 +128,20 @@ let args_xh = {
      * 白名单和黑名单无法共存，白名单永远优先于黑名单
      * 可通过环境变量控制：JD_TRY_WHITELIST，默认为false
      * */
-   
+    whiteList: process.env.JD_TRY_WHITELIST || false,
+    /*
+     * 白名单关键词，当标题存在关键词时，加入到试用组
+     * 例如A商品的名字为『旺仔牛奶48瓶特价』，白名单其中一个关键词是『牛奶』，那么A将会直接被添加到待提交试用组，不再进行另外判断
+     * 就算设置了黑名单也不会判断，希望这种写得那么清楚的脑瘫问题就别提issues了
+     * 可通过环境变量控制：JD_TRY_WHITELIST，用@分隔
+     * */
     whiteListKeywords: process.env.JD_TRY_WHITELISTKEYWORDS && process.env.JD_TRY_WHITELISTKEYWORDS.split('@') || [],
     /*
      * 每多少个账号发送一次通知，默认为10
      * 可通过环境变量控制 JD_TRY_SENDNUM
      * */
-    sendNum: process.env.JD_TRY_SENDNUM * 1 || 1,
-
+    sendNum: process.env.JD_TRY_SENDNUM * 1 || 10,
+    
     /*
     * 商品申请剩余时间，默认为1天	
     * 商品离结束时间的天数，0为今天结束，1为明天结束，如此类推
@@ -123,7 +155,9 @@ let args_xh = {
     // 如果你要运行京东试用这个脚本，麻烦你把环境变量 JD_TRY 设置为 true
     if(true){
         await requireConfig()
-	 let args_xh = {
+        if(!$.cookiesArr[0]){
+            $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/', {
+                "open-url": "https://bean.m.jd.com/"
             })
             return
         }
@@ -145,7 +179,7 @@ let args_xh = {
                 $.isLogin = true;                
                 $.nickName = '';
                 await totalBean();
-
+               
                 if(!$.isLogin){
                     $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {
                         "open-url": "https://bean.m.jd.com/bean/signIndex.action"
@@ -163,7 +197,11 @@ let args_xh = {
                     if($.nowTabIdIndex === args_xh.tabId.length){
                         console.log(`tabId组已遍历完毕，不在获取商品\n`);
                         break;
-	                  let args_xh = {
+                    } else {
+                        await try_feedsList(args_xh.tabId[$.nowTabIdIndex], $.nowPage)  //获取对应tabId的试用页面
+                    }
+                    if(trialActivityIdList.length < args_xh.maxLength){
+                        console.log(`间隔等待中，请等待 2 秒\n`)
                         await $.wait(2000);
                     }
                 }
@@ -209,7 +247,7 @@ let args_xh = {
                 $.isLogin = true;
                 $.nickName = '';
                 await totalBean();
-
+                
                 if(!$.isLogin){
                     continue
                 }
@@ -226,7 +264,8 @@ let args_xh = {
                     $.sentNum++;
                     console.log(`正在进行第 ${$.sentNum} 次发送通知，发送数量：${args_xh.sendNum}`)
                     await $.notify.sendNotify(`${$.name}`, `${notifyMsg}`)
-	             let args_xh = {
+                    notifyMsg = "";
+                }
             }
         }
         if($.isNode()){
@@ -234,7 +273,38 @@ let args_xh = {
                 console.log(`正在进行最后一次发送通知，发送数量：${($.cookiesArr.length - ($.sentNum * args_xh.sendNum))}`)
                 await $.notify.sendNotify(`${$.name}`, `${notifyMsg}`)
                 notifyMsg = "";
-	            function requireConfig(){
+            }
+        }
+    } else {
+        console.log(`\n您未设置运行【京东试用】脚本，结束运行！\n`)
+    }
+})().catch((e) => {
+    console.error(`❗️ ${$.name} 运行错误！\n${e}`)
+}).finally(() => $.done())
+
+function requireConfig(){
+    return new Promise(resolve => {
+        console.log('开始获取配置文件\n')
+        $.notify = $.isNode() ? require('./sendNotify') : { sendNotify: async() => { } }
+        //获取 Cookies
+        $.cookiesArr = []
+        if($.isNode()){
+            //Node.js用户请在jdCookie.js处填写京东ck;
+            const jdCookieNode = require('./jdCookie.js');
+            Object.keys(jdCookieNode).forEach((item) => {
+                if(jdCookieNode[item]) $.cookiesArr.push(jdCookieNode[item])
+            })
+            if(process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => { };
+        } else {
+            //IOS等用户直接用NobyDa的jd $.cookie
+            $.cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
+        }
+        if(typeof process.env.JD_TRY_WHITELIST === "undefined") args_xh.whiteList = false;
+        else args_xh.whiteList = process.env.JD_TRY_WHITELIST === 'true';
+        if(typeof process.env.JD_TRY_PLOG === "undefined") args_xh.printLog = true;
+        else args_xh.printLog = process.env.JD_TRY_PLOG === 'true';
+        if(typeof process.env.JD_TRY_PASSZC === "undefined") args_xh.passZhongCao = true;
+        else args_xh.passZhongCao = process.env.JD_TRY_PASSZC === 'true';
         for(let keyWord of $.innerKeyWords) args_xh.titleFilters.push(keyWord)
         console.log(`共${$.cookiesArr.length}个京东账号\n`)
         console.log('=====环境变量配置如下=====')
@@ -254,7 +324,17 @@ let args_xh = {
         console.log('=======================')
         resolve()
     })
-	 function try_tabList(){
+}
+
+//获取tabList的，如果不知道tabList有哪些，跑一遍这个function就行了
+function try_tabList(){
+    return new Promise((resolve, reject) => {
+        console.log(`获取tabList中...`)
+        const body = JSON.stringify({
+            "previewTime": ""
+        });
+        let option = taskurl_xh('newtry', 'try_tabList', body)
+        $.get(option, (err, resp, data) => {
             try{
                 if(err){
                     if(JSON.stringify(err) === `\"Response code 403 (Forbidden)\"`){
@@ -262,7 +342,31 @@ let args_xh = {
                         console.log('账号被京东服务器风控，不再请求该帐号')
                     } else {
                         console.log(JSON.stringify(err))
-	 function try_feedsList(tabId, page){
+                        console.log(`${$.name} API请求失败，请检查网路重试`)
+                    }
+                } else {
+                    data = JSON.parse(data)
+                    if(data.success){
+                        for(let tabId of data.data.tabList) console.log(`${tabId.tabName} - ${tabId.tabId}`)
+                    } else {
+                        console.log("获取失败", data)
+                    }
+                }
+            } catch(e){
+                reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}\n${JSON.stringify(data)}`)
+            } finally{
+                resolve()
+            }
+        })
+    })
+}
+
+//获取商品列表并且过滤 By X1a0He
+function try_feedsList(tabId, page){
+    return new Promise((resolve, reject) => {
+        const body = JSON.stringify({
+            "tabId": `${tabId}`,
+            "page": page,
             "previewTime": ""
         });
         let option = taskurl_xh('newtry', 'try_feedsList', body)
@@ -274,7 +378,52 @@ let args_xh = {
                         console.log('账号被京东服务器风控，不再请求该帐号')
                     } else {
                         console.log(JSON.stringify(err))
-	 function try_feedsList(tabId, page){
+                        console.log(`${$.name} API请求失败，请检查网路重试`)
+                    }
+                } else {
+                    data = JSON.parse(data)
+                    let tempKeyword = ``;
+                    if(data.success){
+                        $.totalPages = data.data.pages
+                        $.nowPage === $.totalPages ? $.nowPage = 1 : $.nowPage++;
+                        console.log(`第 ${size++} 次获取试用商品成功，tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${$.totalPages} 页`)
+                        console.log(`获取到商品 ${data.data.feedList.length} 条`)
+                        for(let item of data.data.feedList){
+                            if(item.applyNum === null){
+                                args_xh.printLog ? console.log(`商品未到申请时间：${item.skuTitle}\n`) : ''
+                                continue
+                            }
+                            if(trialActivityIdList.length >= args_xh.maxLength){
+                                console.log('商品列表长度已满.结束获取')
+                                break
+                            }
+                            if(item.applyState === 1){
+                                args_xh.printLog ? console.log(`商品已申请试用：${item.skuTitle}\n`) : ''
+                                continue
+                            }
+                            if(item.applyState !== null){
+                                args_xh.printLog ? console.log(`商品状态异常，未找到skuTitle\n`) : ''
+                                continue
+                            }
+                            if(args_xh.passZhongCao){
+                                $.isPush = true;
+                                if(item.tagList.length !== 0){
+                                    for(let itemTag of item.tagList){
+                                        if(itemTag.tagType === 3){
+                                            args_xh.printLog ? console.log('商品被过滤，该商品是种草官专属') : ''
+                                            $.isPush = false;
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                            if(item.skuTitle && $.isPush){
+                                args_xh.printLog ? console.log(`检测 tabId:${args_xh.tabId[$.nowTabIdIndex]} 的 第 ${page}/${$.totalPages} 页 第 ${$.nowItem++ + 1} 个商品\n${item.skuTitle}`) : ''
+                                if(args_xh.whiteList){
+                                    if(args_xh.whiteListKeywords.some(fileter_word => item.skuTitle.includes(fileter_word))){
+                                        args_xh.printLog ? console.log(`商品白名单通过，将加入试用组，trialActivityId为${item.trialActivityId}\n`) : ''
+                                        trialActivityIdList.push(item.trialActivityId)
+                                        trialActivityTitleList.push(item.skuTitle)
                                     }
                                 } else {
                                     tempKeyword = ``;
@@ -283,11 +432,13 @@ let args_xh = {
                                     } else if(parseFloat(item.supplyNum) < args_xh.minSupplyNum && item.supplyNum !== null){
                                         args_xh.printLog ? console.log(`商品被过滤，提供申请的份数小于预设申请的份数 \n`) : ''
                                     } else if(parseFloat(item.applyNum) > args_xh.applyNumFilter && item.applyNum !== null){
-	                         function try_feedsList(tabId, page){
+                                        args_xh.printLog ? console.log(`商品被过滤，已申请试用人数大于预设人数 \n`) : ''
+                                    } else if(parseFloat(item.jdPrice) < args_xh.jdPrice){
+                                        args_xh.printLog ? console.log(`商品被过滤，商品原价低于预设商品原价 \n`) : ''
                                     } else if(args_xh.titleFilters.some(fileter_word => item.skuTitle.includes(fileter_word) ? tempKeyword = fileter_word : '')){
                                         args_xh.printLog ? console.log(`商品被过滤，含有关键词 ${tempKeyword}\n`) : ''
                                     } else {
-
+                                        
                                         $.day = -1
                                         await try_detail(item.skuTitle,item.trialActivityId)
                                         if($.day!= -1 && $.day <= args_xh.remainingDay)
@@ -300,11 +451,32 @@ let args_xh = {
                                         {
                                             args_xh.printLog ? console.log(`剩余时间 ${$.day} 设定时间 ${args_xh.remainingDay}\n`) : ''
                                         }
-
+                                        
                                     }
                                 }
                             } else if($.isPush !== false){
-	            function try_feedsList(tabId, page){
+                                console.error('skuTitle解析异常')
+                                return
+                            }
+                        }
+                        console.log(`当前试用组长度为：${trialActivityIdList.length}`)
+                        args_xh.printLog ? console.log(`${trialActivityIdList}`) : ''
+                        if(page === $.totalPages && $.nowTabIdIndex < args_xh.tabId.length){
+                            //这个是因为每一个tab都会有对应的页数，获取完如果还不够的话，就获取下一个tab
+                            $.nowTabIdIndex++;
+                            $.nowPage = 1;
+                            $.nowItem = 1;
+                        }
+                    } else {
+                        console.log(`💩 获得试用列表失败: ${data.message}`)
+                    }
+                }
+            } catch(e){
+                reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}\n${JSON.stringify(data)}`)
+            } finally{
+                resolve()
+            }
+        })
     })
 }
 
@@ -352,7 +524,7 @@ function try_detail(title, activityId){
 							$.day = -1
 							args_xh.printLog ? console.log(`当前商品已结束申请`) : ''
 						}	
-
+                        
                     }
                 }
             } catch(e){
@@ -363,12 +535,19 @@ function try_detail(title, activityId){
         })
     })
 }
-
+    
 
 function try_apply(title, activityId){
     return new Promise((resolve, reject) => {
         console.log(`申请试用商品提交中...`)
-	     function try_apply(title, activityId){
+        args_xh.printLog ? console.log(`商品：${title}`) : ''
+        args_xh.printLog ? console.log(`id为：${activityId}`) : ''
+        const body = JSON.stringify({
+            "activityId": activityId,
+            "previewTime": ""
+        });
+        let option = taskurl_xh('newtry', 'try_apply', body)
+        $.get(option, (err, resp, data) => {
             try{
                 if(err){
                     if(JSON.stringify(err) === `\"Response code 403 (Forbidden)\"`){
@@ -387,7 +566,10 @@ function try_apply(title, activityId){
                     } else if(data.code === "-106"){
                         console.log(data.message)   // 未在申请时间内！
                     } else if(data.code === "-110"){
-	                function try_apply(title, activityId){
+                        console.log(data.message)   // 您的申请已成功提交，请勿重复申请…
+                    } else if(data.code === "-120"){
+                        console.log(data.message)   // 您还不是会员，本品只限会员申请试用，请注册会员后申请！
+                    } else if(data.code === "-167"){
                         console.log(data.message)   // 抱歉，此试用需为种草官才能申请。查看下方详情了解更多。
                     } else if(data.code === "-131"){
                         console.log(data.message)   // 申请次数上限。
@@ -399,7 +581,84 @@ function try_apply(title, activityId){
                     }
                 }
             } catch(e){
-	 function taskurl_xh(appid, functionId, body = JSON.stringify({})){
+                reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}\n${JSON.stringify(data)}`)
+            } finally{
+                resolve()
+            }
+        })
+    })
+}
+
+function try_MyTrials(page, selected){
+    return new Promise((resolve, reject) => {
+        switch(selected){
+            case 1:
+                console.log('正在获取已申请的商品...')
+                break;
+            case 2:
+                console.log('正在获取申请成功的商品...')
+                break;
+            case 3:
+                console.log('正在获取申请失败的商品...')
+                break;
+            default:
+                console.log('selected错误')
+        }
+        const body = JSON.stringify({
+            "page": page,
+            "selected": selected,   // 1 - 已申请 2 - 成功列表，3 - 失败列表
+            "previewTime": ""
+        });
+        let option = taskurl_xh('newtry', 'try_MyTrials', body)
+        option.headers.Referer = 'https://pro.m.jd.com/'
+        $.get(option, (err, resp, data) => {
+            try{
+                if(err){
+                    console.log(`🚫 ${arguments.callee.name.toString()} API请求失败，请检查网路\n${JSON.stringify(err)}`)
+                } else {
+                    data = JSON.parse(data)
+                    if(data.success){
+                        //temp adjustment
+                        if(selected === 2){
+                            if(data.success && data.data){
+                                for(let item of data.data.list){
+                                    item.status === 4 || item.text.text.includes('已放弃') ? $.giveupNum += 1 : ''
+                                    item.status === 2 && item.text.text.includes('试用资格将保留') ? $.successNum += 1 : ''
+                                    item.status === 2 && item.text.text.includes('请收货后尽快提交报告') ? $.getNum += 1 : ''
+                                    item.status === 2 && item.text.text.includes('试用已完成') ? $.completeNum += 1 : ''
+                                }
+                                console.log(`待领取 | 已领取 | 已完成 | 已放弃：${$.successNum} | ${$.getNum} | ${$.completeNum} | ${$.giveupNum}`)
+                            } else {
+                                console.log(`获得成功列表失败: ${data.message}`)
+                            }
+                        }
+                    } else {
+                        console.error(`ERROR:try_MyTrials`)
+                    }
+                }
+            } catch(e){
+                reject(`⚠️ ${arguments.callee.name.toString()} API返回结果解析出错\n${e}\n${JSON.stringify(data)}`)
+            } finally{
+                resolve()
+            }
+        })
+    })
+}
+
+function taskurl_xh(appid, functionId, body = JSON.stringify({})){
+    return {
+        "url": `${URL}?appid=${appid}&functionId=${functionId}&clientVersion=10.1.2&client=wh5&body=${encodeURIComponent(body)}`,
+        'headers': {
+            'Host': 'api.m.jd.com',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Cookie': $.cookie,
+            'Connection': 'keep-alive',
+            'UserAgent': 'jdapp;iPhone;10.1.2;15.0;ff2caa92a8529e4788a34b3d8d4df66d9573f499;network/wifi;model/iPhone13,4;addressid/2074196292;appBuild/167802;jdSupportDarkMode/1;Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1',
+            'Accept-Language': 'zh-cn',
+            'Referer': 'https://prodev.m.jd.com/'
+        },
+    }
+}
 
 async function showMsg(){
     let message = ``;
@@ -428,6 +687,7 @@ async function showMsg(){
         console.log(message)
     }
 }
+
 function totalBean(){
     return new Promise(async resolve => {
         const options = {
@@ -473,6 +733,7 @@ function totalBean(){
         })
     })
 }
+
 function jsonParse(str){
     if(typeof str == "string"){
         try{
@@ -484,11 +745,13 @@ function jsonParse(str){
         }
     }
 }
+
 function Env(name, opts){
     class Http{
         constructor(env){
             this.env = env
         }
+
         send(opts, method = 'GET'){
             opts = typeof opts === 'string' ? {
                 url: opts
@@ -504,13 +767,16 @@ function Env(name, opts){
                 })
             })
         }
+
         get(opts){
             return this.send.call(this.env, opts)
         }
+
         post(opts){
             return this.send.call(this.env, opts, 'POST')
         }
     }
+
     return new (class{
         constructor(name, opts){
             this.name = name
@@ -525,18 +791,23 @@ function Env(name, opts){
             Object.assign(this, opts)
             this.log('', `🔔${this.name}, 开始!`)
         }
+
         isNode(){
             return 'undefined' !== typeof module && !!module.exports
         }
+
         isQuanX(){
             return 'undefined' !== typeof $task
         }
+
         isSurge(){
             return 'undefined' !== typeof $httpClient && 'undefined' === typeof $loon
         }
+
         isLoon(){
             return 'undefined' !== typeof $loon
         }
+
         toObj(str, defaultValue = null){
             try{
                 return JSON.parse(str)
@@ -544,6 +815,7 @@ function Env(name, opts){
                 return defaultValue
             }
         }
+
         toStr(obj, defaultValue = null){
             try{
                 return JSON.stringify(obj)
@@ -551,6 +823,7 @@ function Env(name, opts){
                 return defaultValue
             }
         }
+
         getjson(key, defaultValue){
             let json = defaultValue
             const val = this.getdata(key)
@@ -561,6 +834,7 @@ function Env(name, opts){
             }
             return json
         }
+
         setjson(val, key){
             try{
                 return this.setdata(JSON.stringify(val), key)
@@ -568,6 +842,7 @@ function Env(name, opts){
                 return false
             }
         }
+
         getScript(url){
             return new Promise((resolve) => {
                 this.get({
@@ -575,6 +850,7 @@ function Env(name, opts){
                 }, (err, resp, body) => resolve(body))
             })
         }
+
         runScript(script, runOpts){
             return new Promise((resolve) => {
                 let httpapi = this.getdata('@chavy_boxjs_userCfgs.httpapi')
@@ -598,6 +874,7 @@ function Env(name, opts){
                 this.post(opts, (err, resp, body) => resolve(body))
             }).catch((e) => this.logErr(e))
         }
+
         loaddata(){
             if(this.isNode()){
                 this.fs = this.fs ? this.fs : require('fs')
@@ -616,6 +893,7 @@ function Env(name, opts){
                 } else return {}
             } else return {}
         }
+
         writedata(){
             if(this.isNode()){
                 this.fs = this.fs ? this.fs : require('fs')
@@ -634,6 +912,7 @@ function Env(name, opts){
                 }
             }
         }
+
         lodash_get(source, path, defaultValue = undefined){
             const paths = path.replace(/\[(\d+)\]/g, '.$1').split('.')
             let result = source
@@ -645,6 +924,7 @@ function Env(name, opts){
             }
             return result
         }
+
         lodash_set(obj, path, value){
             if(Object(obj) !== obj) return obj
             if(!Array.isArray(path)) path = path.toString().match(/[^.[\]]+/g) || []
@@ -653,6 +933,7 @@ function Env(name, opts){
                 ] = value
             return obj
         }
+
         getdata(key){
             let val = this.getval(key)
             // 如果以 @
@@ -670,6 +951,7 @@ function Env(name, opts){
             }
             return val
         }
+
         setdata(val, key){
             let issuc = false
             if(/^@/.test(key)){
@@ -690,6 +972,7 @@ function Env(name, opts){
             }
             return issuc
         }
+
         getval(key){
             if(this.isSurge() || this.isLoon()){
                 return $persistentStore.read(key)
@@ -702,6 +985,7 @@ function Env(name, opts){
                 return (this.data && this.data[key]) || null
             }
         }
+
         setval(val, key){
             if(this.isSurge() || this.isLoon()){
                 return $persistentStore.write(val, key)
@@ -716,6 +1000,7 @@ function Env(name, opts){
                 return (this.data && this.data[key]) || null
             }
         }
+
         initGotEnv(opts){
             this.got = this.got ? this.got : require('got')
             this.cktough = this.cktough ? this.cktough : require('tough-cookie')
@@ -727,6 +1012,7 @@ function Env(name, opts){
                 }
             }
         }
+
         get(opts, callback = () => { }){
             if(opts.headers){
                 delete opts.headers['Content-Type']
@@ -810,6 +1096,7 @@ function Env(name, opts){
                 )
             }
         }
+
         post(opts, callback = () => { }){
             // 如果指定了请求体, 但没指定`Content-Type`, 则自动生成
             if(opts.body && opts.headers && !opts.headers['Content-Type']){
@@ -886,6 +1173,7 @@ function Env(name, opts){
                 )
             }
         }
+
         /**
          *
          * 示例:$.time('yyyy-MM-dd qq HH:mm:ss.S')
@@ -911,6 +1199,7 @@ function Env(name, opts){
                     fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substr(('' + o[k]).length))
             return fmt
         }
+
         /**
          * 系统通知
          *
@@ -980,12 +1269,14 @@ function Env(name, opts){
                 this.logs = this.logs.concat(logs)
             }
         }
+
         log(...logs){
             if(logs.length > 0){
                 this.logs = [...this.logs, ...logs]
             }
             console.log(logs.join(this.logSeparator))
         }
+
         logErr(err, msg){
             const isPrintSack = !this.isSurge() && !this.isQuanX() && !this.isLoon()
             if(!isPrintSack){
@@ -994,9 +1285,11 @@ function Env(name, opts){
                 this.log('', `❗️${this.name}, 错误!`, err.stack)
             }
         }
+
         wait(time){
             return new Promise((resolve) => setTimeout(resolve, time))
         }
+
         done(val = {}){
             const endTime = new Date().getTime()
             const costTime = (endTime - this.startTime) / 1000
