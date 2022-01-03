@@ -128,6 +128,7 @@ ENV_PATH=
 10 7 * * * node /scripts/jd_ms.js >> /log/jd_ms.log 2>&1
 28 04,13 * * * node /scripts/jd_mohe.js >> /log/jd_mohe.log 2>&1
 26 02,8 * * * node /scripts/jd_nzmh.js >> /log/jd_nzmh.log 2>&1
+36 02,8 * * * node /scripts/jd_nh_sign.js >> /log/jd_nh_sign.log 2>&1
 26 0,9,18,23 * * * node /scripts/jd_nnfls.js >> /log/jd_nnfls.js 2>&1
 5 1,10 * * * node /scripts/jd_necklace.js >> /log/jd_necklace.log 2>&1
 02 8,18 * * * node /scripts/jd_opencard.js >> /log/jd_opencard.log 2>&1
@@ -171,6 +172,7 @@ ENV_PATH=
 15 0-23/4 * * * node /scripts/jd_unsubscribe.js >> /log/jd_unsubscribe.log 2>&1
 42 9,15 * * * node /scripts/jd_wishingPool.js >> /log/jd_wishingPool.log 2>&1
 22 2,8 * * * node /scripts/jd_wxFans.js >> /log/jd_wxFans.log 2>&1
+42 2,8 * * * node /scripts/jd_wxgame.js >> /log/jd_wxgame.log 2>&1
 25 2,8 * * * node /scripts/jd_wish.js >> /log/jd_wish.log 2>&1
 18 0,12,18 * * * node /scripts/jd_ys.js >> /log/jd_ys.log 2>&1
 15 3,18 * * * node /scripts/jd_zsign.js >> /log/jd_zsign.log 2>&1
