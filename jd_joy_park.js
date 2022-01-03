@@ -1,4 +1,3 @@
-// @grant nodejs
 /*
 ENV
 
@@ -27,7 +26,7 @@ cron "20 0-23/3 * * *" script-path=jd_joypark_joy.js,tag=汪汪乐园养joy
 */
 const $ = new Env('汪汪乐园养joy');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-
+let hot_flag = false
 const notify = $.isNode() ? require('./sendNotify') : '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [],
@@ -65,6 +64,7 @@ message = ""
     //   console.log(`\n汪汪乐园养joy 只运行 ${process.env.JOYPARK_JOY_START} 个Cookie\n`);
     //   break
     // }
+    hot_flag = false
     cookie = cookiesArr[i];
     if (cookie) {
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
@@ -87,10 +87,11 @@ message = ""
         } else {
           await getShareCode()
           if ($.kgw_invitePin && $.kgw_invitePin.length) {
+            $.log("开始帮【zero205】助力开工位\n");
             $.kgw_invitePin = [...($.kgw_invitePin || [])][Math.floor((Math.random() * $.kgw_invitePin.length))];
             let resp = await getJoyBaseInfo(undefined, 2, $.kgw_invitePin);
             if (resp.helpState && resp.helpState === 1) {
-              $.log("开工位成功，感谢！\n");
+              $.log("帮【zero205】开工位成功，感谢！\n");
             } else if (resp.helpState && resp.helpState === 3) {
               $.log("你不是新用户！跳过开工位助力\n");
             } else if (resp.helpState && resp.helpState === 2) {
@@ -281,10 +282,14 @@ async function doJoyMergeAll(activityJoyList) {
   let joyMinLevelArr = activityJoyList.filter(row => row.level === minLevel);
   let joyBaseInfo = await getJoyBaseInfo()
   let fastBuyLevel = joyBaseInfo.fastBuyLevel
+  await $.wait(5000)
   if (joyMinLevelArr.length >= 2) {
     $.log(`开始合成 ${minLevel} ${joyMinLevelArr[0].id} <=> ${joyMinLevelArr[1].id} 【限流严重，5秒后合成！如失败会重试】`);
     await $.wait(5000)
     await doJoyMerge(joyMinLevelArr[0].id, joyMinLevelArr[1].id);
+    if (hot_flag) {
+      return
+    }
     await getJoyList()
     await doJoyMergeAll($.activityJoyList)
   } else if (joyMinLevelArr.length === 1 && joyMinLevelArr[0].level < fastBuyLevel) {
@@ -345,6 +350,9 @@ function doJoyMerge(joyId1, joyId2) {
         } else {
           data = JSON.parse(data);
           $.log(`合成 ${joyId1} <=> ${joyId2} ${data.success ? `成功！` : `失败！【${data.errMsg}】 code=${data.code}`}`)
+          if (data.code == '1006') {
+            hot_flag = true
+          }
         }
       } catch (e) {
         $.logErr(e, resp)
