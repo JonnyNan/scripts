@@ -63,10 +63,10 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
       //await initateCoinDozer() //开团
       await $.wait(12000)
       if ($.canRun) {
-        await getCoinDozerInfo()
-        await $.wait(3000)
-        await coinDozerBackFlow()
-        await $.wait(3000)
+       // await getCoinDozerInfo()
+        //await $.wait(3000)
+       // await coinDozerBackFlow()
+       // await $.wait(3000)
         await helpCoinDozer(packetId)
         await $.wait(8000)
         if (tytpacketId !== '') {
