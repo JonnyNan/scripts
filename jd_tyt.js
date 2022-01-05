@@ -6,7 +6,6 @@ export TYT_PACKETID=""
 #柠檬推一推
 0 0-23/3 * * * http://nm66.top/jd_tyt.js, tag=柠檬推一推, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 注意：助力码每天会变，旧的不可用。
-助力逻辑：优先助力互助码变量，北京时间15点后默认会助力作者，介意请勿运行！
 */
 const $ = new Env('柠檬推一推');
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -16,9 +15,6 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '';
 let tytpacketId = '';
-// if (process.env.tytpacketId) {
-//   tytpacketId = process.env.tytpacketId;
-// }
 
 //兼容elecV2P
 tytpacketId = $.getdata('TYT_PACKETID') ? $.getdata('TYT_PACKETID') : '';
@@ -66,12 +62,13 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
         await getCoinDozerInfo()
         await $.wait(3000)
         await coinDozerBackFlow()
-        await $.wait(3000)
-        await helpCoinDozer(packetId)
+      
         await $.wait(8000)
         if (tytpacketId !== '') {
           await tythelp(tytpacketId)
         }
+        await $.wait(3000)
+        await helpCoinDozer(packetId)
       }
     }
   }
