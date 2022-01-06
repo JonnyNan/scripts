@@ -128,7 +128,7 @@ let args_xh = {
      * 每多少个账号发送一次通知，默认为4
      * 可通过环境变量控制 JD_TRY_SENDNUM
      * */
-    sendNum: process.env.JD_TRY_SENDNUM * 1 || 4,
+    sendNum: process.env.JD_TRY_SENDNUM * 1 || 5,
 }
 //上面很重要，遇到问题请把上面注释看一遍再来问
 !(async() => {
@@ -544,17 +544,15 @@ async function showMsg(){
     let message = ``;
     message += `👤 京东账号${$.index} ${$.nickName || $.UserName}\n`;
     if($.totalSuccess !== 0 && $.totalTry !== 0){
-        message += `🎉 本次提交申请：${$.totalSuccess}/${$.totalTry}个商品🛒\n`;
-        message += `🎉 ${$.successNum}个商品待领取\n`;
-        message += `🎉 ${$.getNum}个商品已领取\n`;
-        message += `🎉 ${$.completeNum}个商品已完成\n`;
-        message += `🗑 ${$.giveupNum}个商品已放弃\n\n`;
+        message += `🎉 本次提交申请：${$.totalSuccess}/${$.totalTry}个商品`;
+        message += `🎉 ${$.successNum}个商品待领取`;        
+        message += `🎉 ${$.completeNum}个商品已完成`;
+       
     } else {
-        message += `⚠️ 本次执行没有申请试用商品\n`;
-        message += `🎉 ${$.successNum}个商品待领取\n`;
-        message += `🎉 ${$.getNum}个商品已领取\n`;
-        message += `🎉 ${$.completeNum}个商品已完成\n`;
-        message += `🗑 ${$.giveupNum}个商品已放弃\n\n`;
+        message += `⚠️ 本次执行没有申请试用商品`;
+        message += `🎉 ${$.successNum}个商品待领取`;
+        message += `🎉 ${$.getNum}个商品已领取`;
+        message += `🎉 ${$.completeNum}个商品已完成`;        
     }
     if(!args_xh.jdNotify || args_xh.jdNotify === 'false'){
         $.msg($.name, ``, message, {
