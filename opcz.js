@@ -67,7 +67,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
         //await $.wait(3000)
        // await coinDozerBackFlow()
        // await $.wait(3000)
-        await helpCoinDozer(packetId)
+        //await helpCoinDozer(packetId)
         await $.wait(8000)
         if (tytpacketId !== '') {
           await tythelp(tytpacketId)
