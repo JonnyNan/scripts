@@ -41,6 +41,7 @@ ENV_PATH=
 0 0 * * * node /scripts/jd_car_exchange.js >> /log/jd_car_exchange.log 2>&1
 45 1 * * * node /scripts/jd_cart_remove.js >> /log/jd_cart_remove.js 2>&1
 27 6,18,15 * * * node /scripts/jd_cash.js >> /log/jd_cash.log 2>&1
+18 16,18,21 * * * node /scripts/jd_city.js >> /log/jd_city.log 2>&1
 0 0 * * * node /scripts/jd_cash_exchange.js >> /log/jd_cash_exchange.log 2>&1
 22 0,9 * * * node /scripts/jd_ccSign.js >> /log/jd_ccSign.log 2>&1
 30 * * * * node /scripts/jd_cfd.js >> /log/jd_cfd.log 2>&1
