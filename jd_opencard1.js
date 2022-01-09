@@ -29,7 +29,7 @@ if ($.isNode()) {
     cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-let inviteCodes = ["ZXASTT0124KQ2GkdM81PfFjRWn6W7zB55awQ","ZXASTT019-ak0PWRKgCO3W02JyLYFjRWn6W7zB55awQ","ZXASTT019-aksBmRfkjSreH-R1YQFjRWn6W7zB55awQ","ZXASTT019-aklCFpFgSm_WEil7LIFjRWn6W7zB55awQ","ZXASTT0205KkcPUtgghSRdWSyzY5_FjRWn6W7zB55awQ","",""
+let inviteCodes = ["ZXASTT0124KQ2GkdM81PfFjRWn6W7zB55awQ","ZXASTT019-ak0PWRKgCO3W02JyLYFjRWn6W7zB55awQ","ZXASTT019-aksBmRfkjSreH-R1YQFjRWn6W7zB55awQ","ZXASTT019-aklCFpFgSm_WEil7LIFjRWn6W7zB55awQ","ZXASTT0205KkcPUtgghSRdWSyzY5_FjRWn6W7zB55awQ","ZXASTT0225KkcRRYfo1bTdBigxfMCIAFjRWn6W7zB55awQ","ZXASTT0225KkcRBoY9VbQdhillaIKIAFjRWn6W7zB55awQ"
 
 
 ]
