@@ -1,5 +1,4 @@
 
-
 /*
 
 脚本有问题，凑活用
@@ -30,7 +29,8 @@ if ($.isNode()) {
     cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-let inviteCodes = [
+let inviteCodes = ["ZXASTT0124KQ2GkdM81PfFjRWn6W7zB55awQ","ZXASTT019-ak0PWRKgCO3W02JyLYFjRWn6W7zB55awQ","ZXASTT019-aksBmRfkjSreH-R1YQFjRWn6W7zB55awQ","ZXASTT019-aklCFpFgSm_WEil7LIFjRWn6W7zB55awQ","ZXASTT0205KkcPUtgghSRdWSyzY5_FjRWn6W7zB55awQ","",""
+
 
 ]
 $.shareCodesArr = [];
@@ -110,6 +110,7 @@ $.shareCodesArr = [];
                                 var tmp = []
                                 if (task.taskType == 7) {
                                     tmp = task.browseShopVo
+									await $.wait(6000)
                                 } else {
                                     tmp = task.shoppingActivityVos
                                 }
@@ -118,6 +119,7 @@ $.shareCodesArr = [];
                                     console.log(`\n\n ${tmp[o].title?tmp[o].title:tmp[o].shopName}`)
                                     if (tmp[o].status == 1) {
                                         conti = true
+										await $.wait(6000)
                                         await tigernian_collectScore(tmp[o].taskToken, task.taskId)
                                     }
 
@@ -126,6 +128,7 @@ $.shareCodesArr = [];
                                 for (var o = 0; o < tmp.length; o++) {
                                     if (tmp[o].status == 1) {
                                         conti = true
+										await $.wait(6000)
                                         await qryViewkitCallbackResult(tmp[o].taskToken)
                                     }
 
@@ -137,6 +140,7 @@ $.shareCodesArr = [];
                                 for (var o = 0; o < r.productInfoVos.length; o++) {
                                     if (r.productInfoVos[o].status == 1) {
                                         conti = true
+										await $.wait(6000)
                                         await tigernian_collectScore(r.productInfoVos[o].taskToken, task.taskId)
                                         t++
                                         if (t >= 5) break
@@ -145,7 +149,9 @@ $.shareCodesArr = [];
                                 }
                                 break
                             case 5:
-                                r = await tigernian_getFeedDetail2(task.taskId)
+                                await $.wait(6000)
+								r = await tigernian_getFeedDetail2(task.taskId)
+								
                                 var t = 0;
                                 for (var o = 0; o < r.browseShopVo.length; o++) {
                                     if (r.browseShopVo[o].status == 1) {
@@ -171,7 +177,7 @@ $.shareCodesArr = [];
                         }
 
                     }
-                    await $.wait(1000)
+                    await $.wait(5000)
                 } while (conti)
 
 
