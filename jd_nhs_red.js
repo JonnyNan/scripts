@@ -4,7 +4,7 @@ cron 1 0,20,23,12 * * * https://raw.githubusercontent.com/star261/jd/main/script
 * */
 const $ = new Env('会场红包');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-let flCode =  $.isNode() ? (process.env.FLCODE3 ? process.env.FLCODE3 : 'SIQeAW7'):'SIQeAW7';
+let flCode =  $.isNode() ? (process.env.FLCODE3 ? process.env.FLCODE3 : 'SCqdIAr'):'SCqdIAr';
 let cookiesArr = [];
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
