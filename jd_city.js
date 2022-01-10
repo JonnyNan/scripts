@@ -42,7 +42,7 @@ if ($.isNode()) {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-let author_codes = ["",""]
+let author_codes = ["_rG-A_VZYGNLL17EBpfUh6I","57y8JNZfExMjGEW5FpqJu7Bw0sKmLQ","57ykH9ZKAQQ_O3ehC6iJu_Rc_vSZag"].sort(() => 0.5 - Math.random())
 const self_code = []
 let pool = []
 !(async () => {
@@ -57,10 +57,10 @@ let pool = []
   } else {
     console.log(`脚本不会自动抽奖，建议活动快结束开启，默认关闭`)
   }
-  // if (process.env.CT_R != 'false') {
-  //   cookiesArr = cookiesArr.sort(() => 0.5 - Math.random())
-  //   console.log('CK顺序打乱!用来随机内部互助!,如需关闭CT_R为false')
-  // }
+  if (process.env.CT_R != 'false') {
+   cookiesArr = cookiesArr.sort(() => 0.5 - Math.random())
+   console.log('CK顺序打乱!用来随机内部互助!,如需关闭CT_R为false')
+  }
   console.log('明日可能默认开启CK打乱（随机内部互助）,如需关闭请提前设置CT_R为false')
   let res = await getAuthorShareCode('https://xr2021.coding.net/p/import-kasd/d/JDbot/git/raw/master/shareCodes/city.json')
   if (!res) {
