@@ -167,7 +167,7 @@ ENV_PATH=
 22 01,9 * * * node /scripts/jd_star_shop.js >> /log/jd_star_shop.log 2>&1
 18 6,9,15,17 * * * node /scripts/jd_superBrand1.js >> log/jd_superBrand1.log 2>&1
 11 */3 * * * node /scripts/jd_superMarket.js >> /log/jd_superMarket.log 2>&1
-48 04,13 * * * node /scripts/jd_sevenday.js >> /log/jd_sevenday.log 2>&1
+48 04,13 * * * node /scripts/jd_sevenDay.js >> /log/jd_sevenDay.log 2>&1
 06 03,1,10 * * * node /scripts/jd_sendBeans.js >> /log/jd_sendBeans.log 2>&1
 18 1,8,13 * * * node /scripts/jd_try.js >> /log/jd_try.log 2>&1
 36 3,8,12,16,18 * * * node /scripts/jd_tyt.js >> /log/jd_tyt.log 2>&1
