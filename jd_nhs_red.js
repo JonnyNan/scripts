@@ -3,6 +3,10 @@
 cron 1 0,20,23,12 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_nhs_red.js
 * */
 const $ = new Env('会场红包');
+if (process.env.special != 'true') {
+    console.log('脚本默认不运行,请设置环境变量special为true运行,可能黑号,运行前最少手动进去过一次')
+    return
+}
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let flCode =  $.isNode() ? (process.env.FLCODE3 ? process.env.FLCODE3 : 'SCqdIAr'):'SCqdIAr';
 let cookiesArr = [];
