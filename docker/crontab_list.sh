@@ -143,6 +143,8 @@ ENV_PATH=
 32 8,18 * * * node /scripts/jd_opencard2.js >> /log/jd_opencard2.log 2>&1
 42 8,18 * * * node /scripts/jd_opencard3.js >> /log/jd_opencard3.log 2>&1
 40 10,18 * * * node /scripts/jd_opencard4.js >> /log/jd_opencard4.log 2>&1
+45 11,17 * * * node /scripts/jd_opencard4.js >> /log/jd_opencard5.log 2>&1
+50 12,16 * * * node /scripts/jd_opencard4.js >> /log/jd_opencard6.log 2>&1
 5 6-18/6 * * * node /scripts/jd_pet.js >> /log/jd_pet.log 2>&1
 8 9 * * * node /scripts/jd_petTreasureBox.js >> /log/jd_petTreasureBox.log 2>&1
 12 * * * * node /scripts/jd_pigPet.js >> /log/jd_pigPet.log 2>&1
