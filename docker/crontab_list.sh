@@ -175,6 +175,7 @@ ENV_PATH=
 31 9,15 * * * node /scripts/jd_ttpt.js >> /log/jd_ttpt.log 2>&1
 10 0,10 * * * node /scripts/jd_twz-star.js >> /log/jd_twz-star.log 2>&1
 15 8,14 * * * node /scripts/jd_temp.js >> /log/jd_temp.js 2>&1
+15 20 * * * node /scripts/jd_travel_help.js >> /log/jd_travel_help.js 2>&1
 38 17 * * * node /scripts/jd_unbind.js >> /log/jd_unbind.log 2>&1
 15 0-23/4 * * * node /scripts/jd_unsubscribe.js >> /log/jd_unsubscribe.log 2>&1
 42 9,15 * * * node /scripts/jd_wishingPool.js >> /log/jd_wishingPool.log 2>&1
