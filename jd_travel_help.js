@@ -33,7 +33,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
     }
 
     $.shareCodesArr = [];
-    for (let i = 0; i < cookiesArr.length; i++) {
+    for (let i = 0; i < 1; i++) {
         if (cookiesArr[i]) {
             await getUA()
             cookie = cookiesArr[i];
