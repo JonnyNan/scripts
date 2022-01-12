@@ -187,8 +187,8 @@ async function travel() {
                 ap.push(`签到进度：${progress}`)
                 scoreResult?.score && formatMsg(scoreResult.score, "每日签到", ap.join("，"))
             }
-            const collectAutoScore = await doApi("collectAutoScore", null, null, true)
-            collectAutoScore.produceScore && formatMsg(collectAutoScore.produceScore, "定时收集")
+            //const collectAutoScore = await doApi("collectAutoScore", null, null, true)
+            //collectAutoScore.produceScore && formatMsg(collectAutoScore.produceScore, "定时收集")
             console.log("\n去看看战队\n")
             await team()
             console.log("\n去做主App任务\n")
