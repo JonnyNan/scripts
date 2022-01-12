@@ -546,7 +546,7 @@ async function showMsg(){
     if($.totalSuccess !== 0 && $.totalTry !== 0){
         message += `🎉 本次提交申请：${$.totalSuccess}/${$.totalTry}个商品`;
         message += `🎉 待领取商品须手动查看`;        
-        message += `;
+        message += ``;
        
     } else {
         message += `🎉 本次提交0个申请`;
