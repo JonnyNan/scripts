@@ -3,15 +3,15 @@
 cron 0 0,8,20,22 * * *  https://raw.githubusercontent.com/smiek2121/scripts/master/gua_nhjRed.js
 整点跑 红包几率大点
 
-https://u.jd.com/StixNUc
+https://u.jd.com/SIaOAya
 跳转到app 可查看助力情况
 
 返利变量：gua_nhjRed_rebateCode，若需要返利给自己，请自己修改环境变量[gua_nhjRed_rebateCode]
 SCqdIAr换成自己的返利
-export gua_nhjRed_rebateCode="SCqdIAr"
+export gua_nhjRed_rebateCode="SIaOAya"
 */
 
-let rebateCodes = 'SCqdIAr'
+let rebateCodes = 'SIaOAya'
 
 const $ = new Env('年货节红包');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -27,7 +27,7 @@ if ($.isNode()) {
 } else {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
-//rebateCodes = $.isNode() ? (process.env.gua_nhjRed_rebateCode ? process.env.gua_nhjRed_rebateCode : `${rebateCodes}`) : ($.getdata('gua_nhjRed_rebateCode') ? $.getdata('gua_nhjRed_rebateCode') : `${rebateCodes}`);
+rebateCodes = $.isNode() ? (process.env.gua_nhjRed_rebateCode ? process.env.gua_nhjRed_rebateCode : `${rebateCodes}`) : ($.getdata('gua_nhjRed_rebateCode') ? $.getdata('gua_nhjRed_rebateCode') : `${rebateCodes}`);
 
 rebateCode = rebateCodes
 message = ''
@@ -99,9 +99,9 @@ let nowTime = new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*
   }
   if(Object.getOwnPropertyNames($.shareCodeArr).length > 0 && $.shareCodeArr["updateTime"] != pinUpdateTime) $.setdata($.shareCodeArr,'gua_JDnhjRed')
   if(message){
-    $.msg($.name, ``, `${message}\nhttps://u.jd.com/StixNUc\n\n跳转到app 可查看助力情况`);
+    $.msg($.name, ``, `${message}\nhttps://u.jd.com/SIaOAya\n\n跳转到app 可查看助力情况`);
     if ($.isNode()){
-      // await notify.sendNotify(`${$.name}`, `${message}\n\nhttps://u.jd.com/StixNUc\n跳转到app 可查看助力情况`);
+      // await notify.sendNotify(`${$.name}`, `${message}\n\nhttps://u.jd.com/SIaOAya\n跳转到app 可查看助力情况`);
     }
   }
 })()
