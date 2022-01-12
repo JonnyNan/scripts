@@ -10,7 +10,7 @@ let secretp='',inviteId=[]
 let helpnum=process.env.helpnum ? process.env.helpnum : 1;//默认前三组队当车头/膨胀
 let groupnum=process.env.groupnum ? process.env.groupnum : 24;//默认4人参队，即一队5人
 let num=0;
-
+let GROUPInviteId=['m2telgJiXU4EtwCgJrnbN5TV6R25CgqUPfjsarOw7A'];
 
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
@@ -22,7 +22,7 @@ if ($.isNode()) {
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 
-$.inviteId  = ['m2telgJiXU4EtwCgJrnbN5TV6R25CgqUPfjsarOw7A'];
+$.inviteId  = [''];
 
 !(async () => {
   if (!cookiesArr[0]) {
