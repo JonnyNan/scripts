@@ -187,7 +187,7 @@ ENV_PATH=
 42 2,8 * * * node /scripts/jd_wxgame.js >> /log/jd_wxgame.log 2>&1
 25 2,8 * * * node /scripts/jd_wish.js >> /log/jd_wish.log 2>&1
 18 0,12,18 * * * node /scripts/jd_ys.js >> /log/jd_ys.log 2>&1
-18 9,10,12,15 * * * node /scripts/jd_nsteam.js >> /log/jd_nsteam.log 2>&1
+18 9,10,12,15,17 * * * node /scripts/jd_nsteam.js >> /log/jd_nsteam.log 2>&1
 15 3,18 * * * node /scripts/jd_zsign.js >> /log/jd_zsign.log 2>&1
 2 01,7 * * * node /scripts/jd_zjb.js >> /log/jd_zjb.log 2>&1
 35 5,16 * * * node /scripts/jx_aid_red.js >> /log/jx_aid_red.log 2>&1
