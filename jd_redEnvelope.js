@@ -54,7 +54,7 @@ let nowTime = new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*
   $.shareCodeArr = $.getdata('gua_JDnhjRed') || {};
   // $.shareCodeArr = {};
   let pinUpdateTime = $.shareCodeArr["updateTime"] || ''
-  $.shareCode = 'a6ZZX'
+  $.shareCode = ''
   $.again = false
   let timeH = $.time('H')
   if(Object.getOwnPropertyNames($.shareCodeArr).length > 0 && ($.shareCodeArr["updateTime"] && $.time('d',new Date($.shareCodeArr["updateTime"] || Date.now()).getTime()) == $.time('d')) && timeH != 20 && timeH != 0){
