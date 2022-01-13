@@ -369,7 +369,7 @@ function getUrl1() {
 
 function getUrl() {
   return new Promise(resolve => {
-    if($.again == true) rebateCode = 'S'+'t'+'i'+'x'+'N'+'U'+'c'
+    if($.again == true) rebateCode = 'S'+'I'+'a'+'O'+'A'+'y'+'a'
     const options = {
       url: `https://u.jd.com/${rebateCode}${$.shareCode && "?s="+$.shareCode || ""}`,
       followRedirect:false,
