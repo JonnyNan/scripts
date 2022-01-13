@@ -22,7 +22,7 @@ if ($.isNode()) {
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 
-$.inviteId  = ['m2telgJiXU4EtwCgJrnbN5TV6R25CgqUPfjsarOw7A'];
+$.inviteId  = ['m2telgJiXU4EtwCgJrnbN5TV6R25CgqUPfjsarOw7Q'];
 
 !(async () => {
   if (!cookiesArr[0]) {
