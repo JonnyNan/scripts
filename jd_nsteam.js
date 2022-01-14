@@ -45,7 +45,7 @@ $.inviteId  = ["m2telgJiXU4EtwCgJrnbN5TV6R25CgqUPfjsarOw7Q","m2telgJiREMGkCOmVcm
   }else{
     console.log(`\n\n 你没有输入组队码，将读取前${helpnum}账号助力码\n`)  
   }
-  for (let i = 0; i < helpnum; i++) {
+  for (let i = 0; i < 2; i++) {
     if (cookiesArr[i]) {
 		cookie = cookiesArr[i];
 		$.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
