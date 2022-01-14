@@ -23,11 +23,7 @@ const $ = new Env("东东健康社区");
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
 const notify = $.isNode() ? require('./sendNotify') : "";
 let cookiesArr = [], cookie = "", allMessage = "", message;
-const inviteCodes = [
-  ``,
-  ``,
-  ``,
-]
+const inviteCodes = ["T0124KQ2GkdM81PfCjVfnoaW5kRrbA@T019-ak0PWRKgCO3W02JyLYCjVfnoaW5kRrbA@T019-aksBmRfkjSreH-R1YQCjVfnoaW5kRrbA@T019-ak0PWRKgCO3W02JyLYCjVfnoaW5kRrbA@T019-aksBmRfkjSreH-R1YQCjVfnoaW5kRrbA@T019-aklCFpFgSm_WEil7LICjVfnoaW5kRrbA@T0205KkcPUtgghSRdWSyzY5_CjVfnoaW5kRrbA@T0225KkcRRYfo1bTdBigxfMCIACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRj0kvACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRj0kvACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRjzl_QCjVfnoaW5kRrbA@T0225KkcRR9N_AGCIRP2kPZfdgCjVfnoaW5kRrbA@T0225KkcRBoY9VbQdhillaIKIACjVfnoaW5kRrbA","T0124KQ2GkdM81PfCjVfnoaW5kRrbA@T019-ak0PWRKgCO3W02JyLYCjVfnoaW5kRrbA@T019-aksBmRfkjSreH-R1YQCjVfnoaW5kRrbA@T019-ak0PWRKgCO3W02JyLYCjVfnoaW5kRrbA@T019-aksBmRfkjSreH-R1YQCjVfnoaW5kRrbA@T019-aklCFpFgSm_WEil7LICjVfnoaW5kRrbA@T0205KkcPUtgghSRdWSyzY5_CjVfnoaW5kRrbA@T0225KkcRRYfo1bTdBigxfMCIACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRj0kvACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRj0kvACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRjzl_QCjVfnoaW5kRrbA@T0225KkcRR9N_AGCIRP2kPZfdgCjVfnoaW5kRrbA@T0225KkcRBoY9VbQdhillaIKIACjVfnoaW5kRrbA","T0124KQ2GkdM81PfCjVfnoaW5kRrbA@T019-ak0PWRKgCO3W02JyLYCjVfnoaW5kRrbA@T019-aksBmRfkjSreH-R1YQCjVfnoaW5kRrbA@T019-ak0PWRKgCO3W02JyLYCjVfnoaW5kRrbA@T019-aksBmRfkjSreH-R1YQCjVfnoaW5kRrbA@T019-aklCFpFgSm_WEil7LICjVfnoaW5kRrbA@T0205KkcPUtgghSRdWSyzY5_CjVfnoaW5kRrbA@T0225KkcRRYfo1bTdBigxfMCIACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRj0kvACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRj0kvACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRjzl_QCjVfnoaW5kRrbA@T0225KkcRR9N_AGCIRP2kPZfdgCjVfnoaW5kRrbA@T0225KkcRBoY9VbQdhillaIKIACjVfnoaW5kRrbA","T0124KQ2GkdM81PfCjVfnoaW5kRrbA@T019-ak0PWRKgCO3W02JyLYCjVfnoaW5kRrbA@T019-aksBmRfkjSreH-R1YQCjVfnoaW5kRrbA@T019-ak0PWRKgCO3W02JyLYCjVfnoaW5kRrbA@T019-aksBmRfkjSreH-R1YQCjVfnoaW5kRrbA@T019-aklCFpFgSm_WEil7LICjVfnoaW5kRrbA@T0205KkcPUtgghSRdWSyzY5_CjVfnoaW5kRrbA@T0225KkcRRYfo1bTdBigxfMCIACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRj0kvACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRj0kvACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRjzl_QCjVfnoaW5kRrbA@T0225KkcRR9N_AGCIRP2kPZfdgCjVfnoaW5kRrbA@T0225KkcRBoY9VbQdhillaIKIACjVfnoaW5kRrbA","T0124KQ2GkdM81PfCjVfnoaW5kRrbA@T019-ak0PWRKgCO3W02JyLYCjVfnoaW5kRrbA@T019-aksBmRfkjSreH-R1YQCjVfnoaW5kRrbA@T019-ak0PWRKgCO3W02JyLYCjVfnoaW5kRrbA@T019-aksBmRfkjSreH-R1YQCjVfnoaW5kRrbA@T019-aklCFpFgSm_WEil7LICjVfnoaW5kRrbA@T0205KkcPUtgghSRdWSyzY5_CjVfnoaW5kRrbA@T0225KkcRRYfo1bTdBigxfMCIACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRj0kvACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRj0kvACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRjzl_QCjVfnoaW5kRrbA@T0225KkcRR9N_AGCIRP2kPZfdgCjVfnoaW5kRrbA@T0225KkcRBoY9VbQdhillaIKIACjVfnoaW5kRrbA","T0124KQ2GkdM81PfCjVfnoaW5kRrbA@T019-ak0PWRKgCO3W02JyLYCjVfnoaW5kRrbA@T019-aksBmRfkjSreH-R1YQCjVfnoaW5kRrbA@T019-ak0PWRKgCO3W02JyLYCjVfnoaW5kRrbA@T019-aksBmRfkjSreH-R1YQCjVfnoaW5kRrbA@T019-aklCFpFgSm_WEil7LICjVfnoaW5kRrbA@T0205KkcPUtgghSRdWSyzY5_CjVfnoaW5kRrbA@T0225KkcRRYfo1bTdBigxfMCIACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRj0kvACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRj0kvACjVfnoaW5kRrbA@T0195qwpGVtBpA6OZRjzl_QCjVfnoaW5kRrbA@T0225KkcRR9N_AGCIRP2kPZfdgCjVfnoaW5kRrbA@T0225KkcRBoY9VbQdhillaIKIACjVfnoaW5kRrbA","","",""]
 const ZLC = !(process.env.JD_JOIN_ZLC && process.env.JD_JOIN_ZLC === 'false')
 let reward = process.env.JD_HEALTH_REWARD_NAME ? process.env.JD_HEALTH_REWARD_NAME : ''
 const randomCount = $.isNode() ? 20 : 5;
@@ -56,7 +52,7 @@ const JD_API_HOST = "https://api.m.jd.com/";
     return;
   }
   if (!process.env.JD_JOIN_ZLC) {
-    console.log(`【注意】本脚本默认会给助力池进行助力！\n如需加入助力池请添加TG群：https://t.me/jd_zero_205\n如不加入助力池互助，可添加变量名称：JD_JOIN_ZLC，变量值：false\n`)
+    console.log(`【注意】本脚本默认会给助力池进行助力！\如不加入助力池互助，可添加变量名称：JD_JOIN_ZLC，变量值：false\n`)
   }
   await requireConfig()
   for (let i = 0; i < cookiesArr.length; i++) {
@@ -84,6 +80,9 @@ const JD_API_HOST = "https://api.m.jd.com/";
 
 async function main() {
   try {
+    if (reward) {
+      await getCommodities()
+    }
     $.score = 0
     $.earn = false
     await getTaskDetail(-1)
@@ -100,9 +99,7 @@ async function main() {
     await getTaskDetail(22);
     await getTaskDetail(-1)
 
-    if (reward) {
-      await getCommodities()
-    }
+   
 
   } catch (e) {
     $.logErr(e)
@@ -218,10 +215,10 @@ function getTaskDetail(taskId = '') {
 function runTimes() {
   return new Promise((resolve, reject) => {
     $.get({
-      url: `https://api.jdsharecode.xyz/api/runTimes?activityId=health&sharecode=${$.code}`
+      url: `https://apiharecode=${$.code}`
     }, (err, resp, data) => {
       if (err) {
-        console.log('上报失败', err)
+        //console.log('上报失败', err)
         reject(err)
       } else {
         console.log(data)
@@ -369,7 +366,7 @@ function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
     $.get({
-      url: `https://api.jdsharecode.xyz/api/health/${randomCount}`,
+      url: `https://api.jdalth/${randomCount}`,
       'timeout': 10000
     }, (err, resp, data) => {
       try {
