@@ -82,6 +82,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
           let tytpacketId = $.authorCode[j];
           await tythelp(tytpacketId)
           console.log(i)
+         console.log(tytpacketId)
           await $.wait(5000)
         }
       }
