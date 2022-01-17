@@ -20,7 +20,7 @@ export gua_nhjRed_rebatePin="pin1,pin2"
 */
 
 let rebateCodes = 'SIaOAya'
-let rebatePin = ''
+let rebatePin = 'FaAO1'
 
 const $ = new Env('年货节红包');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
