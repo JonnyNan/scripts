@@ -134,7 +134,7 @@ ENV_PATH=
 10 7 * * * node /scripts/jd_ms.js >> /log/jd_ms.log 2>&1
 28 04,13 * * * node /scripts/jd_mohe.js >> /log/jd_mohe.log 2>&1
 26 02,8 * * * node /scripts/jd_nzmh.js >> /log/jd_nzmh.log 2>&1
-00 0,20,21,22 * * * node /scripts/jd_nhs_red.js >> /log/jd_nhs_red.js 2>&1
+00 20,21,22 * * * node /scripts/jd_nhs_red2.js >> /log/jd_nhs_red2.js 2>&1
 00 0,09,20,21,22 * * * node /scripts/jd_nhs_red1.js >> /log/jd_nhs_red.js 2>&1
 36 02,8 * * * node /scripts/jd_nh_sign.js >> /log/jd_nh_sign.log 2>&1
 26 0,9,18,23 * * * node /scripts/jd_nnfls.js >> /log/jd_nnfls.js 2>&1
