@@ -1310,7 +1310,7 @@ function readShareCode() {
           console.log(`${JSON.stringify(err)}`)
           console.log(`${$.name} API请求失败，将切换为备用API`)
           console.log(`随机取助力码放到您固定的互助码后面(不影响已有固定互助)`)
-          $.get({url: `https://gitee.com/xr2021/share/raw/master/JD_Fruit.json`, 'timeout': 10000},(err, resp, data)=>{
+          $.get({url: `https://cdn.jsdelivr.net/gh/hajiuhajiu/code@main/sharecode/JD_Fruit.json`, 'timeout': 10000},(err, resp, data)=>{
           data = JSON.parse(data);})
         } else {
           if (data) {
