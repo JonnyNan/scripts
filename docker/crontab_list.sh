@@ -117,6 +117,7 @@ ENV_PATH=
 55 7,10,13,16 * * * node /scripts/jd_jddj_fruit_collectWater.js >> /log/jd_jddj_fruit_collectWater.log 2>&1
 05 1,8,13,20 * * * node /scripts/jd_jddj_getPoints.js >> /log/jd_jddj_getPoints.log 2>&1
 18 3,8,13,17 * * * node /scripts/jd_jddj_plantBeans.js >> /log/jd_jddj_plantBeans.log 2>&1
+18 3,8,11,14,16,17 * * * node /scripts/jd_jxlhb.js >> /log/jd_jxlhb.log 2>&1
 23 1 * * * node /scripts/jd_kd.js >> /log/jd_kd.log 2>&1
 10-20/5 12 * * * node /scripts/jd_live.js >> /log/jd_live.log 2>&1
 28 14 * * * node /scripts/jd_live_lottery_social.js >> /log/jd_live_lottery_social.log 2>&1
@@ -135,9 +136,6 @@ ENV_PATH=
 10 7 * * * node /scripts/jd_ms.js >> /log/jd_ms.log 2>&1
 28 04,13 * * * node /scripts/jd_mohe.js >> /log/jd_mohe.log 2>&1
 26 02,8 * * * node /scripts/jd_nzmh.js >> /log/jd_nzmh.log 2>&1
-00 20,21,22 * * * node /scripts/jd_nhs_red2.js >> /log/jd_nhs_red2.js 2>&1
-00 9,18,20 * * * node /scripts/jd_nhs_red3.js >> /log/jd_nhs_red3.js 2>&1
-00 0,09,20,21,22 * * * node /scripts/jd_nhs_red1.js >> /log/jd_nhs_red.js 2>&1
 36 02,8 * * * node /scripts/jd_nh_sign.js >> /log/jd_nh_sign.log 2>&1
 26 0,9,18,23 * * * node /scripts/jd_nnfls.js >> /log/jd_nnfls.js 2>&1
 5 1,10 * * * node /scripts/jd_necklace.js >> /log/jd_necklace.log 2>&1
@@ -146,21 +144,18 @@ ENV_PATH=
 32 8,18 * * * node /scripts/jd_opencard2.js >> /log/jd_opencard2.log 2>&1
 42 8,18 * * * node /scripts/jd_opencard3.js >> /log/jd_opencard3.log 2>&1
 40 10,18 * * * node /scripts/jd_opencard4.js >> /log/jd_opencard4.log 2>&1
-45 11,17 * * * node /scripts/jd_opencard5.js >> /log/jd_opencard5.log 2>&1
-50 12,16 * * * node /scripts/jd_opencard6.js >> /log/jd_opencard6.log 2>&1
 5 6-18/6 * * * node /scripts/jd_pet.js >> /log/jd_pet.log 2>&1
 8 9 * * * node /scripts/jd_petTreasureBox.js >> /log/jd_petTreasureBox.log 2>&1
 12 * * * * node /scripts/jd_pigPet.js >> /log/jd_pigPet.log 2>&1
 0 */6 * * * node /scripts/jd_plantBean.js >> /log/jd_plantBean.log 2>&1
 8 9 * * * node /scripts/jd_plus_bean.js >> /log/jd_plus_bean.log 2>&1
 35 13,17,19 * * * node /scripts/jd_redPacket.js >> /log/jd_redPacket.log 2>&1
-59 19,20,22 * * * node /scripts/jd_redEnvelope.js >> /log/jd_redEnvelope.log 2>&1
+#59 19,20,22 * * * node /scripts/jd_redEnvelope.js >> /log/jd_redEnvelope.log 2>&1
 27 8 * * * node /scripts/jd_sgmh.js >> /log/jd_sgmh.log 2>&1
 30 8,12 * * * node /scripts/jd_split.js >> /log/jd_split.log 2>&1
 26 5 * * * node /scripts/jd_shake.js >> /log/jd_shake.log 2>&1
 10 04 * * * node /scripts/jd_shop.js >> /log/jd_shop.log 2>&1
 10 01,3 * * * node /scripts/jd_speed.js >> /log/jd_speed.log 2>&1
-10 03,9 * * * node /scripts/jd_sign_graphics.js >> /log/jd_sign_graphics.log 2>&1
 40 0,8 * * * node /scripts/jd_speed_redpocke.js >> /log/jd_speed_redpocke.log 2>&1
 0 0-23 * * * node /scripts/jd_super_redrain.js >> /log/jd_super_redrain.log 2>&1
 36 0-23/4 * * * node /scripts/jd_syj.js >> /log/jd_syj.log 2>&1
@@ -191,7 +186,6 @@ ENV_PATH=
 18 10,15,17 * * * node /scripts/jd_year.js >> /log/jd_year.log 2>&1
 15 3,18 * * * node /scripts/jd_zsign.js >> /log/jd_zsign.log 2>&1
 2 01,7 * * * node /scripts/jd_zjb.js >> /log/jd_zjb.log 2>&1
-35 5,16 * * * node /scripts/jx_aid_red.js >> /log/jx_aid_red.log 2>&1
 18 3,9 * * * node /scripts/jx_sign.js >> /log/jx_sign.log 2>&1
 18 4,11 * * * node /scripts/jx_sign_xd.js >> /log/jx_sign_xd.log 2>&1
 
