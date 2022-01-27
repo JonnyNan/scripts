@@ -62,7 +62,7 @@ let args_xh = {
      * 可设置环境变量：JD_TRY_TABID，用@进行分隔
      * 默认为 1 到 10
      * */
-    tabId: process.env.JD_TRY_TABID && process.env.JD_TRY_TABID.split('@').map(Number) || [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    tabId: process.env.JD_TRY_TABID && process.env.JD_TRY_TABID.split('@').map(Number) || [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
     /*
      * 试用商品标题过滤，黑名单，当标题存在关键词时，则不加入试用组
      * 当白名单和黑名单共存时，黑名单会自动失效，优先匹配白名单，匹配完白名单后不会再匹配黑名单，望周知
@@ -79,7 +79,7 @@ let args_xh = {
      * C商品原价49元，现在试用价1元，如果下面设置为1，那C商品也会被添加到带提交试用组，因为1 = 1
      * 可设置环境变量：JD_TRY_TRIALPRICE，默认为0
      * */
-    trialPrice: process.env.JD_TRY_TRIALPRICE * 1 || 0,
+    trialPrice: process.env.JD_TRY_TRIALPRICE * 1 || 7,
     /*
      * 最小提供数量，例如试用商品只提供2份试用资格，当前设置为1，则会进行申请
      * 若只提供5分试用资格，当前设置为10，则不会申请
@@ -90,7 +90,7 @@ let args_xh = {
      * 过滤大于设定值的已申请人数，例如下面设置的1000，A商品已经有1001人申请了，则A商品不会进行申请，会被跳过
      * 可设置环境变量：JD_TRY_APPLYNUMFILTER
      * */
-    applyNumFilter: process.env.JD_TRY_APPLYNUMFILTER * 1 || 10000,
+    applyNumFilter: process.env.JD_TRY_APPLYNUMFILTER * 1 || 100000,
     /*
      * 商品试用之间和获取商品之间的间隔, 单位：毫秒(1秒=1000毫秒)
      * 可设置环境变量：JD_TRY_APPLYINTERVAL
@@ -121,7 +121,7 @@ let args_xh = {
      * 不打印的缺点：无法清晰知道每个商品为什么会被过滤，哪个商品被添加到了待提交试用组
      * 可设置环境变量：JD_TRY_PLOG，默认为true
      * */
-    printLog: process.env.JD_TRY_PLOG || true,
+    printLog: process.env.JD_TRY_PLOG || false,
     /*
      * 白名单，是否打开，如果下面为true，那么黑名单会自动失效
      * 白名单和黑名单无法共存，白名单永远优先于黑名单
@@ -139,7 +139,7 @@ let args_xh = {
      * 每多少个账号发送一次通知，默认为4
      * 可通过环境变量控制 JD_TRY_SENDNUM
      * */
-    sendNum: process.env.JD_TRY_SENDNUM * 1 || 4,
+    sendNum: process.env.JD_TRY_SENDNUM * 1 || 5,
 }
 //上面很重要，遇到问题请把上面注释看一遍再来问
 !(async () => {
