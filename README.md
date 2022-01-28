@@ -18,7 +18,7 @@ wget https://cdn.jsdelivr.net/gh/hajiuhajiu/jd-base@main/install_scripts/docker_
 
 # 扫码获取ck失效! 需要手动找cookie[点击查看](https://github.com/hajiuhajiu/scripts/blob/master/icon/GetJdCookie.md)  
 
-# 建议安装docker可视化管理工具portainer,可以管理docker容器察看状态 
+建议安装docker可视化管理工具portainer,可以管理docker容器察看状态 
 按下面两步安装, 安装完成后 输入 ip地址:9000 (如:http://192.168.1.1:9000/)访问
 docker pull portainer/portainer
 
