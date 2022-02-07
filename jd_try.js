@@ -35,7 +35,7 @@ let args_xh = {
      * 例如设置 JD_TRY_PRICE 为 30，假如现在正在遍历tab1，那tab1就会被遍历到30页，到31页就会跳到tab2，或下一个预设的tab页继续遍历到30页
      * 默认为20
      */
-    totalPages: process.env.JD_TRY_TOTALPAGES * 1 || 20,
+    totalPages: process.env.JD_TRY_TOTALPAGES * 1 || 30,
     /*
      * 由于每个账号每次获取的试用产品都不一样，所以为了保证每个账号都能试用到不同的商品，之前的脚本都不支持采用统一试用组的
      * 以下环境变量是用于指定是否采用统一试用组的
@@ -46,7 +46,7 @@ let args_xh = {
      * 提示：想每个账号独立不同的试用产品的，请设置为false，想减少脚本运行时间的，请设置为true
      * 默认为false
      */
-    unified: process.env.JD_TRY_UNIFIED || false,
+    unified: process.env.JD_TRY_UNIFIED || true,
     //以上环境变量新增于2022.01.25
     /*
      * 商品原价，低于这个价格都不会试用，意思是
