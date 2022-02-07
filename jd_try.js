@@ -183,7 +183,7 @@ let args_xh = {
                 }
                 $.isLimit = false;
                 // 获取tabList的，不知道有哪些的把这里的注释解开跑一遍就行了
-                // await try_tabList();
+                 await try_tabList();
                 // return;
                 $.isForbidden = false
                 $.wrong = false
