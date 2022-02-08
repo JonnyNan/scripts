@@ -1,4 +1,4 @@
-
+自用！
 # docker 一键安装：
 可以下载putty，进入终端，复制下面命令，按提示操作，不知道怎样填就默认回车：
 wget https://cdn.jsdelivr.net/gh/hajiuhajiu/jd-base@main/install_scripts/docker_install_jd.sh -O docker_install_jd.sh && chmod +x docker_install_jd.sh && bash docker_install_jd.sh
